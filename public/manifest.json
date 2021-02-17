@@ -1,6 +1,6 @@
 {
-  "name": "Advanced React - Boilerplate",
-  "short_name": "Advanced React",
+  "name": "My Page",
+  "short_name": "about me",
   "icons": [
     {
       "src": "/img/icon-192.png",
@@ -14,7 +14,7 @@
     }
   ],
   "background_color": "#06092B",
-  "description": "Boilerplate using JavaScript, ReactJS, Next.js and Styled Components",
+  "description": "Personal Page using JavaScript, ReactJS, Next.js and MaterialUI",
   "display": "fullscreen",
   "start_url": "/",
   "theme_color": "#06092B"
