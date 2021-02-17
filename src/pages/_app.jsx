@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { CssBaseline, ThemeProvider } from '@material-ui/core'
 
 import theme from 'styles/theme'
+import Base from 'components/Base'
 
 const App = ({ Component, pageProps }) => (
   <ThemeProvider theme={theme}>
@@ -17,7 +18,9 @@ const App = ({ Component, pageProps }) => (
       />
     </Head>
     <CssBaseline />
-    <Component {...pageProps} />
+    <Base>
+      <Component {...pageProps} />
+    </Base>
   </ThemeProvider>
 )
 
