@@ -1,22 +1,29 @@
-import { AppBar, Box, Button, Toolbar, Typography } from '@material-ui/core'
+import { AppBar, Box, Toolbar, Typography } from '@material-ui/core'
+
+import Menu from 'components/Menu'
+import InternalLink from 'components/InternalLink'
 
 const TopBar = () => (
   <>
-    <AppBar position="fixed">
+    <AppBar position="fixed" color="default">
       <Toolbar>
-        <Box flexGrow={1} alignItems="center">
-          <Typography variant="h5">Paulo Silva</Typography>
-          <Typography variant="caption">Software Developer</Typography>
+        <Box flexGrow={1}>
+          <InternalLink href="/">
+            <Box mr={1} display="inline">
+              <Typography variant="h4" display="inline">
+                Paulo Silva
+              </Typography>
+            </Box>
+            <Typography variant="caption">Software Developer</Typography>
+          </InternalLink>
         </Box>
-        <Button color="inherit">Experience</Button>
-        <Button color="inherit">Education</Button>
-        <Button color="inherit">Skills</Button>
-        <Button color="inherit">Projects</Button>
-        <Button color="inherit">Contact</Button>
+
+        <Menu />
       </Toolbar>
     </AppBar>
     {/* necessary for content to be below app bar */}
     <Toolbar />
   </>
 )
+
 export default TopBar
