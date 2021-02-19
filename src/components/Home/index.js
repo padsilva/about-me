@@ -9,7 +9,7 @@ import {
   makeStyles,
   Typography
 } from '@material-ui/core'
-import { GitHub, LinkedIn, Twitter } from '@material-ui/icons'
+import { Email, GitHub, LinkedIn, Twitter } from '@material-ui/icons'
 
 import DateFormatter from 'utils/date'
 
@@ -38,12 +38,12 @@ const Home = () => {
     <Container component="main" maxWidth="md">
       <Card className={classes.paper}>
         <CardContent>
-          <Grid container spacing={3}>
+          <Grid container spacing={4}>
             <Grid
               container
               spacing={2}
               item
-              sm={6}
+              sm={5}
               direction="column"
               justify="space-evenly"
               alignItems="center"
@@ -82,7 +82,7 @@ const Home = () => {
               container
               spacing={2}
               item
-              sm={6}
+              sm={7}
               direction="column"
               justify="space-evenly"
               alignItems="center"
@@ -101,6 +101,15 @@ const Home = () => {
         </CardContent>
         <CardActions className={classes.actions}>
           <Grid container justify="space-evenly">
+            <Grid item>
+              <IconButton
+                color="inherit"
+                href="mailto:pauloalexandreduartesilva@gmail.com"
+                aria-label="Email"
+              >
+                <Email />
+              </IconButton>
+            </Grid>
             <Grid item>
               <IconButton
                 color="inherit"
