@@ -19,7 +19,7 @@ const Menu = () => {
 
   return (
     <>
-      <Hidden xsDown>
+      <Hidden smDown>
         <Box>
           <Grid container spacing={6} justify="flex-end">
             <Grid item>
@@ -55,7 +55,7 @@ const Menu = () => {
         </Box>
       </Hidden>
 
-      <Hidden smUp>
+      <Hidden mdUp>
         <IconButton
           aria-label="menu"
           color="primary"

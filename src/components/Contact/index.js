@@ -2,16 +2,14 @@ import {
   Box,
   Button,
   Card,
-  CardActions,
   CardContent,
   CardHeader,
   Container,
   Grid,
-  IconButton,
   makeStyles,
   TextField
 } from '@material-ui/core'
-import { Email, GitHub, LinkedIn, Twitter } from '@material-ui/icons'
+import SocialLinks from 'components/SocialLinks'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -27,9 +25,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
       padding: theme.spacing(3)
     }
-  },
-  actions: {
-    backgroundColor: theme.palette.primary.light
   }
 }))
 
@@ -111,52 +106,7 @@ const Contact = () => {
             </Grid>
           </Grid>
         </CardContent>
-        <CardActions className={classes.actions}>
-          <Grid container justify="space-evenly">
-            <Grid item>
-              <IconButton
-                color="inherit"
-                href="mailto:pauloalexandreduartesilva@gmail.com"
-                aria-label="Email"
-              >
-                <Email />
-              </IconButton>
-            </Grid>
-            <Grid item>
-              <IconButton
-                color="inherit"
-                href="https://github.com/padsilva"
-                aria-label="Github"
-                target="_blank"
-                rel="noopener no referrer"
-              >
-                <GitHub />
-              </IconButton>
-            </Grid>
-            <Grid item>
-              <IconButton
-                color="inherit"
-                href="https://www.linkedin.com/in/padsilva88/"
-                aria-label="LinkedIn"
-                target="_blank"
-                rel="noopener no referrer"
-              >
-                <LinkedIn />
-              </IconButton>
-            </Grid>
-            <Grid item>
-              <IconButton
-                color="inherit"
-                href="https://twitter.com/padsilva88"
-                aria-label="Twitter"
-                target="_blank"
-                rel="noopener no referrer"
-              >
-                <Twitter />
-              </IconButton>
-            </Grid>
-          </Grid>
-        </CardActions>
+        <SocialLinks />
       </Card>
     </Container>
   )
