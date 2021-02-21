@@ -10,7 +10,6 @@ import {
   Typography,
   withStyles
 } from '@material-ui/core'
-import Image from 'next/image'
 
 const BorderLinearProgress = withStyles((theme) => ({
   root: {
