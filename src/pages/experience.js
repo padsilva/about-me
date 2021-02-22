@@ -1,3 +1,5 @@
-const Experience = () => <h1>Experience</h1>
+import Experience from 'components/Experience'
 
-export default Experience
+const ExperiencePage = () => <Experience />
+
+export default ExperiencePage
