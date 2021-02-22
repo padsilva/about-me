@@ -8,10 +8,14 @@ import Base from 'components/Base'
 const App = ({ Component, pageProps }) => (
   <ThemeProvider theme={theme}>
     <Head>
-      <title>My page</title>
+      <title>Paulo Silva</title>
       <link rel="shortcut icon" href="/img/icon-512.png" />
-      <link rel="apple-touch-icon" href="/img/icon-192.png" />
+      <link rel="apple-touch-icon" href="/img/icon-512.png" />
       <link rel="manifest" href="/manifest.json" />
+      <meta
+        name="description"
+        content="Paulo Silva's page with details about his experience, education, skills and projects."
+      />
       <meta
         name="viewport"
         content="minimum-scale=1, initial-scale=1, width=device-width"
