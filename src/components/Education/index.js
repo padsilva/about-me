@@ -47,7 +47,7 @@ const Experience = () => {
     <Container component="main" maxWidth="md">
       <Card className={classes.card}>
         <CardHeader
-          title="Experience"
+          title="Education"
           titleTypographyProps={{
             variant: 'h4',
             align: 'center'
@@ -56,7 +56,7 @@ const Experience = () => {
         <CardContent className={classes.content}>
           <Timeline align="alternate">
             <TimelineItem>
-              <TimelineOppositeContent>2017-Present</TimelineOppositeContent>
+              <TimelineOppositeContent>2013-2015</TimelineOppositeContent>
               <TimelineSeparator>
                 <TimelineDot />
                 <TimelineConnector />
@@ -64,7 +64,7 @@ const Experience = () => {
               <TimelineContent>
                 <Paper elevation={3} className={classes.paper}>
                   <Typography variant="h6" component="h1">
-                    JOB POSITION
+                    UNIVERSITY NAME
                   </Typography>
                   <Typography align="justify">
                     I’m a paragraph. Click here to add your own text and edit
@@ -77,7 +77,7 @@ const Experience = () => {
               </TimelineContent>
             </TimelineItem>
             <TimelineItem>
-              <TimelineOppositeContent>2016-2017</TimelineOppositeContent>
+              <TimelineOppositeContent>2008-2013</TimelineOppositeContent>
               <TimelineSeparator>
                 <TimelineDot />
                 <TimelineConnector />
@@ -85,28 +85,7 @@ const Experience = () => {
               <TimelineContent>
                 <Paper elevation={3} className={classes.paper}>
                   <Typography variant="h6" component="h1">
-                    JOB POSITION
-                  </Typography>
-                  <Typography align="justify">
-                    I’m a paragraph. Click here to add your own text and edit
-                    me. It’s easy. Just click “Edit Text” or double click me to
-                    add your own content and make changes to the font. I’m a
-                    great place for you to tell a story and let your users know
-                    a little more about you.
-                  </Typography>
-                </Paper>
-              </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-              <TimelineOppositeContent>2014-2015</TimelineOppositeContent>
-              <TimelineSeparator>
-                <TimelineDot />
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent>
-                <Paper elevation={3} className={classes.paper}>
-                  <Typography variant="h6" component="h1">
-                    JOB POSITION
+                    UNIVERSITY NAME
                   </Typography>
                   <Typography align="justify">
                     I’m a paragraph. Click here to add your own text and edit

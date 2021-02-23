@@ -1,3 +1,5 @@
-const Education = () => <h1>Education</h1>
+import Education from 'components/Education'
 
-export default Education
+const EducationPage = () => <Education />
+
+export default EducationPage
