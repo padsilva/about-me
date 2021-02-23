@@ -6,7 +6,6 @@ import {
   IconButton,
   List,
   ListItem,
-  ListItemText,
   Typography
 } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
@@ -47,35 +46,18 @@ const Menu = () => {
             onKeyDown={() => setOpen(false)}
           >
             <List>
-              <InternalLink href="/experience" isActive>
-                <ListItem button>
-                  <ListItemText primary="Experience" />
-                </ListItem>
-              </InternalLink>
-
-              <InternalLink href="/education" isActive>
-                <ListItem button>
-                  <ListItemText primary="Education" />
-                </ListItem>
-              </InternalLink>
-
-              <InternalLink href="/skills" isActive>
-                <ListItem button>
-                  <ListItemText primary="Skills" />
-                </ListItem>
-              </InternalLink>
-
-              <InternalLink href="/projects" isActive>
-                <ListItem button>
-                  <ListItemText primary="Projects" />
-                </ListItem>
-              </InternalLink>
-
-              <InternalLink href="/contact" isActive>
-                <ListItem button>
-                  <ListItemText primary="Contact" />
-                </ListItem>
-              </InternalLink>
+              {data.map((menu) => (
+                <InternalLink key={menu.name} href={menu.link} isActive>
+                  <ListItem button>
+                    <Grid container spacing={1}>
+                      <Grid item>{menu.icon}</Grid>
+                      <Grid item>
+                        <Typography variant="button">{menu.name}</Typography>
+                      </Grid>
+                    </Grid>
+                  </ListItem>
+                </InternalLink>
+              ))}
             </List>
           </div>
         </Drawer>
