@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import {
-  Box,
   Drawer,
   Grid,
   Hidden,
@@ -13,6 +12,7 @@ import {
 import MenuIcon from '@material-ui/icons/Menu'
 
 import InternalLink from 'components/InternalLink'
+import data from 'components/Menu/data'
 
 const Menu = () => {
   const [open, setOpen] = useState(false)
@@ -20,39 +20,16 @@ const Menu = () => {
   return (
     <>
       <Hidden smDown>
-        <Box>
-          <Grid container spacing={6} justify="flex-end">
-            <Grid item>
-              <InternalLink href="/experience" isActive>
-                <Typography variant="button">experience</Typography>
-              </InternalLink>
+        {data.map((menu) => (
+          <InternalLink key={menu.name} href={menu.link} isActive>
+            <Grid container item spacing={1}>
+              <Grid item>{menu.icon}</Grid>
+              <Grid item>
+                <Typography variant="button">{menu.name}</Typography>
+              </Grid>
             </Grid>
-
-            <Grid item>
-              <InternalLink href="/education" isActive>
-                <Typography variant="button">education</Typography>
-              </InternalLink>
-            </Grid>
-
-            <Grid item>
-              <InternalLink href="/skills" isActive>
-                <Typography variant="button">skills</Typography>
-              </InternalLink>
-            </Grid>
-
-            <Grid item>
-              <InternalLink href="/projects" isActive>
-                <Typography variant="button">projects</Typography>
-              </InternalLink>
-            </Grid>
-
-            <Grid item>
-              <InternalLink href="/contact" isActive>
-                <Typography variant="button">contact</Typography>
-              </InternalLink>
-            </Grid>
-          </Grid>
-        </Box>
+          </InternalLink>
+        ))}
       </Hidden>
 
       <Hidden mdUp>
