@@ -11,6 +11,7 @@ import {
   CardContent,
   CardHeader,
   Container,
+  Hidden,
   Paper,
   Typography
 } from '@material-ui/core'
@@ -54,62 +55,64 @@ const Experience = () => {
           }}
         />
         <CardContent className={classes.content}>
-          <Timeline align="alternate">
-            <TimelineItem>
-              <TimelineOppositeContent>2017-Present</TimelineOppositeContent>
-              <TimelineSeparator>
-                <TimelineDot />
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent>
-                <Paper elevation={3} className={classes.paper}>
-                  <Typography variant="h6" component="h1">
-                    JOB POSITION
-                  </Typography>
-                  <Typography align="justify">
-                    This is a great place for you to tell a story and let your
-                    users know a little more about you.
-                  </Typography>
-                </Paper>
-              </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-              <TimelineOppositeContent>2016-2017</TimelineOppositeContent>
-              <TimelineSeparator>
-                <TimelineDot />
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent>
-                <Paper elevation={3} className={classes.paper}>
-                  <Typography variant="h6" component="h1">
-                    JOB POSITION
-                  </Typography>
-                  <Typography align="justify">
-                    This is a great place for you to tell a story and let your
-                    users know a little more about you.
-                  </Typography>
-                </Paper>
-              </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-              <TimelineOppositeContent>2014-2015</TimelineOppositeContent>
-              <TimelineSeparator>
-                <TimelineDot />
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent>
-                <Paper elevation={3} className={classes.paper}>
-                  <Typography variant="h6" component="h1">
-                    JOB POSITION
-                  </Typography>
-                  <Typography align="justify">
-                    This is a great place for you to tell a story and let your
-                    users know a little more about you.
-                  </Typography>
-                </Paper>
-              </TimelineContent>
-            </TimelineItem>
-          </Timeline>
+          <Hidden smDown>
+            <Timeline align="alternate">
+              <TimelineItem>
+                <TimelineOppositeContent>2017-Present</TimelineOppositeContent>
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Paper elevation={3} className={classes.paper}>
+                    <Typography variant="h6" component="h1">
+                      JOB POSITION
+                    </Typography>
+                    <Typography align="justify">
+                      This is a great place for you to tell a story and let your
+                      users know a little more about you.
+                    </Typography>
+                  </Paper>
+                </TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineOppositeContent>2016-2017</TimelineOppositeContent>
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Paper elevation={3} className={classes.paper}>
+                    <Typography variant="h6" component="h1">
+                      JOB POSITION
+                    </Typography>
+                    <Typography align="justify">
+                      This is a great place for you to tell a story and let your
+                      users know a little more about you.
+                    </Typography>
+                  </Paper>
+                </TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineOppositeContent>2014-2015</TimelineOppositeContent>
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Paper elevation={3} className={classes.paper}>
+                    <Typography variant="h6" component="h1">
+                      JOB POSITION
+                    </Typography>
+                    <Typography align="justify">
+                      This is a great place for you to tell a story and let your
+                      users know a little more about you.
+                    </Typography>
+                  </Paper>
+                </TimelineContent>
+              </TimelineItem>
+            </Timeline>
+          </Hidden>
         </CardContent>
       </Card>
     </Container>

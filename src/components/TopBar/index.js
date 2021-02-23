@@ -24,7 +24,8 @@ const TopBar = () => (
             xs={2}
             sm={1}
             md={8}
-            lg={4}
+            lg={6}
+            xl={4}
             direction="row"
             justify="space-evenly"
             alignItems="center"
