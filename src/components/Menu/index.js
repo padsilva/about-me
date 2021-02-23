@@ -34,7 +34,7 @@ const Menu = () => {
       <Hidden mdUp>
         <IconButton
           aria-label="menu"
-          color="primary"
+          color="inherit"
           onClick={() => setOpen(true)}
         >
           <MenuIcon />
