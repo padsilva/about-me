@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import {
   Box,
   Card,
@@ -5,11 +6,63 @@ import {
   CardHeader,
   Container,
   Grid,
+  IconButton,
   LinearProgress,
   makeStyles,
   Typography,
   withStyles
 } from '@material-ui/core'
+
+const data = [
+  {
+    imgSrc: '/img/tech/javascript.svg',
+    link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    name: 'JavaScript',
+    percentage: 80
+  },
+  {
+    imgSrc: '/img/tech/react.svg',
+    link: 'https://reactjs.org/',
+    name: 'React',
+    percentage: 70
+  },
+  {
+    imgSrc: '/img/tech/nextjs.svg',
+    link: 'https://nextjs.org/',
+    name: 'Next.js',
+    percentage: 70
+  },
+  {
+    imgSrc: '/img/tech/graphql.svg',
+    link: 'https://graphql.org/',
+    name: 'GraphQL',
+    percentage: 70
+  },
+  {
+    imgSrc: '/img/tech/strapi.svg',
+    link: 'https://graphql.org/',
+    name: 'Strapi',
+    percentage: 60
+  },
+  {
+    imgSrc: '/img/tech/jest.svg',
+    link: 'https://jestjs.io/',
+    name: 'Jest',
+    percentage: 50
+  },
+  {
+    imgSrc: '/img/tech/storybook.svg',
+    link: 'https://storybook.js.org/',
+    name: 'Storybook',
+    percentage: 50
+  },
+  {
+    imgSrc: '/img/tech/apollo.svg',
+    link: 'https://www.apollographql.com/',
+    name: 'Apollo',
+    percentage: 50
+  }
+]
 
 const BorderLinearProgress = withStyles((theme) => ({
   root: {
@@ -40,6 +93,12 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
       padding: theme.spacing(3)
     }
+  },
+  box: {
+    marginLeft: theme.spacing(0),
+    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
+      marginLeft: theme.spacing(-1)
+    }
   }
 }))
 
@@ -57,150 +116,56 @@ const Skills = () => {
           }}
         />
         <CardContent className={classes.content}>
-          <Grid container spacing={3}>
-            <Grid container item justify="center" alignItems="center">
-              <Grid item xs={12} sm={2}>
-                <Typography variant="body2">JavaScript</Typography>
+          <Grid container spacing={4}>
+            {data.map((tech) => (
+              <Grid
+                key={tech.name}
+                container
+                item
+                justify="space-evenly"
+                alignItems="center"
+              >
+                <Grid
+                  item
+                  xs={12}
+                  sm={3}
+                  container
+                  direction="row"
+                  justify="flex-start"
+                  alignItems="center"
+                >
+                  <Grid item xs={3}>
+                    <IconButton
+                      href={tech.link}
+                      aria-label={tech.name}
+                      target="_blank"
+                      rel="noopener no referrer"
+                    >
+                      <Image src={tech.imgSrc} alt={tech.name} layout="fill" />
+                    </IconButton>
+                  </Grid>
+                  <Grid item xs={9}>
+                    <Typography variant="body2">{tech.name}</Typography>
+                  </Grid>
+                </Grid>
+                <Grid item xs={10} sm={8}>
+                  <Box className={classes.box}>
+                    <BorderLinearProgress
+                      variant="determinate"
+                      value={tech.percentage}
+                      size={100}
+                    />
+                  </Box>
+                </Grid>
+                <Grid item xs={2} sm={1}>
+                  <Box ml={2}>
+                    <Typography variant="body2">
+                      {`${tech.percentage}%`}
+                    </Typography>
+                  </Box>
+                </Grid>
               </Grid>
-              <Grid item xs={9}>
-                <BorderLinearProgress
-                  variant="determinate"
-                  value={80}
-                  size={100}
-                />
-              </Grid>
-              <Grid item xs={1}>
-                <Box ml={2}>
-                  <Typography variant="body2">80%</Typography>
-                </Box>
-              </Grid>
-            </Grid>
-
-            <Grid container item justify="center" alignItems="center">
-              <Grid item xs={12} sm={2}>
-                <Typography variant="body2">ReactJS</Typography>
-              </Grid>
-              <Grid item xs={9}>
-                <BorderLinearProgress
-                  variant="determinate"
-                  value={70}
-                  size={100}
-                />
-              </Grid>
-              <Grid item xs={1}>
-                <Box ml={2}>
-                  <Typography variant="body2">70%</Typography>
-                </Box>
-              </Grid>
-            </Grid>
-
-            <Grid container item justify="center" alignItems="center">
-              <Grid item xs={12} sm={2}>
-                <Typography variant="body2">Next.js</Typography>
-              </Grid>
-              <Grid item xs={9}>
-                <BorderLinearProgress
-                  variant="determinate"
-                  value={70}
-                  size={100}
-                />
-              </Grid>
-              <Grid item xs={1}>
-                <Box ml={2}>
-                  <Typography variant="body2">70%</Typography>
-                </Box>
-              </Grid>
-            </Grid>
-
-            <Grid container item justify="center" alignItems="center">
-              <Grid item xs={12} sm={2}>
-                <Typography variant="body2">GraphQL</Typography>
-              </Grid>
-              <Grid item xs={9}>
-                <BorderLinearProgress
-                  variant="determinate"
-                  value={65}
-                  size={100}
-                />
-              </Grid>
-              <Grid item xs={1}>
-                <Box ml={2}>
-                  <Typography variant="body2">70%</Typography>
-                </Box>
-              </Grid>
-            </Grid>
-
-            <Grid container item justify="center" alignItems="center">
-              <Grid item xs={12} sm={2}>
-                <Typography variant="body2">Strapi</Typography>
-              </Grid>
-              <Grid item xs={9}>
-                <BorderLinearProgress
-                  variant="determinate"
-                  value={60}
-                  size={100}
-                />
-              </Grid>
-              <Grid item xs={1}>
-                <Box ml={2}>
-                  <Typography variant="body2">60%</Typography>
-                </Box>
-              </Grid>
-            </Grid>
-
-            <Grid container item justify="center" alignItems="center">
-              <Grid item xs={12} sm={2}>
-                <Typography variant="body2">Jest</Typography>
-              </Grid>
-              <Grid item xs={9}>
-                <BorderLinearProgress
-                  variant="determinate"
-                  value={50}
-                  size={100}
-                />
-              </Grid>
-              <Grid item xs={1}>
-                <Box ml={2}>
-                  <Typography variant="body2">50%</Typography>
-                </Box>
-              </Grid>
-            </Grid>
-
-            <Grid container item justify="center" alignItems="center">
-              <Grid item xs={12} sm={2}>
-                <Typography variant="body2">Storybook</Typography>
-              </Grid>
-              <Grid item xs={9}>
-                <BorderLinearProgress
-                  variant="determinate"
-                  value={50}
-                  size={100}
-                />
-              </Grid>
-              <Grid item xs={1}>
-                <Box ml={2}>
-                  <Typography variant="body2">50%</Typography>
-                </Box>
-              </Grid>
-            </Grid>
-
-            <Grid container item justify="center" alignItems="center">
-              <Grid item xs={12} sm={2}>
-                <Typography variant="body2">Apollo</Typography>
-              </Grid>
-              <Grid item xs={9}>
-                <BorderLinearProgress
-                  variant="determinate"
-                  value={40}
-                  size={100}
-                />
-              </Grid>
-              <Grid item xs={1}>
-                <Box ml={2}>
-                  <Typography variant="body2">50%</Typography>
-                </Box>
-              </Grid>
-            </Grid>
+            ))}
           </Grid>
         </CardContent>
       </Card>
