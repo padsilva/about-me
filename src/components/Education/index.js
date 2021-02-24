@@ -11,6 +11,7 @@ import {
   CardContent,
   CardHeader,
   Container,
+  Hidden,
   Paper,
   Typography
 } from '@material-ui/core'
@@ -54,44 +55,77 @@ const Experience = () => {
           }}
         />
         <CardContent className={classes.content}>
-          <Timeline align="alternate">
-            <TimelineItem>
-              <TimelineOppositeContent>2013-2015</TimelineOppositeContent>
-              <TimelineSeparator>
-                <TimelineDot />
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent>
-                <Paper elevation={3} className={classes.paper}>
-                  <Typography variant="h6" component="h1">
-                    UNIVERSITY NAME
-                  </Typography>
-                  <Typography align="justify">
-                    This is a great place for you to tell a story and let your
-                    users know a little more about you.
-                  </Typography>
-                </Paper>
-              </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-              <TimelineOppositeContent>2008-2013</TimelineOppositeContent>
-              <TimelineSeparator>
-                <TimelineDot />
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent>
-                <Paper elevation={3} className={classes.paper}>
-                  <Typography variant="h6" component="h1">
-                    UNIVERSITY NAME
-                  </Typography>
-                  <Typography align="justify">
-                    This is a great place for you to tell a story and let your
-                    users know a little more about you.
-                  </Typography>
-                </Paper>
-              </TimelineContent>
-            </TimelineItem>
-          </Timeline>
+          <Hidden smDown>
+            <Timeline align="alternate">
+              <TimelineItem>
+                <TimelineOppositeContent>2013-2015</TimelineOppositeContent>
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Paper elevation={3} className={classes.paper}>
+                    <Typography variant="h6" component="h1">
+                      UNIVERSITY NAME
+                    </Typography>
+                    <Typography align="justify">
+                      This is a great place for you to tell a story and let your
+                      users know a little more about you.
+                    </Typography>
+                  </Paper>
+                </TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineOppositeContent>2008-2013</TimelineOppositeContent>
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Paper elevation={3} className={classes.paper}>
+                    <Typography variant="h6" component="h1">
+                      UNIVERSITY NAME
+                    </Typography>
+                    <Typography align="justify">
+                      This is a great place for you to tell a story and let your
+                      users know a little more about you.
+                    </Typography>
+                  </Paper>
+                </TimelineContent>
+              </TimelineItem>
+            </Timeline>
+          </Hidden>
+          <Hidden mdUp>
+            <Card elevation={0}>
+              <CardContent>
+                <Typography variant="subtitle1" color="textSecondary">
+                  2013-2015
+                </Typography>
+                <Typography variant="h6" component="h1">
+                  UNIVERSITY NAME
+                </Typography>
+                <Typography align="justify">
+                  This is a great place for you to tell a story and let your
+                  users know a little more about you.
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card elevation={0}>
+              <CardContent>
+                <Typography variant="subtitle1" color="textSecondary">
+                  2008-2013
+                </Typography>
+                <Typography variant="h6" component="h1">
+                  UNIVERSITY NAME
+                </Typography>
+                <Typography align="justify">
+                  This is a great place for you to tell a story and let your
+                  users know a little more about you.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Hidden>
         </CardContent>
       </Card>
     </Container>

@@ -113,6 +113,52 @@ const Experience = () => {
               </TimelineItem>
             </Timeline>
           </Hidden>
+          <Hidden mdUp>
+            <Card elevation={0}>
+              <CardContent>
+                <Typography variant="subtitle1" color="textSecondary">
+                  2017-Present
+                </Typography>
+                <Typography variant="h6" component="h1">
+                  JOB POSITION
+                </Typography>
+                <Typography align="justify">
+                  This is a great place for you to tell a story and let your
+                  users know a little more about you.
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card elevation={0}>
+              <CardContent>
+                <Typography variant="subtitle1" color="textSecondary">
+                  2016-2017
+                </Typography>
+                <Typography variant="h6" component="h1">
+                  JOB POSITION
+                </Typography>
+                <Typography align="justify">
+                  This is a great place for you to tell a story and let your
+                  users know a little more about you.
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card elevation={0}>
+              <CardContent>
+                <Typography variant="subtitle1" color="textSecondary">
+                  2014-2015
+                </Typography>
+                <Typography variant="h6" component="h1">
+                  JOB POSITION
+                </Typography>
+                <Typography align="justify">
+                  This is a great place for you to tell a story and let your
+                  users know a little more about you.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Hidden>
         </CardContent>
       </Card>
     </Container>
