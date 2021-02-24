@@ -18,14 +18,6 @@ import {
 import { TimelineOppositeContent } from '@material-ui/lab'
 
 const useStyles = makeStyles((theme) => ({
-  card: {
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(3),
-    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      marginTop: theme.spacing(6),
-      marginBottom: theme.spacing(6)
-    }
-  },
   content: {
     padding: theme.spacing(2),
     [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
@@ -46,7 +38,7 @@ const Experience = () => {
 
   return (
     <Container component="main" maxWidth="md">
-      <Card className={classes.card}>
+      <Card>
         <CardHeader
           title="Experience"
           titleTypographyProps={{

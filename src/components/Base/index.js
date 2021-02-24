@@ -1,20 +1,33 @@
 import PropTypes from 'prop-types'
-import { Box, Container } from '@material-ui/core'
+import { Box, makeStyles } from '@material-ui/core'
 
 import Footer from 'components/Footer'
 import TopBar from 'components/TopBar'
 
-const Base = ({ children }) => (
-  <Box display="flex" flexDirection="column" minHeight="100vh">
-    <TopBar />
+const useStyles = makeStyles((theme) => ({
+  container: {
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
+    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
+      marginTop: theme.spacing(6),
+      marginBottom: theme.spacing(6)
+    }
+  }
+}))
 
-    <Container>
-      <Box my={2}>{children}</Box>
-    </Container>
+const Base = ({ children }) => {
+  const classes = useStyles()
 
-    <Footer />
-  </Box>
-)
+  return (
+    <Box display="flex" flexDirection="column" minHeight="100vh">
+      <TopBar />
+
+      <Box className={classes.container}>{children}</Box>
+
+      <Footer />
+    </Box>
+  )
+}
 
 Base.propTypes = {
   children: PropTypes.node.isRequired

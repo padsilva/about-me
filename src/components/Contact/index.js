@@ -12,14 +12,6 @@ import {
 import SocialLinks from 'components/SocialLinks'
 
 const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(3),
-    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      marginTop: theme.spacing(6),
-      marginBottom: theme.spacing(6)
-    }
-  },
   content: {
     padding: theme.spacing(2),
     [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
@@ -37,7 +29,6 @@ const Contact = () => {
         component="form"
         autoComplete="off"
         onSubmit={(e) => e.preventDefault()}
-        className={classes.paper}
       >
         <CardHeader
           title="Contact me"
