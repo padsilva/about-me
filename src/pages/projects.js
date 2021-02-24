@@ -1,3 +1,5 @@
-const Projects = () => <h1>Projects</h1>
+import Projects from 'components/Projects'
 
-export default Projects
+const ProjectsPage = () => <Projects />
+
+export default ProjectsPage
