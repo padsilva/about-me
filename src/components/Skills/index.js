@@ -5,6 +5,7 @@ import {
   CardContent,
   CardHeader,
   Container,
+  Divider,
   Grid,
   IconButton,
   LinearProgress,
@@ -58,6 +59,7 @@ const Skills = () => {
             align: 'center'
           }}
         />
+        <Divider />
         <CardContent className={classes.content}>
           <Grid container spacing={4}>
             {data.map((tech) => (

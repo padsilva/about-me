@@ -11,6 +11,7 @@ import {
   CardContent,
   CardHeader,
   Container,
+  Divider,
   Hidden,
   Paper,
   Typography
@@ -46,6 +47,7 @@ const Experience = () => {
             align: 'center'
           }}
         />
+        <Divider />
         <CardContent className={classes.content}>
           <Hidden smDown>
             <Timeline align="alternate">

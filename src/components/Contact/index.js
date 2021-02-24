@@ -5,6 +5,7 @@ import {
   CardContent,
   CardHeader,
   Container,
+  Divider,
   Grid,
   makeStyles,
   TextField
@@ -37,6 +38,7 @@ const Contact = () => {
             align: 'center'
           }}
         />
+        <Divider />
         <CardContent className={classes.content}>
           <Grid container spacing={2} item>
             <Grid item xs={12} sm={6}>
