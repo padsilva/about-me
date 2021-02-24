@@ -4,6 +4,7 @@ import { CssBaseline, ThemeProvider } from '@material-ui/core'
 
 import theme from 'styles/theme'
 import Base from 'components/Base'
+import ScrollTop from 'components/ScrollTop'
 
 const App = ({ Component, pageProps }) => (
   <ThemeProvider theme={theme}>
@@ -25,6 +26,7 @@ const App = ({ Component, pageProps }) => (
     <Base>
       <Component {...pageProps} />
     </Base>
+    <ScrollTop />
   </ThemeProvider>
 )
 

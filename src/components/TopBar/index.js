@@ -37,7 +37,7 @@ const TopBar = () => (
       </Toolbar>
     </AppBar>
     {/* necessary for content to be below app bar */}
-    <Toolbar />
+    <Toolbar id="back-to-top-anchor" />
   </>
 )
 
