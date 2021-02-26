@@ -1,4 +1,6 @@
-import { Box, Container, Typography, makeStyles } from '@material-ui/core'
+import PropTypes from 'prop-types'
+import { Box, Typography, makeStyles, Grid } from '@material-ui/core'
+import ToggleTheme from 'components/ToggleTheme'
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -9,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const Footer = () => {
+const Footer = ({ onToggleDark }) => {
   const classes = useStyles()
 
   return (
@@ -19,13 +21,29 @@ const Footer = () => {
       padding={3}
       className={classes.footer}
     >
-      <Container maxWidth="sm">
-        <Typography variant="body2" align="center">
-          {`Copyright © Paulo Silva ${new Date().getFullYear()}.`}
-        </Typography>
-      </Container>
+      <Grid item xs={12}>
+        <Grid container justify="space-between" alignItems="center">
+          <Grid item>
+            <ToggleTheme onToggleDark={onToggleDark} />
+          </Grid>
+          <Grid item>
+            <Typography variant="body2" align="center">
+              {`Copyright © Paulo Silva ${new Date().getFullYear()}.`}
+            </Typography>
+          </Grid>
+        </Grid>
+      </Grid>
+
+      {/* <ToggleTheme onToggleDark={onToggleDark} />
+      <Typography variant="body2" align="center">
+        {`Copyright © Paulo Silva ${new Date().getFullYear()}.`}
+      </Typography> */}
     </Box>
   )
+}
+
+Footer.propTypes = {
+  onToggleDark: PropTypes.func.isRequired
 }
 
 export default Footer

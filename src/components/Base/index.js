@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const Base = ({ children }) => {
+const Base = ({ onToggleDark, children }) => {
   const classes = useStyles()
 
   return (
@@ -24,12 +24,13 @@ const Base = ({ children }) => {
 
       <Box className={classes.container}>{children}</Box>
 
-      <Footer />
+      <Footer onToggleDark={onToggleDark} />
     </Box>
   )
 }
 
 Base.propTypes = {
+  onToggleDark: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired
 }
 
