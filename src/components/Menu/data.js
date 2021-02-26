@@ -4,26 +4,26 @@ export default [
   {
     icon: <Work fontSize="small" />,
     link: '/experience',
-    name: 'Experience'
+    name: 'experience'
   },
   {
     icon: <School fontSize="small" />,
     link: '/education',
-    name: 'Education'
+    name: 'education'
   },
   {
     icon: <Notes fontSize="small" />,
     link: '/skills',
-    name: 'Skills'
+    name: 'skills'
   },
   {
     icon: <Code fontSize="small" />,
     link: '/projects',
-    name: 'Projects'
+    name: 'projects'
   },
   {
     icon: <ContactSupport fontSize="small" />,
     link: '/contact',
-    name: 'Contact'
+    name: 'contact'
   }
 ]

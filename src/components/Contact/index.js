@@ -1,3 +1,4 @@
+import { useIntl } from 'react-intl'
 import {
   Box,
   Button,
@@ -23,6 +24,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Contact = () => {
   const classes = useStyles()
+  const { formatMessage } = useIntl()
+  const f = (id) => formatMessage({ id })
 
   return (
     <Container component="main" maxWidth="sm">
@@ -32,7 +35,7 @@ const Contact = () => {
         onSubmit={(e) => e.preventDefault()}
       >
         <CardHeader
-          title="Contact me"
+          title={f('contact')}
           titleTypographyProps={{
             variant: 'h4',
             align: 'center'

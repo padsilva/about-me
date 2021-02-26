@@ -1,4 +1,5 @@
 import React from 'react'
+import { useIntl } from 'react-intl'
 import { makeStyles } from '@material-ui/core/styles'
 import Timeline from '@material-ui/lab/Timeline'
 import TimelineItem from '@material-ui/lab/TimelineItem'
@@ -36,12 +37,14 @@ const useStyles = makeStyles((theme) => ({
 
 const Experience = () => {
   const classes = useStyles()
+  const { formatMessage } = useIntl()
+  const f = (id) => formatMessage({ id })
 
   return (
     <Container component="main" maxWidth="md">
       <Card>
         <CardHeader
-          title="Education"
+          title={f('education')}
           titleTypographyProps={{
             variant: 'h4',
             align: 'center'

@@ -27,9 +27,8 @@ const TopBar = () => (
             lg={6}
             xl={4}
             direction="row"
-            justify="space-evenly"
+            justify="space-around"
             alignItems="center"
-            spacing={6}
           >
             <Menu />
           </Grid>

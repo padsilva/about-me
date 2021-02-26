@@ -5,5 +5,9 @@ module.exports = withPWA({
   pwa: {
     dest: 'public',
     disable: !isProd
+  },
+  i18n: {
+    locales: ['en', 'pt'],
+    defaultLocale: 'en'
   }
 })

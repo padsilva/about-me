@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useIntl } from 'react-intl'
 import {
   Drawer,
   Grid,
@@ -15,6 +16,8 @@ import data from 'components/Menu/data'
 
 const Menu = () => {
   const [open, setOpen] = useState(false)
+  const { formatMessage } = useIntl()
+  const f = (id) => formatMessage({ id })
 
   return (
     <>
@@ -24,7 +27,7 @@ const Menu = () => {
             <Grid container item spacing={1}>
               <Grid item>{menu.icon}</Grid>
               <Grid item>
-                <Typography variant="button">{menu.name}</Typography>
+                <Typography variant="button">{f(menu.name)}</Typography>
               </Grid>
             </Grid>
           </InternalLink>
@@ -52,7 +55,7 @@ const Menu = () => {
                     <Grid container spacing={1}>
                       <Grid item>{menu.icon}</Grid>
                       <Grid item>
-                        <Typography variant="button">{menu.name}</Typography>
+                        <Typography variant="button">{f(menu.name)}</Typography>
                       </Grid>
                     </Grid>
                   </ListItem>
