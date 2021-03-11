@@ -3,5 +3,10 @@
   "education": "Educação",
   "skills": "Competências",
   "projects": "Projectos",
-  "contact": "Contacto"
+  "contact": "Contacto",
+  "firstName": "Nome",
+  "lastName": "Apelido",
+  "subject": "Assunto",
+  "message": "Messagem",
+  "sendButton": "Enviar"
 }

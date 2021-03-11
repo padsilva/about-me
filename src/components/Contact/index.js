@@ -49,7 +49,7 @@ const Contact = () => {
                 required
                 id="firstName"
                 name="firstName"
-                label="First name"
+                label={f('firstName')}
                 fullWidth
               />
             </Grid>
@@ -58,7 +58,7 @@ const Contact = () => {
                 required
                 id="lastName"
                 name="lastName"
-                label="Last name"
+                label={f('lastName')}
                 fullWidth
               />
             </Grid>
@@ -77,7 +77,7 @@ const Contact = () => {
                 required
                 id="subject"
                 name="subject"
-                label="Subject"
+                label={f('subject')}
                 fullWidth
               />
             </Grid>
@@ -86,7 +86,7 @@ const Contact = () => {
                 required
                 id="message"
                 name="message"
-                label="Message"
+                label={f('message')}
                 multiline
                 rows={12}
                 fullWidth
@@ -96,7 +96,7 @@ const Contact = () => {
             <Grid item xs={12}>
               <Box display="flex" justifyContent="flex-end">
                 <Button variant="contained" color="primary" type="submit">
-                  Send
+                  {f('sendButton')}
                 </Button>
               </Box>
             </Grid>

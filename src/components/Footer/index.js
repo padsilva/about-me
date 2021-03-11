@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Footer = () => {
-  const { pathname } = useRouter()
+  const { locale, pathname } = useRouter()
   const classes = useStyles()
 
   return (
@@ -49,19 +49,47 @@ const Footer = () => {
           <Grid item container justify="flex-end" sm={3}>
             <Hidden smDown>
               <Grid item>
-                <InternalLink href={pathname} locale="en" shallow>
-                  <Button size="small" color="primary">
+                {locale === 'en' ? (
+                  <Button
+                    size="small"
+                    color="primary"
+                    disabled={locale === 'en'}
+                  >
                     EN
                   </Button>
-                </InternalLink>
+                ) : (
+                  <InternalLink href={pathname} locale="en" shallow>
+                    <Button
+                      size="small"
+                      color="primary"
+                      disabled={locale === 'en'}
+                    >
+                      EN
+                    </Button>
+                  </InternalLink>
+                )}
               </Grid>
               <Divider orientation="vertical" flexItem />
               <Grid item>
-                <InternalLink href={pathname} locale="pt" shallow>
-                  <Button size="small" color="primary">
+                {locale === 'pt' ? (
+                  <Button
+                    size="small"
+                    color="primary"
+                    disabled={locale === 'pt'}
+                  >
                     PT
                   </Button>
-                </InternalLink>
+                ) : (
+                  <InternalLink href={pathname} locale="pt" shallow>
+                    <Button
+                      size="small"
+                      color="primary"
+                      disabled={locale === 'pt'}
+                    >
+                      PT
+                    </Button>
+                  </InternalLink>
+                )}
               </Grid>
             </Hidden>
           </Grid>
