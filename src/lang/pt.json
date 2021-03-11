@@ -8,5 +8,6 @@
   "lastName": "Apelido",
   "subject": "Assunto",
   "message": "Messagem",
-  "sendButton": "Enviar"
+  "sendButton": "Enviar",
+  "header": "Cabeçalho"
 }

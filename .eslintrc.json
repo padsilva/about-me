@@ -12,7 +12,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:json/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -27,5 +28,5 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/react-in-jsx-scope": "off"
   },
-  "ignorePatterns": ["node_modules/", ".next/", "/src/lang/"]
+  "ignorePatterns": ["node_modules/", ".next/"]
 }
