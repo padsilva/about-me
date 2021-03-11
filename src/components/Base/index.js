@@ -20,7 +20,7 @@ const Base = ({ onToggleDark, children }) => {
 
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh">
-      <TopBar />
+      <TopBar onToggleDark={onToggleDark} />
 
       <Box className={classes.container}>{children}</Box>
 
