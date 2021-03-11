@@ -15,22 +15,21 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const Base = ({ onToggleDark, children }) => {
+const Base = ({ children }) => {
   const classes = useStyles()
 
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh">
-      <TopBar onToggleDark={onToggleDark} />
+      <TopBar />
 
       <Box className={classes.container}>{children}</Box>
 
-      <Footer onToggleDark={onToggleDark} />
+      <Footer />
     </Box>
   )
 }
 
 Base.propTypes = {
-  onToggleDark: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired
 }
 

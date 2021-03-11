@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { useIntl } from 'react-intl'
@@ -20,7 +19,7 @@ import InternalLink from 'components/InternalLink'
 import data from 'components/Menu/data'
 import ToggleTheme from 'components/ToggleTheme'
 
-const Menu = ({ onToggleDark }) => {
+const Menu = () => {
   const [open, setOpen] = useState(false)
   const { pathname } = useRouter()
   const { formatMessage } = useIntl()
@@ -70,7 +69,7 @@ const Menu = ({ onToggleDark }) => {
               ))}
               <Box position="fixed" bottom={0}>
                 <ListItem>
-                  <ToggleTheme onToggleDark={onToggleDark} />
+                  <ToggleTheme />
                 </ListItem>
                 <ListItem>
                   <Grid container spacing={1}>
@@ -98,10 +97,6 @@ const Menu = ({ onToggleDark }) => {
       </Hidden>
     </>
   )
-}
-
-Menu.propTypes = {
-  onToggleDark: PropTypes.func.isRequired
 }
 
 export default Menu

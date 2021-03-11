@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 import {
   Box,
@@ -22,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const Footer = ({ onToggleDark }) => {
+const Footer = () => {
   const { pathname } = useRouter()
   const classes = useStyles()
 
@@ -38,7 +37,7 @@ const Footer = ({ onToggleDark }) => {
           <Grid item container justify="flex-start" sm={3}>
             <Hidden smDown>
               <Grid item>
-                <ToggleTheme onToggleDark={onToggleDark} />
+                <ToggleTheme />
               </Grid>
             </Hidden>
           </Grid>
@@ -70,10 +69,6 @@ const Footer = ({ onToggleDark }) => {
       </Grid>
     </Box>
   )
-}
-
-Footer.propTypes = {
-  onToggleDark: PropTypes.func.isRequired
 }
 
 export default Footer

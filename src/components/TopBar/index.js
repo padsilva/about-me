@@ -1,10 +1,9 @@
-import PropTypes from 'prop-types'
 import { AppBar, Box, Grid, Toolbar, Typography } from '@material-ui/core'
 
 import Menu from 'components/Menu'
 import InternalLink from 'components/InternalLink'
 
-const TopBar = ({ onToggleDark }) => (
+const TopBar = () => (
   <>
     <AppBar position="fixed" color="default">
       <Toolbar>
@@ -31,7 +30,7 @@ const TopBar = ({ onToggleDark }) => (
             justify="space-around"
             alignItems="center"
           >
-            <Menu onToggleDark={onToggleDark} />
+            <Menu />
           </Grid>
         </Grid>
       </Toolbar>
@@ -40,9 +39,5 @@ const TopBar = ({ onToggleDark }) => (
     <Toolbar id="back-to-top-anchor" />
   </>
 )
-
-TopBar.propTypes = {
-  onToggleDark: PropTypes.func.isRequired
-}
 
 export default TopBar
