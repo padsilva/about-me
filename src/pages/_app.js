@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { CssBaseline } from '@material-ui/core'
 
-import { lightTheme } from 'styles/theme'
 import Base from 'components/Base'
 import ScrollTop from 'components/ScrollTop'
 import messages_en from 'lang/en.json'
@@ -28,10 +27,31 @@ const App = ({ Component, pageProps }) => {
       <DarkModeProvider>
         <Head>
           <title>Paulo Silva</title>
-          <link rel="shortcut icon" href="/img/icon-512.png" />
-          <link rel="apple-touch-icon" href="/img/icon-512.png" />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicon/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon/favicon-16x16.png"
+          />
+          <link
+            rel="mask-icon"
+            href="/favicon/safari-pinned-tab.svg"
+            color="#000000"
+          />
+          <link rel="shortcut icon" href="/favicon/favicon.ico" />
           <link rel="manifest" href="/manifest.json" />
-          <meta name="theme-color" content={lightTheme.palette.primary.main} />
+          <meta name="theme-color" content="#ffffff" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"

@@ -18,7 +18,12 @@ const ToggleTheme = () => {
         fontSize="small"
         className={!darkMode ? classes.iconActive : null}
       />
-      <Switch size="small" checked={darkMode} onChange={toggleTheme} />
+      <Switch
+        size="small"
+        checked={darkMode}
+        onChange={toggleTheme}
+        inputProps={{ 'aria-label': 'toggle theme' }}
+      />
       <Brightness3
         fontSize="small"
         className={darkMode ? classes.iconActive : null}

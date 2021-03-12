@@ -52,7 +52,9 @@ const Home = () => {
                 justify="center"
                 alignItems="center"
               >
-                <Typography variant="h4">Paulo Silva</Typography>
+                <Typography variant="h4" component="h5">
+                  Paulo Silva
+                </Typography>
                 <Typography variant="subtitle2">Software Developer</Typography>
               </Grid>
               <Grid
