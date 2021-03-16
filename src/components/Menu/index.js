@@ -21,7 +21,7 @@ import ToggleTheme from 'components/ToggleTheme'
 
 const Menu = () => {
   const [open, setOpen] = useState(false)
-  const { pathname } = useRouter()
+  const { locale, pathname } = useRouter()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
 
@@ -67,29 +67,64 @@ const Menu = () => {
                   </ListItem>
                 </InternalLink>
               ))}
-              <Box position="fixed" bottom={0}>
-                <ListItem>
-                  <ToggleTheme />
-                </ListItem>
-                <ListItem>
-                  <Grid container spacing={1}>
+              <Box position="fixed" bottom={10}>
+                <Grid container spacing={3}>
+                  <Grid item xs={12}>
+                    <ToggleTheme />
+                  </Grid>
+
+                  <Grid
+                    container
+                    item
+                    alignItems="center"
+                    justify="center"
+                    xs={12}
+                  >
                     <Grid item>
-                      <InternalLink href={pathname} locale="en" shallow>
-                        <Button size="small" color="primary">
+                      {locale === 'en' ? (
+                        <Button
+                          size="small"
+                          color="primary"
+                          disabled={locale === 'en'}
+                        >
                           EN
                         </Button>
-                      </InternalLink>
+                      ) : (
+                        <InternalLink href={pathname} locale="en" shallow>
+                          <Button
+                            size="small"
+                            color="primary"
+                            disabled={locale === 'en'}
+                          >
+                            EN
+                          </Button>
+                        </InternalLink>
+                      )}
                     </Grid>
                     <Divider orientation="vertical" flexItem />
                     <Grid item>
-                      <InternalLink href={pathname} locale="pt" shallow>
-                        <Button size="small" color="primary">
+                      {locale === 'pt' ? (
+                        <Button
+                          size="small"
+                          color="primary"
+                          disabled={locale === 'pt'}
+                        >
                           PT
                         </Button>
-                      </InternalLink>
+                      ) : (
+                        <InternalLink href={pathname} locale="pt" shallow>
+                          <Button
+                            size="small"
+                            color="primary"
+                            disabled={locale === 'pt'}
+                          >
+                            PT
+                          </Button>
+                        </InternalLink>
+                      )}
                     </Grid>
                   </Grid>
-                </ListItem>
+                </Grid>
               </Box>
             </List>
           </div>
