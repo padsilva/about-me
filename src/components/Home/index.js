@@ -1,3 +1,4 @@
+import { FormattedDate, useIntl } from 'react-intl'
 import {
   Avatar,
   Card,
@@ -7,9 +8,8 @@ import {
   makeStyles,
   Typography
 } from '@material-ui/core'
-import SocialLinks from 'components/SocialLinks'
 
-import DateFormatter from 'utils/date'
+import SocialLinks from 'components/SocialLinks'
 
 const useStyles = makeStyles((theme) => ({
   actions: {
@@ -23,6 +23,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
   const classes = useStyles()
+  const { formatMessage } = useIntl()
+  const f = (id) => formatMessage({ id })
 
   return (
     <Container component="main" maxWidth="md">
@@ -65,10 +67,15 @@ const Home = () => {
                 alignItems="center"
               >
                 <Typography variant="body2">
-                  <DateFormatter dateString="1988/09/04" />
+                  <FormattedDate
+                    value="1988/09/04"
+                    year="numeric"
+                    month="long"
+                    day="2-digit"
+                  />
                 </Typography>
                 <Typography variant="body2" paragraph>
-                  Lisbon, Portugal
+                  {`${f('hometown')}, Portugal`}
                 </Typography>
               </Grid>
             </Grid>
@@ -81,15 +88,11 @@ const Home = () => {
               justify="center"
               alignItems="center"
             >
-              <Typography variant="body1" align="justify" paragraph>
-                {`Com formação em Engenharia Informática, procuro novos desafios que possibilitem a construção da minha carreira nesta área à qual me tenho dedicado com entusiasmo ao longo destes anos.`}
-              </Typography>
-              <Typography variant="body1" align="justify" paragraph>
-                {`Pretendo demonstrar todo o meu potencial e em simultâneo valorizar o meu trabalho com foco numa realização competente e eficaz.`}
-              </Typography>
-              <Typography variant="body1" align="justify">
-                {`Para além da minha área de formação académica existem outras das quais tenho interesse, nomeadamente: cinema, desporto, música e natureza.`}
-              </Typography>
+              <Typography
+                variant="body1"
+                align="justify"
+                dangerouslySetInnerHTML={{ __html: f('abstract') }}
+              />
             </Grid>
           </Grid>
         </CardContent>

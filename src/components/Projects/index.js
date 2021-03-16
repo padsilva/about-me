@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { useState } from 'react'
+import { useIntl } from 'react-intl'
 import {
   Container,
   Dialog,
@@ -44,6 +45,8 @@ const Projects = () => {
   const classes = useStyles()
   const [open, setOpen] = useState(false)
   const [name, setName] = useState('')
+  const { formatMessage } = useIntl()
+  const f = (id) => formatMessage({ id })
 
   const handleClickOpen = (name) => {
     setName(name)
@@ -116,21 +119,11 @@ const Projects = () => {
           </IconButton>
         </DialogTitle>
         <DialogContent dividers className={classes.content}>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-            dui. Donec ullamcorper nulla non metus auctor fringilla.
-          </Typography>
+          <Typography
+            gutterBottom
+            align="justify"
+            dangerouslySetInnerHTML={{ __html: f('projectDescription') }}
+          />
         </DialogContent>
       </Dialog>
     </Container>

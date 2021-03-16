@@ -35,6 +35,19 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
+const educations = [
+  {
+    date: 'educationDate1',
+    position: 'educationPosition1',
+    description: 'educationDescription1'
+  },
+  {
+    date: 'educationDate2',
+    position: 'educationPosition2',
+    description: 'educationDescription2'
+  }
+]
+
 const Experience = () => {
   const classes = useStyles()
   const { formatMessage } = useIntl()
@@ -54,74 +67,39 @@ const Experience = () => {
         <CardContent className={classes.content}>
           <Hidden smDown>
             <Timeline align="alternate">
-              <TimelineItem>
-                <TimelineOppositeContent>2013-2015</TimelineOppositeContent>
-                <TimelineSeparator>
-                  <TimelineDot />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent>
-                  <Paper elevation={3} className={classes.paper}>
-                    <Typography variant="h6" component="h1">
-                      UNIVERSITY NAME
-                    </Typography>
-                    <Typography align="justify">
-                      This is a great place for you to tell a story and let your
-                      users know a little more about you.
-                    </Typography>
-                  </Paper>
-                </TimelineContent>
-              </TimelineItem>
-              <TimelineItem>
-                <TimelineOppositeContent>2008-2013</TimelineOppositeContent>
-                <TimelineSeparator>
-                  <TimelineDot />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent>
-                  <Paper elevation={3} className={classes.paper}>
-                    <Typography variant="h6" component="h1">
-                      UNIVERSITY NAME
-                    </Typography>
-                    <Typography align="justify">
-                      This is a great place for you to tell a story and let your
-                      users know a little more about you.
-                    </Typography>
-                  </Paper>
-                </TimelineContent>
-              </TimelineItem>
+              {educations.map(({ date, position, description }, index) => (
+                <TimelineItem key={`education-${index}`}>
+                  <TimelineOppositeContent>{f(date)}</TimelineOppositeContent>
+                  <TimelineSeparator>
+                    <TimelineDot />
+                    <TimelineConnector />
+                  </TimelineSeparator>
+                  <TimelineContent>
+                    <Paper elevation={3} className={classes.paper}>
+                      <Typography variant="h6" component="h1">
+                        {f(position).toUpperCase()}
+                      </Typography>
+                      <Typography align="justify">{f(description)}</Typography>
+                    </Paper>
+                  </TimelineContent>
+                </TimelineItem>
+              ))}
             </Timeline>
           </Hidden>
           <Hidden mdUp>
-            <Card elevation={0}>
-              <CardContent>
-                <Typography variant="subtitle1" color="textSecondary">
-                  2013-2015
-                </Typography>
-                <Typography variant="h6" component="h1">
-                  UNIVERSITY NAME
-                </Typography>
-                <Typography align="justify">
-                  This is a great place for you to tell a story and let your
-                  users know a little more about you.
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card elevation={0}>
-              <CardContent>
-                <Typography variant="subtitle1" color="textSecondary">
-                  2008-2013
-                </Typography>
-                <Typography variant="h6" component="h1">
-                  UNIVERSITY NAME
-                </Typography>
-                <Typography align="justify">
-                  This is a great place for you to tell a story and let your
-                  users know a little more about you.
-                </Typography>
-              </CardContent>
-            </Card>
+            {educations.map(({ date, position, description }, index) => (
+              <Card elevation={0} key={`job-${index}`}>
+                <CardContent>
+                  <Typography variant="subtitle1" color="textSecondary">
+                    {f(date)}
+                  </Typography>
+                  <Typography variant="h6" component="h1">
+                    {f(position).toUpperCase()}
+                  </Typography>
+                  <Typography align="justify">{f(description)}</Typography>
+                </CardContent>
+              </Card>
+            ))}
           </Hidden>
         </CardContent>
       </Card>
