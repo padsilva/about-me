@@ -120,6 +120,7 @@ const Projects = () => {
         </DialogTitle>
         <DialogContent dividers className={classes.content}>
           <Typography
+            component="div"
             gutterBottom
             align="justify"
             dangerouslySetInnerHTML={{ __html: f('projectDescription') }}

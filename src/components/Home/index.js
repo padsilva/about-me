@@ -89,6 +89,7 @@ const Home = () => {
               alignItems="center"
             >
               <Typography
+                component="div"
                 variant="body1"
                 align="justify"
                 dangerouslySetInnerHTML={{ __html: f('abstract') }}
