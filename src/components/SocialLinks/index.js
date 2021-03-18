@@ -3,7 +3,7 @@ import { Email, GitHub, LinkedIn, Twitter } from '@material-ui/icons'
 
 const useStyles = makeStyles((theme) => ({
   actions: {
-    backgroundColor: theme.palette.primary.light
+    backgroundColor: theme.palette.primary[theme.palette.type]
   }
 }))
 

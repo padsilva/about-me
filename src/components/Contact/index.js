@@ -95,7 +95,7 @@ const Contact = () => {
             </Grid>
             <Grid item xs={12}>
               <Box display="flex" justifyContent="flex-end">
-                <Button variant="contained" color="primary" type="submit">
+                <Button variant="contained" color="secondary" type="submit">
                   {f('sendButton')}
                 </Button>
               </Box>
