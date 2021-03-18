@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://padsilva.vercel.app/
+
+# Sitemaps
+Sitemap: https://padsilva.vercel.app/sitemap.xml
