@@ -26,6 +26,10 @@ const App = ({ Component, pageProps }) => {
     >
       <DarkModeProvider>
         <Head>
+          <meta
+            name="google-site-verification"
+            content="pM0VV9O2-QE_DFgTJpfdEQu9st9jxjHU8PQVAORwCLc"
+          />
           <title>Paulo Silva</title>
           <link
             rel="apple-touch-icon"
