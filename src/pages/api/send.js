@@ -1,4 +1,4 @@
-const sgMail = require('@sendgrid/mail')
+import sgMail from '@sendgrid/mail'
 
 export default async function (req, res) {
   sgMail.setApiKey(process.env.NEXT_SENDGRID_API_KEY)

@@ -30,7 +30,6 @@ const App = ({ Component, pageProps }) => {
             name="google-site-verification"
             content="pM0VV9O2-QE_DFgTJpfdEQu9st9jxjHU8PQVAORwCLc"
           />
-          <script src="https://www.google.com/recaptcha/api.js" async defer />
           <title>Paulo Silva</title>
           <link
             rel="apple-touch-icon"
