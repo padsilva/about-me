@@ -6,6 +6,8 @@
   "skills": "Competências",
   "projects": "Projectos",
   "contact": "Contacto",
+  "emailSuccess": "Mensagem enviada com sucesso.",
+  "emailError": "Mensagem não enviada.",
   "firstName": "Nome",
   "lastName": "Apelido",
   "subject": "Assunto",
