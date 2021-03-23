@@ -8,11 +8,17 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.primary,
     textDecoration: 'none',
     '&:hover': {
-      color: theme.palette.primary.main
+      color:
+        theme.palette.type === 'light'
+          ? theme.palette.primary.dark
+          : theme.palette.primary.main
     }
   },
   active: {
-    color: theme.palette.primary.main,
+    color:
+      theme.palette.type === 'light'
+        ? theme.palette.primary.dark
+        : theme.palette.primary.main,
     textDecoration: 'none'
   }
 }))

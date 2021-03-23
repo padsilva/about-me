@@ -18,6 +18,12 @@ const useStyles = makeStyles((theme) => ({
       theme.palette.type === 'light'
         ? theme.palette.grey[200]
         : theme.palette.grey[800]
+  },
+  button: {
+    color:
+      theme.palette.type === 'light'
+        ? theme.palette.primary.dark
+        : theme.palette.primary.main
   }
 }))
 
@@ -50,19 +56,15 @@ const Footer = () => {
             <Hidden smDown>
               <Grid item>
                 {locale === 'en' ? (
-                  <Button
-                    size="small"
-                    color="primary"
-                    disabled={locale === 'en'}
-                  >
+                  <Button size="small" color="primary" disabled>
                     EN
                   </Button>
                 ) : (
-                  <InternalLink href={pathname} locale="en" shallow>
+                  <InternalLink isButton href={pathname} locale="en" shallow>
                     <Button
                       size="small"
                       color="primary"
-                      disabled={locale === 'en'}
+                      className={classes.button}
                     >
                       EN
                     </Button>
@@ -72,19 +74,15 @@ const Footer = () => {
               <Divider orientation="vertical" flexItem />
               <Grid item>
                 {locale === 'pt' ? (
-                  <Button
-                    size="small"
-                    color="primary"
-                    disabled={locale === 'pt'}
-                  >
+                  <Button size="small" color="primary" disabled>
                     PT
                   </Button>
                 ) : (
-                  <InternalLink href={pathname} locale="pt" shallow>
+                  <InternalLink isButton href={pathname} locale="pt" shallow>
                     <Button
                       size="small"
                       color="primary"
-                      disabled={locale === 'pt'}
+                      className={classes.button}
                     >
                       PT
                     </Button>
