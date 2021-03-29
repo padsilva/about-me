@@ -13,6 +13,8 @@
   "subject": "Subject",
   "message": "Message",
   "sendButton": "Send",
+  "string.empty": "Required.",
+  "string.email": "Invalid email.",
   "header": "Header",
   "jobDate1": "2017-Present",
   "jobPosition1": "Job Position",

@@ -1,4 +1,5 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/router'
 import { useIntl } from 'react-intl'
 import ReCAPTCHA from 'react-google-recaptcha'
 import {
@@ -9,6 +10,7 @@ import {
   Collapse,
   Container,
   Divider,
+  FormHelperText,
   Grid,
   IconButton,
   makeStyles,
@@ -18,6 +20,8 @@ import { Alert } from '@material-ui/lab'
 import { Close } from '@material-ui/icons'
 
 import SocialLinks from 'components/SocialLinks'
+import { sendEmailValidate } from 'utils/formValidations'
+import { useDarkMode } from 'hooks/darkMode'
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -29,26 +33,34 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Contact = () => {
+  const { locale } = useRouter()
   const classes = useStyles()
   const recaptchaRef = useRef(null)
+  const { darkMode } = useDarkMode()
+  const { formatMessage } = useIntl()
+  const f = (id) => formatMessage({ id })
+
+  const [key, setKey] = useState(0)
   const [status, setStatus] = useState({
-    captcha: '',
     open: false,
     submitting: false,
-    info: { error: false, msg: null }
+    info: { error: false, msg: null },
+    fieldError: {}
   })
   const [inputs, setInputs] = useState({
+    captcha: '',
     email: '',
     message: '',
     subject: '',
     firstName: '',
     lastName: ''
   })
-  const { formatMessage } = useIntl()
-  const f = (id) => formatMessage({ id })
+
+  useEffect(() => {
+    setKey(`${darkMode ? 'dark' : 'light'}_${locale}`)
+  }, [key, darkMode, locale])
 
   const handleOnChange = (e) => {
-    e.persist()
     setInputs((prevStatus) => ({
       ...prevStatus,
       [e.target.id]: e.target.value
@@ -57,17 +69,31 @@ const Contact = () => {
       ...prevStatus,
       open: false,
       submitting: false,
-      info: { error: false, msg: null }
+      info: { error: false, msg: null },
+      fieldError: {}
     }))
   }
 
   const handleOnSubmit = async (e) => {
     e.preventDefault()
+
+    const errors = sendEmailValidate(inputs)
+
+    if (Object.keys(errors).length) {
+      setStatus((prevStatus) => ({
+        ...prevStatus,
+        fieldError: errors
+      }))
+      return
+    }
+
     setStatus((prevStatus) => ({
       ...prevStatus,
       open: false,
-      submitting: true
+      submitting: true,
+      fieldError: {}
     }))
+
     const res = await fetch('/api/send', {
       method: 'POST',
       headers: {
@@ -75,6 +101,7 @@ const Contact = () => {
       },
       body: JSON.stringify(inputs)
     })
+
     const text = await res.text()
     handleResponse(res.status, text)
   }
@@ -82,12 +109,13 @@ const Contact = () => {
   const handleResponse = (status, msg) => {
     if (status === 200) {
       setStatus({
-        captcha: '',
         open: true,
         submitting: false,
-        info: { error: false, msg }
+        info: { error: false, msg },
+        fieldError: {}
       })
       setInputs({
+        captcha: '',
         email: '',
         message: '',
         subject: '',
@@ -100,7 +128,8 @@ const Contact = () => {
         ...prevStatus,
         open: true,
         submitting: false,
-        info: { error: true, msg }
+        info: { error: true, msg },
+        fieldError: {}
       }))
     }
   }
@@ -120,74 +149,103 @@ const Contact = () => {
           <Grid container spacing={2} item>
             <Grid item xs={12} sm={6}>
               <TextField
-                required
                 id="firstName"
                 name="firstName"
-                label={f('firstName')}
+                label={`${f('firstName')} *`}
                 fullWidth
                 value={inputs.firstName}
                 onChange={handleOnChange}
+                error={!!status.fieldError.firstName}
+                helperText={
+                  status.fieldError.firstName && f(status.fieldError.firstName)
+                }
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                required
                 id="lastName"
                 name="lastName"
-                label={f('lastName')}
+                label={`${f('lastName')} *`}
                 fullWidth
                 value={inputs.lastName}
                 onChange={handleOnChange}
+                error={!!status.fieldError.lastName}
+                helperText={
+                  status.fieldError.lastName && f(status.fieldError.lastName)
+                }
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
-                required
-                type="email"
                 id="email"
                 name="email"
-                label="Email"
+                label="Email *"
                 fullWidth
                 value={inputs.email}
                 onChange={handleOnChange}
+                error={!!status.fieldError.email}
+                helperText={
+                  status.fieldError.email && f(status.fieldError.email)
+                }
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
-                required
                 id="subject"
                 name="subject"
-                label={f('subject')}
+                label={`${f('subject')} *`}
                 fullWidth
                 value={inputs.subject}
                 onChange={handleOnChange}
+                error={!!status.fieldError.subject}
+                helperText={
+                  status.fieldError.subject && f(status.fieldError.subject)
+                }
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
-                required
                 id="message"
                 name="message"
-                label={f('message')}
+                label={`${f('message')} *`}
                 multiline
                 rows={12}
                 fullWidth
                 variant="outlined"
                 value={inputs.message}
                 onChange={handleOnChange}
-              />
-            </Grid>
-            <Grid item xs={12} container justify="flex-end">
-              <ReCAPTCHA
-                ref={recaptchaRef}
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE}
-                onChange={(value) =>
-                  setStatus((prevStatus) => ({
-                    ...prevStatus,
-                    captcha: value
-                  }))
+                error={!!status.fieldError.message}
+                helperText={
+                  status.fieldError.message && f(status.fieldError.message)
                 }
               />
+            </Grid>
+            <Grid item xs={12} container>
+              <Grid item xs={12}>
+                <ReCAPTCHA
+                  key={key}
+                  id="captcha"
+                  name="captcha"
+                  ref={recaptchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE}
+                  onChange={(value) =>
+                    setInputs((prevStatus) => ({
+                      ...prevStatus,
+                      captcha: value
+                    }))
+                  }
+                  hl={locale}
+                  theme={darkMode ? 'dark' : 'light'}
+                  value={inputs.captcha}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                {status.fieldError.captcha && (
+                  <FormHelperText error={true}>
+                    {f(status.fieldError.captcha)}
+                  </FormHelperText>
+                )}
+              </Grid>
             </Grid>
             <Grid item xs={12} container justify="flex-end">
               <Button
@@ -195,7 +253,7 @@ const Contact = () => {
                 color="secondary"
                 type="submit"
                 disabled={
-                  !status.captcha || status.submitting || status.info.error
+                  status.submitting || status.info.error || !status.fieldError
                 }
               >
                 {f('sendButton')}

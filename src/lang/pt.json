@@ -13,6 +13,8 @@
   "subject": "Assunto",
   "message": "Messagem",
   "sendButton": "Enviar",
+  "string.empty": "Preenchimento obrigatório.",
+  "string.email": "Email inválido.",
   "header": "Cabeçalho",
   "jobDate1": "2017-Presente",
   "jobPosition1": "Posição",
