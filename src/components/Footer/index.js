@@ -1,16 +1,7 @@
-import { useRouter } from 'next/router'
-import {
-  Box,
-  Typography,
-  makeStyles,
-  Grid,
-  Divider,
-  Button,
-  Hidden
-} from '@material-ui/core'
+import { Box, Typography, makeStyles, Grid, Hidden } from '@material-ui/core'
 
 import ToggleTheme from 'components/ToggleTheme'
-import InternalLink from 'components/InternalLink'
+import ToggleLang from 'components/ToggleLang'
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -18,17 +9,10 @@ const useStyles = makeStyles((theme) => ({
       theme.palette.type === 'light'
         ? theme.palette.grey[200]
         : theme.palette.grey[800]
-  },
-  button: {
-    color:
-      theme.palette.type === 'light'
-        ? theme.palette.primary.dark
-        : theme.palette.primary.main
   }
 }))
 
 const Footer = () => {
-  const { locale, pathname } = useRouter()
   const classes = useStyles()
 
   return (
@@ -54,41 +38,7 @@ const Footer = () => {
           </Grid>
           <Grid item container justify="flex-end" sm={3}>
             <Hidden smDown>
-              <Grid item>
-                {locale === 'en' ? (
-                  <Button size="small" color="primary" disabled>
-                    EN
-                  </Button>
-                ) : (
-                  <InternalLink isButton href={pathname} locale="en" shallow>
-                    <Button
-                      size="small"
-                      color="primary"
-                      className={classes.button}
-                    >
-                      EN
-                    </Button>
-                  </InternalLink>
-                )}
-              </Grid>
-              <Divider orientation="vertical" flexItem />
-              <Grid item>
-                {locale === 'pt' ? (
-                  <Button size="small" color="primary" disabled>
-                    PT
-                  </Button>
-                ) : (
-                  <InternalLink isButton href={pathname} locale="pt" shallow>
-                    <Button
-                      size="small"
-                      color="primary"
-                      className={classes.button}
-                    >
-                      PT
-                    </Button>
-                  </InternalLink>
-                )}
-              </Grid>
+              <ToggleLang />
             </Hidden>
           </Grid>
         </Grid>

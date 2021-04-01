@@ -1,10 +1,7 @@
 import { useState } from 'react'
-import { useRouter } from 'next/router'
 import { useIntl } from 'react-intl'
 import {
   Box,
-  Button,
-  Divider,
   Drawer,
   Grid,
   Hidden,
@@ -18,10 +15,10 @@ import MenuIcon from '@material-ui/icons/Menu'
 import InternalLink from 'components/InternalLink'
 import data from 'components/Menu/data'
 import ToggleTheme from 'components/ToggleTheme'
+import ToggleLang from 'components/ToggleLang'
 
 const Menu = () => {
   const [open, setOpen] = useState(false)
-  const { locale, pathname } = useRouter()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
 
@@ -80,49 +77,7 @@ const Menu = () => {
                     justify="center"
                     xs={12}
                   >
-                    <Grid item>
-                      {locale === 'en' ? (
-                        <Button
-                          size="small"
-                          color="primary"
-                          disabled={locale === 'en'}
-                        >
-                          EN
-                        </Button>
-                      ) : (
-                        <InternalLink href={pathname} locale="en" shallow>
-                          <Button
-                            size="small"
-                            color="primary"
-                            disabled={locale === 'en'}
-                          >
-                            EN
-                          </Button>
-                        </InternalLink>
-                      )}
-                    </Grid>
-                    <Divider orientation="vertical" flexItem />
-                    <Grid item>
-                      {locale === 'pt' ? (
-                        <Button
-                          size="small"
-                          color="primary"
-                          disabled={locale === 'pt'}
-                        >
-                          PT
-                        </Button>
-                      ) : (
-                        <InternalLink href={pathname} locale="pt" shallow>
-                          <Button
-                            size="small"
-                            color="primary"
-                            disabled={locale === 'pt'}
-                          >
-                            PT
-                          </Button>
-                        </InternalLink>
-                      )}
-                    </Grid>
+                    <ToggleLang />
                   </Grid>
                 </Grid>
               </Box>
