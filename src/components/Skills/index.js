@@ -87,7 +87,6 @@ const Skills = () => {
                       href={tech.link}
                       aria-label={tech.name}
                       target="_blank"
-                      rel="noopener no referrer"
                     >
                       <Image src={tech.imgSrc} alt={tech.name} layout="fill" />
                     </IconButton>
