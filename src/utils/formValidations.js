@@ -14,14 +14,11 @@ const fieldsValidation = {
 const getFieldErrors = (objError) => {
   const errors = {}
 
-  console.log('objError', objError)
-
   objError.error &&
     objError.error.details.forEach(
       (err) => (errors[err.path.join('.')] = err.type)
     )
 
-  console.log('errors', errors)
   return errors
 }
 
