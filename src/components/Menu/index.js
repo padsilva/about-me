@@ -64,16 +64,11 @@ const Menu = () => {
           <List>
             {data.map((menu) => (
               <InternalLink key={menu.name} href={menu.link} isActive>
-                <ListItem button>
+                <ListItem button onClick={() => setOpen(false)}>
                   <Grid container spacing={1}>
                     <Grid item>{menu.icon}</Grid>
                     <Grid item>
-                      <Typography
-                        variant="button"
-                        onClick={() => setOpen(false)}
-                      >
-                        {f(menu.name)}
-                      </Typography>
+                      <Typography variant="button">{f(menu.name)}</Typography>
                     </Grid>
                   </Grid>
                 </ListItem>
