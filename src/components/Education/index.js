@@ -76,7 +76,7 @@ const Experience = () => {
                   </TimelineSeparator>
                   <TimelineContent>
                     <Paper elevation={3} className={classes.paper}>
-                      <Typography variant="h6" component="h1">
+                      <Typography variant="h6">
                         {f(position).toUpperCase()}
                       </Typography>
                       <Typography align="justify">{f(description)}</Typography>
@@ -93,7 +93,7 @@ const Experience = () => {
                   <Typography variant="subtitle1" color="textSecondary">
                     {f(date)}
                   </Typography>
-                  <Typography variant="h6" component="h1">
+                  <Typography variant="h6">
                     {f(position).toUpperCase()}
                   </Typography>
                   <Typography align="justify">{f(description)}</Typography>

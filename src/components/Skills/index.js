@@ -102,11 +102,12 @@ const Skills = () => {
                       variant="determinate"
                       value={tech.percentage}
                       size={100}
+                      aria-labelledby={`box-${tech.name}`}
                     />
                   </Box>
                 </Grid>
                 <Grid item xs={2} sm={1}>
-                  <Box ml={2}>
+                  <Box ml={2} id={`box-${tech.name}`}>
                     <Typography variant="body2">
                       {`${tech.percentage}%`}
                     </Typography>
