@@ -131,7 +131,7 @@ const Projects = () => {
           {info.live && (
             <Typography>
               {f('live')}
-              <Link href={info.live} target="_blank">
+              <Link href={info.live} target="_blank" rel="noopener">
                 {info.live}
               </Link>
             </Typography>
@@ -139,7 +139,7 @@ const Projects = () => {
           {info.github && (
             <Typography paragraph>
               {f('repo')}
-              <Link href={info.github} target="_blank">
+              <Link href={info.github} target="_blank" rel="noopener">
                 {info.github}
               </Link>
             </Typography>
@@ -183,7 +183,7 @@ const Projects = () => {
           <DialogActions className={classes.content}>
             <DialogContentText variant="body2">
               {f('udemy')}
-              <Link href={info.udemy.link} target="_blank">
+              <Link href={info.udemy.link} target="_blank" rel="noopener">
                 {info.udemy.name}
               </Link>
             </DialogContentText>

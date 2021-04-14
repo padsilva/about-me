@@ -30,6 +30,7 @@ const SocialLinks = () => {
             href="https://github.com/padsilva"
             aria-label="Github"
             target="_blank"
+            rel="noopener"
           >
             <GitHub />
           </IconButton>
@@ -41,6 +42,7 @@ const SocialLinks = () => {
             href="https://www.linkedin.com/in/padsilva88/"
             aria-label="LinkedIn"
             target="_blank"
+            rel="noopener"
           >
             <LinkedIn />
           </IconButton>
@@ -52,6 +54,7 @@ const SocialLinks = () => {
             href="https://twitter.com/padsilva88"
             aria-label="Twitter"
             target="_blank"
+            rel="noopener"
           >
             <Twitter />
           </IconButton>
