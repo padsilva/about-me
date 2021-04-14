@@ -34,6 +34,7 @@ const ToggleLang = () => {
         value="en"
         aria-label="english"
         className={locale === 'en' ? classes.selected : classes.button}
+        disabled={locale === 'en'}
       >
         ENG
       </ToggleButton>
@@ -41,6 +42,7 @@ const ToggleLang = () => {
         value="pt"
         aria-label="portuguese"
         className={locale === 'pt' ? classes.selected : classes.button}
+        disabled={locale === 'pt'}
       >
         POR
       </ToggleButton>

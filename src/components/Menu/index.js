@@ -8,6 +8,7 @@ import {
   IconButton,
   List,
   ListItem,
+  makeStyles,
   Typography
 } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
@@ -17,7 +18,14 @@ import data from 'components/Menu/data'
 import ToggleTheme from 'components/ToggleTheme'
 import ToggleLang from 'components/ToggleLang'
 
+const useStyles = makeStyles(() => ({
+  drawerPaper: {
+    width: 190
+  }
+}))
+
 const Menu = () => {
+  const classes = useStyles()
   const [open, setOpen] = useState(false)
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
@@ -45,44 +53,50 @@ const Menu = () => {
         >
           <MenuIcon />
         </IconButton>
-        <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
-          <div
-            role="presentation"
-            onClick={() => setOpen(false)}
-            onKeyDown={() => setOpen(false)}
-          >
-            <List>
-              {data.map((menu) => (
-                <InternalLink key={menu.name} href={menu.link} isActive>
-                  <ListItem button>
-                    <Grid container spacing={1}>
-                      <Grid item>{menu.icon}</Grid>
-                      <Grid item>
-                        <Typography variant="button">{f(menu.name)}</Typography>
-                      </Grid>
+        <Drawer
+          anchor="right"
+          open={open}
+          onClose={() => setOpen(false)}
+          classes={{
+            paper: classes.drawerPaper
+          }}
+        >
+          <List>
+            {data.map((menu) => (
+              <InternalLink key={menu.name} href={menu.link} isActive>
+                <ListItem button>
+                  <Grid container spacing={1}>
+                    <Grid item>{menu.icon}</Grid>
+                    <Grid item>
+                      <Typography
+                        variant="button"
+                        onClick={() => setOpen(false)}
+                      >
+                        {f(menu.name)}
+                      </Typography>
                     </Grid>
-                  </ListItem>
-                </InternalLink>
-              ))}
-              <Box position="fixed" bottom={10}>
-                <Grid container spacing={3}>
-                  <Grid item xs={12}>
-                    <ToggleTheme />
                   </Grid>
-
-                  <Grid
-                    container
-                    item
-                    alignItems="center"
-                    justify="center"
-                    xs={12}
-                  >
-                    <ToggleLang />
-                  </Grid>
+                </ListItem>
+              </InternalLink>
+            ))}
+            <Box position="fixed" bottom={10}>
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  <ToggleTheme />
                 </Grid>
-              </Box>
-            </List>
-          </div>
+
+                <Grid
+                  container
+                  item
+                  alignItems="center"
+                  justify="center"
+                  xs={12}
+                >
+                  <ToggleLang />
+                </Grid>
+              </Grid>
+            </Box>
+          </List>
         </Drawer>
       </Hidden>
     </>
