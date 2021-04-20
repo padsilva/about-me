@@ -22,7 +22,7 @@ export default [
     techs: [
       {
         name: 'TypeScript',
-        imgSrc: '/img/tech/TypeScript.svg'
+        imgSrc: '/img/tech/typescript.svg'
       },
       {
         name: 'NextJS',
