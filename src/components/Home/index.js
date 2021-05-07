@@ -57,7 +57,7 @@ const Home = () => {
                 <Typography variant="h4" component="h5">
                   Paulo Silva
                 </Typography>
-                <Typography variant="subtitle2">Software Developer</Typography>
+                <Typography variant="subtitle2">{f('position')}</Typography>
               </Grid>
               <Grid
                 container
