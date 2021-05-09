@@ -35,7 +35,7 @@ export default [
   },
   {
     icon: <ContactSupport fontSize="small" />,
-    link: '/contact',
-    name: 'contact'
+    link: '/contacts',
+    name: 'contacts'
   }
 ]

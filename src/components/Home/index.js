@@ -18,6 +18,13 @@ const useStyles = makeStyles((theme) => ({
   large: {
     width: theme.spacing(26),
     height: theme.spacing(26)
+  },
+  paper: {
+    padding: '6px 16px',
+    marginBottom: theme.spacing(2),
+    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
+      marginBottom: theme.spacing(4)
+    }
   }
 }))
 
@@ -28,7 +35,7 @@ const Home = () => {
 
   return (
     <Container component="main" maxWidth="md">
-      <Card>
+      <Card raised>
         <CardContent>
           <Grid container spacing={2}>
             <Grid

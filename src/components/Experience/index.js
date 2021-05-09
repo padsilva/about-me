@@ -10,23 +10,14 @@ import TimelineDot from '@material-ui/lab/TimelineDot'
 import {
   Card,
   CardContent,
-  CardHeader,
   Container,
-  Divider,
   Hidden,
-  Paper,
   Typography
 } from '@material-ui/core'
 import { TimelineOppositeContent } from '@material-ui/lab'
 import Link from '@material-ui/core/Link'
 
 const useStyles = makeStyles((theme) => ({
-  content: {
-    padding: theme.spacing(2),
-    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      padding: theme.spacing(3)
-    }
-  },
   paper: {
     padding: '6px 16px',
     marginBottom: theme.spacing(2),
@@ -72,78 +63,64 @@ const Experience = () => {
   const f = (id) => formatMessage({ id })
 
   return (
-    <Container component="main" maxWidth="lg">
-      <Card>
-        <CardHeader
-          title={f('experience')}
-          titleTypographyProps={{
-            variant: 'h4',
-            align: 'center'
-          }}
-        />
-        <Divider />
-        <CardContent className={classes.content}>
-          <Hidden smDown>
-            <Timeline align="alternate">
-              {jobs.map(
-                ({ date, institution, position, description }, index) => (
-                  <TimelineItem key={`job-${index}`}>
-                    <TimelineOppositeContent>{f(date)}</TimelineOppositeContent>
-                    <TimelineSeparator>
-                      <TimelineDot />
-                      <TimelineConnector />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                      <Paper elevation={3} className={classes.paper}>
-                        <Typography variant="h5">
-                          <Link
-                            href={institution.link}
-                            target="_blank"
-                            rel="noopener"
-                          >
-                            {f(institution.name)}
-                          </Link>
-                        </Typography>
-                        <Typography variant="h6">{f(position)}</Typography>
-                        <Typography
-                          align="justify"
-                          dangerouslySetInnerHTML={{ __html: f(description) }}
-                        />
-                      </Paper>
-                    </TimelineContent>
-                  </TimelineItem>
-                )
-              )}
-            </Timeline>
-          </Hidden>
-          <Hidden mdUp>
-            {jobs.map(({ date, position, institution, description }, index) => (
-              <Card elevation={0} key={`job-${index}`}>
-                <CardContent>
-                  <Typography variant="subtitle1" color="textSecondary">
-                    {f(date)}
-                  </Typography>
-                  <Typography variant="h5">
-                    <Link
-                      href={institution.link}
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      {f(institution.name)}
-                    </Link>
-                  </Typography>
-                  <Typography variant="h6">{f(position)}</Typography>
-                  <Typography
-                    align="justify"
-                    dangerouslySetInnerHTML={{ __html: f(description) }}
-                  />
-                </CardContent>
-              </Card>
+    <>
+      <Hidden smDown>
+        <Container component="main" maxWidth="lg">
+          <Timeline align="alternate">
+            {jobs.map(({ date, institution, position, description }, index) => (
+              <TimelineItem key={`job-${index}`}>
+                <TimelineOppositeContent>{f(date)}</TimelineOppositeContent>
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Card raised className={classes.paper}>
+                    <Typography variant="h5">
+                      <Link
+                        href={institution.link}
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        {f(institution.name)}
+                      </Link>
+                    </Typography>
+                    <Typography variant="h6">{f(position)}</Typography>
+                    <Typography
+                      align="justify"
+                      dangerouslySetInnerHTML={{ __html: f(description) }}
+                    />
+                  </Card>
+                </TimelineContent>
+              </TimelineItem>
             ))}
-          </Hidden>
-        </CardContent>
-      </Card>
-    </Container>
+          </Timeline>
+        </Container>
+      </Hidden>
+      <Hidden mdUp>
+        <Container component="main" maxWidth="sm">
+          {jobs.map(({ date, position, institution, description }, index) => (
+            <Card key={`job-${index}`} raised className={classes.paper}>
+              <CardContent>
+                <Typography variant="subtitle1" color="textSecondary">
+                  {f(date)}
+                </Typography>
+                <Typography variant="h5">
+                  <Link href={institution.link} target="_blank" rel="noopener">
+                    {f(institution.name)}
+                  </Link>
+                </Typography>
+                <Typography variant="h6">{f(position)}</Typography>
+                <Typography
+                  align="justify"
+                  dangerouslySetInnerHTML={{ __html: f(description) }}
+                />
+              </CardContent>
+            </Card>
+          ))}
+        </Container>
+      </Hidden>
+    </>
   )
 }
 

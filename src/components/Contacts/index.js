@@ -6,10 +6,8 @@ import {
   Button,
   Card,
   CardContent,
-  CardHeader,
   Collapse,
   Container,
-  Divider,
   FormHelperText,
   Grid,
   IconButton,
@@ -32,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const Contact = () => {
+const Contacts = () => {
   const { locale } = useRouter()
   const classes = useStyles()
   const recaptchaRef = useRef(null)
@@ -136,15 +134,12 @@ const Contact = () => {
 
   return (
     <Container component="main" maxWidth="sm">
-      <Card component="form" autoComplete="off" onSubmit={handleOnSubmit}>
-        <CardHeader
-          title={f('contact')}
-          titleTypographyProps={{
-            variant: 'h4',
-            align: 'center'
-          }}
-        />
-        <Divider />
+      <Card
+        component="form"
+        autoComplete="off"
+        onSubmit={handleOnSubmit}
+        raised
+      >
         <CardContent className={classes.content}>
           <Grid container spacing={2} item>
             <Grid item xs={12} sm={6}>
@@ -293,4 +288,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default Contacts

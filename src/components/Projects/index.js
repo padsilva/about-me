@@ -37,12 +37,6 @@ const useStyles = makeStyles((theme) => ({
     right: theme.spacing(1),
     top: theme.spacing(1),
     color: theme.palette.grey[500]
-  },
-  link: {
-    '& a': {
-      textDecoration: 'none',
-      color: theme.palette.primary.main
-    }
   }
 }))
 
@@ -71,7 +65,7 @@ const Projects = () => {
   const handleClose = () => setOpen(false)
 
   return (
-    <Container maxWidth="md">
+    <Container component="main" maxWidth="md">
       <GridList cellHeight={200}>
         {data.map((proj) => (
           <GridListTile

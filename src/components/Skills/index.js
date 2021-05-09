@@ -1,12 +1,9 @@
 import Image from 'next/image'
-import { useIntl } from 'react-intl'
 import {
   Box,
   Card,
   CardContent,
-  CardHeader,
   Container,
-  Divider,
   Grid,
   IconButton,
   LinearProgress,
@@ -49,20 +46,10 @@ const useStyles = makeStyles((theme) => ({
 
 const Skills = () => {
   const classes = useStyles()
-  const { formatMessage } = useIntl()
-  const f = (id) => formatMessage({ id })
 
   return (
     <Container component="main" maxWidth="sm">
-      <Card>
-        <CardHeader
-          title={f('skills')}
-          titleTypographyProps={{
-            variant: 'h4',
-            align: 'center'
-          }}
-        />
-        <Divider />
+      <Card elevation={0}>
         <CardContent className={classes.content}>
           <Grid container spacing={4}>
             {data.map((tech) => (

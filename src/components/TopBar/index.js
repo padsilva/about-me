@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import {
   AppBar,
   Box,
@@ -11,8 +12,11 @@ import { useIntl } from 'react-intl'
 import Menu from 'components/Menu'
 
 const TopBar = () => {
+  const { pathname } = useRouter()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
+
+  const breadCrumb = () => ' / ' + f(pathname.replace('/', '') || 'home')
 
   return (
     <>
@@ -25,13 +29,18 @@ const TopBar = () => {
             alignItems="baseline"
           >
             <Grid item xs>
-              <Box mr={1} display="inline">
+              <Typography variant="h4" display="inline">
+                Paulo Silva
+              </Typography>
+              <Hidden mdUp>
                 <Typography variant="h4" display="inline">
-                  Paulo Silva
+                  {breadCrumb()}
                 </Typography>
-              </Box>
+              </Hidden>
               <Hidden mdDown>
-                <Typography variant="caption">{f('position')}</Typography>
+                <Box ml={1} display="inline">
+                  <Typography variant="caption">{f('position')}</Typography>
+                </Box>
               </Hidden>
             </Grid>
             <Grid
