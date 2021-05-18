@@ -1,112 +1,86 @@
-import Image from 'next/image'
-import {
-  Box,
-  Card,
-  CardContent,
-  Container,
-  Grid,
-  IconButton,
-  LinearProgress,
-  makeStyles,
-  Typography,
-  withStyles
-} from '@material-ui/core'
+import { Box, Container, Grid, Hidden } from '@material-ui/core'
 
-import data from './data'
+import SkillsTable from 'components/SkillsTable'
 
-const BorderLinearProgress = withStyles((theme) => ({
-  root: {
-    height: 10,
-    borderRadius: 5
-  },
-  colorPrimary: {
-    backgroundColor:
-      theme.palette.grey[theme.palette.type === 'light' ? 200 : 700]
-  },
-  bar: {
-    borderRadius: 5,
-    backgroundColor: theme.palette.primary.light
-  }
-}))(LinearProgress)
+import { arch, cms, db, dev, lib, scm } from './data'
 
-const useStyles = makeStyles((theme) => ({
-  content: {
-    padding: theme.spacing(2),
-    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      padding: theme.spacing(3)
-    }
-  },
-  box: {
-    marginLeft: theme.spacing(0),
-    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      marginLeft: theme.spacing(-1)
-    }
-  }
-}))
+const GridItem = (props) => (
+  <Box
+    color="white"
+    p={1}
+    borderRadius={1}
+    textAlign="center"
+    fontSize={20}
+    fontWeight="bold"
+    {...props}
+  />
+)
 
-const Skills = () => {
-  const classes = useStyles()
-
-  return (
-    <Container component="main" maxWidth="sm">
-      <Card elevation={0}>
-        <CardContent className={classes.content}>
-          <Grid container spacing={4}>
-            {data.map((tech) => (
-              <Grid
-                key={tech.name}
-                container
-                item
-                justify="space-evenly"
-                alignItems="center"
-              >
-                <Grid
-                  item
-                  xs={12}
-                  sm={3}
-                  container
-                  direction="row"
-                  justify="flex-start"
-                  alignItems="center"
-                >
-                  <Grid item xs={3}>
-                    <IconButton
-                      href={tech.link}
-                      aria-label={tech.name}
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <Image src={tech.imgSrc} alt={tech.name} layout="fill" />
-                    </IconButton>
-                  </Grid>
-                  <Grid item xs={9}>
-                    <Typography variant="body2">{tech.name}</Typography>
-                  </Grid>
-                </Grid>
-                <Grid item xs={10} sm={8}>
-                  <Box className={classes.box}>
-                    <BorderLinearProgress
-                      variant="determinate"
-                      value={tech.percentage}
-                      size={100}
-                      aria-labelledby={`box-${tech.name}`}
-                    />
-                  </Box>
-                </Grid>
-                <Grid item xs={2} sm={1}>
-                  <Box ml={2} id={`box-${tech.name}`}>
-                    <Typography variant="body2">
-                      {`${tech.percentage}%`}
-                    </Typography>
-                  </Box>
-                </Grid>
-              </Grid>
-            ))}
+const Skills = () => (
+  <>
+    <Hidden smDown>
+      <Container component="main" maxWidth="lg">
+        <Box
+          display="grid"
+          gridTemplateColumns="1fr 1fr 1fr"
+          gridTemplateRows="repeat(8, auto)"
+          gridGap={75}
+          gridTemplateAreas={`"Lib DB Arch"
+            "Lib DB Arch"
+            "Lib DB Arch"
+            "Lib DB Dev"
+            "Lib SCM Dev"
+            "Lib SCM Dev"
+            "Lib SCM CMS"
+            ". . CMS"
+            ". . CMS"`}
+        >
+          <GridItem gridArea="Lib">
+            <SkillsTable label="lib" data={lib} />
+          </GridItem>
+          <GridItem gridArea="DB">
+            <SkillsTable label="db" data={db} />
+          </GridItem>
+          <GridItem gridArea="SCM">
+            <SkillsTable label="scm" data={scm} />
+          </GridItem>
+          <GridItem gridArea="Arch">
+            <SkillsTable label="arch" data={arch} />
+          </GridItem>
+          <GridItem gridArea="Dev">
+            <SkillsTable label="dev" data={dev} />
+          </GridItem>
+          <GridItem gridArea="CMS">
+            <SkillsTable label="cms" data={cms} />
+          </GridItem>
+        </Box>
+      </Container>
+    </Hidden>
+    <Hidden mdUp>
+      <Container component="main" maxWidth="xs">
+        <Grid container spacing={4}>
+          <Grid item xs={12}>
+            <SkillsTable label="lib" data={lib} />
           </Grid>
-        </CardContent>
-      </Card>
-    </Container>
-  )
-}
+          <Grid item xs={12}>
+            <SkillsTable label="db" data={db} />
+          </Grid>
+          <Grid item xs={12}>
+            <SkillsTable label="scm" data={scm} />
+          </Grid>
+          <Grid item xs={12}>
+            <SkillsTable label="arch" data={arch} />
+          </Grid>
+          <Grid item xs={12}>
+            <SkillsTable label="dev" data={dev} />
+          </Grid>
+          <Grid item xs={12}>
+            <SkillsTable label="cms" data={cms} />
+          </Grid>
+        </Grid>
+      </Container>
+    </Hidden>
+  </>
+)
 
 export default Skills

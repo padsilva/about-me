@@ -1,50 +1,143 @@
-export default [
+export const lib = [
   {
-    imgSrc: '/img/tech/javascript.svg',
-    link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    link: 'https://www.javascript.com',
     name: 'JavaScript',
-    percentage: 80
+    level: 'expert'
   },
   {
-    imgSrc: '/img/tech/react.svg',
-    link: 'https://reactjs.org/',
-    name: 'React',
-    percentage: 70
+    link: 'https://html.spec.whatwg.org',
+    name: 'HTML',
+    level: 'proficient'
   },
   {
-    imgSrc: '/img/tech/nextjs.svg',
-    link: 'https://nextjs.org/',
+    link: 'https://nextjs.org',
     name: 'Next.js',
-    percentage: 70
+    level: 'proficient'
   },
   {
-    imgSrc: '/img/tech/graphql.svg',
-    link: 'https://graphql.org/',
-    name: 'GraphQL',
-    percentage: 70
+    link: 'https://reactjs.org',
+    name: 'React',
+    level: 'proficient'
   },
   {
-    imgSrc: '/img/tech/strapi.svg',
-    link: 'https://graphql.org/',
-    name: 'Strapi',
-    percentage: 60
+    link: 'https://www.w3.org/TR/CSS/#css',
+    name: 'CSS',
+    level: 'competent'
   },
   {
-    imgSrc: '/img/tech/jest.svg',
-    link: 'https://jestjs.io/',
+    link: 'https://nodejs.org/',
+    name: 'Node.js',
+    level: 'competent'
+  },
+  {
+    link: 'https://www.typescriptlang.org',
+    name: 'TypeScript',
+    level: 'competent'
+  },
+  {
+    link: 'https://www.w3.org/TR/REC-xml/',
+    name: 'XML',
+    level: 'competent'
+  },
+  {
+    link: 'https://jestjs.io',
     name: 'Jest',
-    percentage: 50
+    level: 'basic'
+  }
+]
+
+export const db = [
+  {
+    link: 'https://graphql.org',
+    name: 'GraphQL',
+    level: 'proficient'
   },
   {
-    imgSrc: '/img/tech/storybook.svg',
-    link: 'https://storybook.js.org/',
-    name: 'Storybook',
-    percentage: 50
+    link: 'https://www.ibm.com/products/db2-database',
+    name: 'IBM Db2',
+    level: 'proficient'
   },
   {
-    imgSrc: '/img/tech/apollo.svg',
-    link: 'https://www.apollographql.com/',
-    name: 'Apollo',
-    percentage: 50
+    link: 'https://www.microsoft.com/sql-server',
+    name: 'MS SQL Server',
+    level: 'proficient'
+  },
+  {
+    link: 'https://www.oracle.com/database/',
+    name: 'Oracle',
+    level: 'proficient'
+  },
+  {
+    link: 'https://www.mongodb.com',
+    name: 'MongoDB',
+    level: 'competent'
+  }
+]
+
+export const scm = [
+  {
+    link: 'https://git-scm.com',
+    name: 'Git',
+    level: 'expert'
+  },
+  {
+    link:
+      'https://www.ibm.com/docs/fi/elm/6.0.6?topic=capabilities-rational-team-concert',
+    name: 'IBM RTC',
+    level: 'proficient'
+  },
+  {
+    link: 'https://www.mercurial-scm.org',
+    name: 'Mercurial',
+    level: 'competent'
+  }
+]
+
+export const arch = [
+  {
+    link: 'https://en.wikipedia.org/wiki/Model–view–controller',
+    name: 'MVC',
+    level: 'proficient'
+  },
+  {
+    link: 'https://en.wikipedia.org/wiki/Representational_state_transfer',
+    name: 'REST',
+    level: 'proficient'
+  },
+  {
+    link: 'https://en.wikipedia.org/wiki/SOAP',
+    name: 'SOAP',
+    level: 'competent'
+  }
+]
+
+export const dev = [
+  {
+    link: 'https://www.scrum.org/resources/what-is-scrum',
+    name: 'Scrum',
+    level: 'expert'
+  },
+  {
+    link: 'https://www.atlassian.com/agile/kanban',
+    name: 'Kanban',
+    level: 'competent'
+  },
+  {
+    link: 'https://en.wikipedia.org/wiki/Waterfall_model',
+    name: 'Waterfall',
+    level: 'competent'
+  }
+]
+
+export const cms = [
+  {
+    link: 'https://strapi.io',
+    name: 'Strapi',
+    level: 'competent'
+  },
+  {
+    link: 'https://graphcms.com',
+    name: 'GraphCMS',
+    level: 'competent'
   }
 ]

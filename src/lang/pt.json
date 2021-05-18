@@ -47,5 +47,18 @@
   "title.techs": "Tecnologias",
   "udemy": "Esta aplicação foi desenvolvida no âmbito do curso da Udemy: ",
   "repo": "Repositório GitHub: ",
-  "live": "Aplicação ao vivo: "
+  "live": "Aplicação ao vivo: ",
+  "lib": "Linguagem / Biblioteca",
+  "db": "Base de Dados",
+  "scm": "Sistema de Controlo de Versões",
+  "arch": "Arquitectura / Protocolo",
+  "dev": "Metodologia de Desenvolvimento",
+  "cms": "Sistema de Gestão de Conteúdos",
+  "levelTip": "<p>5 - Especialista</p><p>4 - Proficiente</p><p>3 - Competente</p><p>2 - Básico</p><p>1 - Principiante</p>",
+  "level": "Nível",
+  "expert": "Especialista",
+  "proficient": "Proficiente",
+  "competent": "Competente",
+  "basic": "Básico",
+  "novice": "Principiante"
 }

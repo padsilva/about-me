@@ -5,13 +5,24 @@ import {
   Grid,
   Hidden,
   Toolbar,
-  Typography
+  Typography,
+  makeStyles
 } from '@material-ui/core'
 import { useIntl } from 'react-intl'
 
 import Menu from 'components/Menu'
 
+const useStyles = makeStyles((theme) => ({
+  active: {
+    color:
+      theme.palette.type === 'light'
+        ? theme.palette.primary.dark
+        : theme.palette.primary.main
+  }
+}))
+
 const TopBar = () => {
+  const classes = useStyles()
   const { pathname } = useRouter()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
@@ -33,7 +44,11 @@ const TopBar = () => {
                 Paulo Silva
               </Typography>
               <Hidden mdUp>
-                <Typography variant="h4" display="inline">
+                <Typography
+                  variant="subtitle2"
+                  display="inline"
+                  className={classes.active}
+                >
                   {breadCrumb()}
                 </Typography>
               </Hidden>
