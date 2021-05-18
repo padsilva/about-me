@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import { useIntl } from 'react-intl'
 import {
+  Link,
   Paper,
   Table,
   TableBody,
@@ -50,7 +51,14 @@ const SkillsTable = ({ label, data }) => {
           {data.map((tech) => (
             <StyledTableRow key={tech.name}>
               <StyledTableCell component="th" scope="row">
-                {tech.name}
+                <Link
+                  href={tech.link}
+                  target="_blank"
+                  rel="noopener"
+                  color="inherit"
+                >
+                  <strong>{tech.name}</strong>
+                </Link>
               </StyledTableCell>
               <StyledTableCell align="right">{f(tech.level)}</StyledTableCell>
             </StyledTableRow>
