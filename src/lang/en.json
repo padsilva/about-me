@@ -48,7 +48,8 @@
   "udemy": "This application was developed as part of the Udemy course: ",
   "repo": "GitHub Repository: ",
   "live": "Live App: ",
-  "lib": "Language / Library",
+  "lang": "Language",
+  "lib": "Library",
   "db": "Database",
   "scm": "Source Control Management",
   "arch": "Architecture / Protocol",
@@ -60,5 +61,6 @@
   "proficient": "Proficient",
   "competent": "Competent",
   "basic": "Basic",
-  "novice": "Novice"
+  "novice": "Novice",
+  "_error": "Error"
 }

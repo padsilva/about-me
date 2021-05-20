@@ -5,7 +5,7 @@ const LevelTooltip = ({ text, label }) => (
   <Tooltip
     disableFocusListener
     disableTouchListener
-    placement="right"
+    placement="right-start"
     title={
       <Typography
         variant="subtitle2"

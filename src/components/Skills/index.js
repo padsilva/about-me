@@ -2,7 +2,7 @@ import { Box, Container, Grid, Hidden } from '@material-ui/core'
 
 import SkillsTable from 'components/SkillsTable'
 
-import { arch, cms, db, dev, lib, scm } from './data'
+import { arch, cms, db, dev, lang, lib, scm } from './data'
 
 const GridItem = (props) => (
   <Box
@@ -23,18 +23,21 @@ const Skills = () => (
         <Box
           display="grid"
           gridTemplateColumns="1fr 1fr 1fr"
-          gridTemplateRows="repeat(8, auto)"
+          gridTemplateRows="repeat(9, auto)"
           gridGap={75}
-          gridTemplateAreas={`"Lib DB Arch"
-            "Lib DB Arch"
-            "Lib DB Arch"
-            "Lib DB Dev"
-            "Lib SCM Dev"
-            "Lib SCM Dev"
-            "Lib SCM CMS"
-            ". . CMS"
-            ". . CMS"`}
+          gridTemplateAreas={`"Lang Lib Arch"
+            "Lang Lib Arch"
+            "Lang Lib Arch"
+            "Lang Lib Dev"
+            "DB Lib Dev"
+            "DB CMS Dev"
+            "DB CMS SCM"
+            "DB CMS SCM"
+            ". . SCM"`}
         >
+          <GridItem gridArea="Lang">
+            <SkillsTable label="lang" data={lang} />
+          </GridItem>
           <GridItem gridArea="Lib">
             <SkillsTable label="lib" data={lib} />
           </GridItem>

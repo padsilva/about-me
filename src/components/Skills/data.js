@@ -1,4 +1,4 @@
-export const lib = [
+export const lang = [
   {
     link: 'https://www.javascript.com',
     name: 'JavaScript',
@@ -10,23 +10,8 @@ export const lib = [
     level: 'proficient'
   },
   {
-    link: 'https://nextjs.org',
-    name: 'Next.js',
-    level: 'proficient'
-  },
-  {
-    link: 'https://reactjs.org',
-    name: 'React',
-    level: 'proficient'
-  },
-  {
     link: 'https://www.w3.org/TR/CSS/#css',
     name: 'CSS',
-    level: 'competent'
-  },
-  {
-    link: 'https://nodejs.org/',
-    name: 'Node.js',
     level: 'competent'
   },
   {
@@ -38,10 +23,48 @@ export const lib = [
     link: 'https://www.w3.org/TR/REC-xml/',
     name: 'XML',
     level: 'competent'
+  }
+]
+
+export const lib = [
+  {
+    link: 'https://nextjs.org',
+    name: 'Next.js',
+    level: 'proficient'
+  },
+  {
+    link: 'https://reactjs.org',
+    name: 'React',
+    level: 'proficient'
+  },
+  {
+    link: 'https://www.apollographql.com/',
+    name: 'Apollo',
+    level: 'competent'
+  },
+  {
+    link: 'https://material-ui.com/',
+    name: 'Material-UI',
+    level: 'competent'
+  },
+  {
+    link: 'https://nodejs.org/',
+    name: 'Node.js',
+    level: 'competent'
+  },
+  {
+    link: 'https://www.cypress.io/',
+    name: 'Cypress',
+    level: 'basic'
   },
   {
     link: 'https://jestjs.io',
     name: 'Jest',
+    level: 'basic'
+  },
+  {
+    link: 'https://testing-library.com/',
+    name: 'Testing Library',
     level: 'basic'
   }
 ]
@@ -58,11 +81,6 @@ export const db = [
     level: 'proficient'
   },
   {
-    link: 'https://www.microsoft.com/sql-server',
-    name: 'MS SQL Server',
-    level: 'proficient'
-  },
-  {
     link: 'https://www.oracle.com/database/',
     name: 'Oracle',
     level: 'proficient'
@@ -71,24 +89,23 @@ export const db = [
     link: 'https://www.mongodb.com',
     name: 'MongoDB',
     level: 'competent'
+  },
+  {
+    link: 'https://www.microsoft.com/sql-server',
+    name: 'MS SQL Server',
+    level: 'competent'
   }
 ]
 
-export const scm = [
+export const cms = [
   {
-    link: 'https://git-scm.com',
-    name: 'Git',
-    level: 'expert'
+    link: 'https://graphcms.com',
+    name: 'GraphCMS',
+    level: 'competent'
   },
   {
-    link:
-      'https://www.ibm.com/docs/fi/elm/6.0.6?topic=capabilities-rational-team-concert',
-    name: 'IBM RTC',
-    level: 'proficient'
-  },
-  {
-    link: 'https://www.mercurial-scm.org',
-    name: 'Mercurial',
+    link: 'https://strapi.io',
+    name: 'Strapi',
     level: 'competent'
   }
 ]
@@ -129,15 +146,21 @@ export const dev = [
   }
 ]
 
-export const cms = [
+export const scm = [
   {
-    link: 'https://strapi.io',
-    name: 'Strapi',
-    level: 'competent'
+    link: 'https://git-scm.com',
+    name: 'Git',
+    level: 'expert'
   },
   {
-    link: 'https://graphcms.com',
-    name: 'GraphCMS',
+    link:
+      'https://www.ibm.com/docs/fi/elm/6.0.6?topic=capabilities-rational-team-concert',
+    name: 'IBM RTC',
+    level: 'proficient'
+  },
+  {
+    link: 'https://www.mercurial-scm.org',
+    name: 'Mercurial',
     level: 'competent'
   }
 ]
