@@ -117,10 +117,18 @@ const Projects = () => {
           </IconButton>
         </DialogTitle>
         <DialogContent dividers className={classes.content}>
-          <Typography variant="h6">{f('title.desc')}</Typography>
-          <Typography align="justify" paragraph>
-            {info.name && f(`${info.name}.description`)}
+          <Typography variant="h6" gutterBottom>
+            {f('title.desc')}
           </Typography>
+          {info.name && (
+            <Typography
+              align="justify"
+              dangerouslySetInnerHTML={{
+                __html: f(`${info.name}.description`)
+              }}
+              paragraph
+            />
+          )}
 
           {info.live && (
             <Typography>
@@ -130,6 +138,7 @@ const Projects = () => {
               </Link>
             </Typography>
           )}
+
           {info.github && (
             <Typography paragraph>
               {f('repo')}
@@ -141,7 +150,7 @@ const Projects = () => {
 
           <br />
 
-          <Typography gutterBottom variant="h6">
+          <Typography gutterBottom variant="h6" paragraph>
             {f('title.techs')}
           </Typography>
 
@@ -173,6 +182,7 @@ const Projects = () => {
             ))}
           </Grid>
         </DialogContent>
+
         {info.udemy && (
           <DialogActions className={classes.content}>
             <DialogContentText variant="body2">
