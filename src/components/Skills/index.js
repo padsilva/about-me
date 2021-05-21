@@ -63,6 +63,9 @@ const Skills = () => (
       <Container component="main" maxWidth="xs">
         <Grid container spacing={4}>
           <Grid item xs={12}>
+            <SkillsTable label="lang" data={lang} />
+          </Grid>
+          <Grid item xs={12}>
             <SkillsTable label="lib" data={lib} />
           </Grid>
           <Grid item xs={12}>

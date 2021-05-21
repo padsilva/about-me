@@ -4,7 +4,7 @@ import { Tooltip, Typography } from '@material-ui/core'
 const LevelTooltip = ({ text, label }) => (
   <Tooltip
     disableFocusListener
-    disableTouchListener
+    enterTouchDelay={0}
     placement="right-start"
     title={
       <Typography
