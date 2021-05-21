@@ -62,6 +62,13 @@ export default [
     live: 'https://padsilva-blog.netlify.app/'
   },
   {
+    name: 'footballApp',
+    title: 'Football App',
+    github: 'https://github.com/padsilva/football-app-client',
+    live: '',
+    featured: true
+  },
+  {
     name: 'boilerplateJS',
     title: 'Boilerplate JavaScript',
     github: 'https://github.com/padsilva/nextjs-boilerplate',
