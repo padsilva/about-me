@@ -153,8 +153,7 @@ export const scm = [
     level: 'expert'
   },
   {
-    link:
-      'https://www.ibm.com/docs/fi/elm/6.0.6?topic=capabilities-rational-team-concert',
+    link: 'https://www.ibm.com/docs/fi/elm/6.0.6?topic=capabilities-rational-team-concert',
     name: 'IBM RTC',
     level: 'proficient'
   },

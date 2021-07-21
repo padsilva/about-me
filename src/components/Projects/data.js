@@ -55,8 +55,7 @@ export default [
     title: 'MTB Blog',
     udemy: {
       name: 'Gatsby: Crie um site PWA com React, GraphQL e Netlify CMS',
-      link:
-        'https://www.udemy.com/course/gatsby-crie-um-site-pwa-com-react-graphql-e-netlify-cms/'
+      link: 'https://www.udemy.com/course/gatsby-crie-um-site-pwa-com-react-graphql-e-netlify-cms/'
     },
     github: 'https://github.com/padsilva/gatsby-site',
     live: 'https://padsilva-blog.netlify.app/'

@@ -55,11 +55,6 @@ const App = ({ Component, pageProps }) => {
           />
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
           <link rel="manifest" href="/manifest.json" />
-          <meta name="theme-color" content="#ffffff" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />
           <meta
             name="description"
             content="Paulo Silva's page with details about his experience, education, skills and projects."

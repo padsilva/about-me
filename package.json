@@ -16,30 +16,31 @@
     ]
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.4",
+    "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.9.1",
-    "@material-ui/lab": "^4.0.0-alpha.58",
-    "@sendgrid/mail": "^7.4.4",
-    "joi": "^17.4.0",
-    "next": "10.2.0",
-    "next-pwa": "^5.2.21",
+    "@material-ui/lab": "^4.0.0-alpha.60",
+    "@sendgrid/mail": "^7.4.5",
+    "eslint-config-next": "^11.0.1",
+    "joi": "^17.4.1",
+    "next": "11.0.1",
+    "next-pwa": "^5.2.24",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-google-recaptcha": "^2.1.0",
-    "react-intl": "^5.17.4"
+    "react-intl": "^5.20.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.0",
+    "@babel/core": "^7.14.8",
     "babel-loader": "^8.2.2",
-    "eslint": "^7.25.0",
+    "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-json": "^3.0.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^6.0.0",
-    "lint-staged": "^10.5.3",
-    "next-sitemap": "^1.6.49",
-    "prettier": "^2.2.1"
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.1",
+    "next-sitemap": "^1.6.140",
+    "prettier": "^2.3.2"
   }
 }

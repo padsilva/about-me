@@ -9,8 +9,5 @@ module.exports = withPWA({
   i18n: {
     locales: ['en', 'pt'],
     defaultLocale: 'en'
-  },
-  future: {
-    webpack5: true
   }
 })
