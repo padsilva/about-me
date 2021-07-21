@@ -13,7 +13,12 @@ const ToggleTheme = () => {
   const classes = useStyles()
 
   return (
-    <Grid component="label" container justify="center" alignItems="center">
+    <Grid
+      component="label"
+      container
+      justifyContent="center"
+      alignItems="center"
+    >
       <Brightness5
         fontSize="small"
         className={!darkMode ? classes.iconActive : null}

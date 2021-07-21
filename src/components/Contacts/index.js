@@ -242,7 +242,7 @@ const Contacts = () => {
                 )}
               </Grid>
             </Grid>
-            <Grid item xs={12} container justify="flex-end">
+            <Grid item xs={12} container justifyContent="flex-end">
               <Button
                 variant="contained"
                 color="secondary"

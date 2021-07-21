@@ -154,7 +154,12 @@ const Projects = () => {
             {f('title.techs')}
           </Typography>
 
-          <Grid container spacing={3} justify="center" alignItems="flex-start">
+          <Grid
+            container
+            spacing={3}
+            justifyContent="center"
+            alignItems="flex-start"
+          >
             {info.techs.map((tech) => (
               <Grid
                 container
@@ -163,7 +168,7 @@ const Projects = () => {
                 sm={3}
                 key={tech.name}
                 direction="column"
-                justify="center"
+                justifyContent="center"
                 alignItems="center"
                 spacing={1}
               >

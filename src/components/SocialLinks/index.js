@@ -12,7 +12,7 @@ const SocialLinks = () => {
 
   return (
     <CardActions className={classes.actions}>
-      <Grid container justify="space-evenly">
+      <Grid container justifyContent="space-evenly">
         <Grid item>
           <IconButton
             size="small"

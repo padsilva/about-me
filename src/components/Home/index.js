@@ -44,7 +44,7 @@ const Home = () => {
               item
               sm={5}
               direction="column"
-              justify="space-evenly"
+              justifyContent="space-evenly"
               alignItems="center"
             >
               <Grid item>
@@ -58,7 +58,7 @@ const Home = () => {
                 container
                 direction="column"
                 item
-                justify="center"
+                justifyContent="center"
                 alignItems="center"
               >
                 <Typography variant="h4" component="h5">
@@ -70,7 +70,7 @@ const Home = () => {
                 container
                 direction="column"
                 item
-                justify="center"
+                justifyContent="center"
                 alignItems="center"
               >
                 <Typography variant="body2">
@@ -92,7 +92,7 @@ const Home = () => {
               item
               sm={7}
               direction="column"
-              justify="center"
+              justifyContent="center"
               alignItems="center"
             >
               <Typography

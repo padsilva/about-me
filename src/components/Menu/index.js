@@ -84,7 +84,7 @@ const Menu = () => {
                   container
                   item
                   alignItems="center"
-                  justify="center"
+                  justifyContent="center"
                   xs={12}
                 >
                   <ToggleLang />

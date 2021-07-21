@@ -36,7 +36,7 @@ const TopBar = () => {
           <Grid
             container
             direction="row"
-            justify="center"
+            justifyContent="center"
             alignItems="baseline"
           >
             <Grid item xs>
@@ -45,6 +45,7 @@ const TopBar = () => {
               </Typography>
               <Hidden mdUp>
                 <Typography
+                  component="h5"
                   variant="subtitle2"
                   display="inline"
                   className={classes.active}
@@ -67,7 +68,7 @@ const TopBar = () => {
               lg={7}
               xl={5}
               direction="row"
-              justify="space-around"
+              justifyContent="space-around"
               alignItems="center"
             >
               <Menu />

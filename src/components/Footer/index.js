@@ -23,8 +23,8 @@ const Footer = () => {
       className={classes.footer}
     >
       <Grid item xs={12}>
-        <Grid container justify="space-between" alignItems="center">
-          <Grid item container justify="flex-start" sm={3}>
+        <Grid container justifyContent="space-between" alignItems="center">
+          <Grid item container justifyContent="flex-start" sm={3}>
             <Hidden smDown>
               <Grid item>
                 <ToggleTheme />
@@ -36,7 +36,7 @@ const Footer = () => {
               {`Copyright © Paulo Silva ${new Date().getFullYear()}.`}
             </Typography>
           </Grid>
-          <Grid item container justify="flex-end" sm={3}>
+          <Grid item container justifyContent="flex-end" sm={3}>
             <Hidden smDown>
               <ToggleLang />
             </Hidden>
