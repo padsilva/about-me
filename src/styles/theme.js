@@ -1,19 +1,27 @@
 import { createTheme, responsiveFontSizes } from '@material-ui/core/styles'
 
-// Create a theme instance.
-export const darkTheme = responsiveFontSizes(
-  createTheme({
-    components: {
-      MuiToggleButton: {
-        styleOverrides: {
-          root: {
-            '&.Mui-selected': {
-              color: 'grey'
-            }
+const common = {
+  components: {
+    MuiLink: {
+      defaultProps: {
+        underline: 'hover'
+      }
+    },
+    MuiToggleButton: {
+      styleOverrides: {
+        root: {
+          '&.Mui-selected': {
+            color: 'grey'
           }
         }
       }
-    },
+    }
+  }
+}
+
+export const darkTheme = responsiveFontSizes(
+  createTheme({
+    ...common,
     palette: {
       mode: 'dark',
       background: {
@@ -41,20 +49,9 @@ export const darkTheme = responsiveFontSizes(
   })
 )
 
-// Create a theme instance.
 export const lightTheme = responsiveFontSizes(
   createTheme({
-    components: {
-      MuiToggleButton: {
-        styleOverrides: {
-          root: {
-            '&.Mui-selected': {
-              color: 'grey'
-            }
-          }
-        }
-      }
-    },
+    ...common,
     palette: {
       mode: 'light',
       background: {

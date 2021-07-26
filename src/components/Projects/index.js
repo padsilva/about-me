@@ -82,12 +82,12 @@ const Projects = () => {
         open={open}
       >
         <DialogTitle
-          disableTypography
           id="customized-dialog-title"
           sx={{
             m: 0,
             p: theme.spacing(2)
           }}
+          component="span"
         >
           <Typography variant="h4" component="h2">
             {info.title}

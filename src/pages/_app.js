@@ -8,6 +8,7 @@ import createCache from '@emotion/cache'
 
 import Base from 'components/Base'
 import ScrollTop from 'components/ScrollTop'
+
 import messages_en from 'lang/en.json'
 import messages_pt from 'lang/pt.json'
 import { DarkModeProvider } from 'hooks/darkMode'

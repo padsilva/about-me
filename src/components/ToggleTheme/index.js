@@ -1,5 +1,6 @@
 import { Grid, Switch, useTheme } from '@material-ui/core'
 import { Brightness3, Brightness5 } from '@material-ui/icons'
+
 import { useDarkMode } from 'hooks/darkMode'
 
 const ToggleTheme = () => {

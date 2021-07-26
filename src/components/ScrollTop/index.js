@@ -1,10 +1,10 @@
 import {
+  Box,
   Fab,
-  useScrollTrigger,
   Zoom,
   useMediaQuery,
-  useTheme,
-  Box
+  useScrollTrigger,
+  useTheme
 } from '@material-ui/core'
 import { KeyboardArrowUp } from '@material-ui/icons'
 

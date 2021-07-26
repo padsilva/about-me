@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { useIntl } from 'react-intl'
 import ReCAPTCHA from 'react-google-recaptcha'
 import {
+  Alert,
   Button,
   Card,
   CardContent,
@@ -15,7 +16,6 @@ import {
   useMediaQuery,
   useTheme
 } from '@material-ui/core'
-import { Alert } from '@material-ui/lab'
 import { Close } from '@material-ui/icons'
 
 import SocialLinks from 'components/SocialLinks'
@@ -147,6 +147,7 @@ const Contacts = () => {
                 name="firstName"
                 label={`${f('firstName')} *`}
                 fullWidth
+                variant="standard"
                 value={inputs.firstName}
                 onChange={handleOnChange}
                 error={!!status.fieldError.firstName}
@@ -161,6 +162,7 @@ const Contacts = () => {
                 name="lastName"
                 label={`${f('lastName')} *`}
                 fullWidth
+                variant="standard"
                 value={inputs.lastName}
                 onChange={handleOnChange}
                 error={!!status.fieldError.lastName}
@@ -175,6 +177,7 @@ const Contacts = () => {
                 name="email"
                 label="Email *"
                 fullWidth
+                variant="standard"
                 value={inputs.email}
                 onChange={handleOnChange}
                 error={!!status.fieldError.email}
@@ -189,6 +192,7 @@ const Contacts = () => {
                 name="subject"
                 label={`${f('subject')} *`}
                 fullWidth
+                variant="standard"
                 value={inputs.subject}
                 onChange={handleOnChange}
                 error={!!status.fieldError.subject}
@@ -205,7 +209,6 @@ const Contacts = () => {
                 multiline
                 rows={12}
                 fullWidth
-                variant="outlined"
                 value={inputs.message}
                 onChange={handleOnChange}
                 error={!!status.fieldError.message}

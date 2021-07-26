@@ -24,7 +24,7 @@ const Skills = () => (
           display="grid"
           gridTemplateColumns="1fr 1fr 1fr"
           gridTemplateRows="repeat(9, auto)"
-          gridGap={75}
+          gap={8}
           gridTemplateAreas={`"Lang Lib Arch"
             "Lang Lib Arch"
             "Lang Lib Arch"
