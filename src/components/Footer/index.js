@@ -1,27 +1,22 @@
-import { Box, Grid, Hidden, Typography } from '@material-ui/core'
-import { makeStyles } from '@material-ui/styles'
+import { Box, Grid, Hidden, Typography, useTheme } from '@material-ui/core'
 
 import ToggleLang from 'components/ToggleLang'
 import ToggleTheme from 'components/ToggleTheme'
 
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    backgroundColor:
-      theme.palette.mode === 'light'
-        ? theme.palette.grey[200]
-        : theme.palette.grey[800]
-  }
-}))
-
 const Footer = () => {
-  const classes = useStyles()
+  const theme = useTheme()
 
   return (
     <Box
       component="footer"
       marginTop="auto"
       padding={3}
-      className={classes.footer}
+      sx={{
+        bgcolor:
+          theme.palette.mode === 'light'
+            ? theme.palette.grey[200]
+            : theme.palette.grey[800]
+      }}
     >
       <Grid item xs={12}>
         <Grid container justifyContent="space-between" alignItems="center">

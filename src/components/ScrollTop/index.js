@@ -1,20 +1,16 @@
-import { Fab, useScrollTrigger, Zoom } from '@material-ui/core'
-import { makeStyles } from '@material-ui/styles'
+import {
+  Fab,
+  useScrollTrigger,
+  Zoom,
+  useMediaQuery,
+  useTheme,
+  Box
+} from '@material-ui/core'
 import { KeyboardArrowUp } from '@material-ui/icons'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    position: 'fixed',
-    bottom: theme.spacing(6),
-    [theme.breakpoints.up(800 + theme.spacing(3) * 2)]: {
-      bottom: theme.spacing(10)
-    },
-    right: theme.spacing(2)
-  }
-}))
-
 const ScrollTop = () => {
-  const classes = useStyles()
+  const theme = useTheme()
+  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm')) ? 10 : 6
   const trigger = useScrollTrigger()
 
   const handleClick = (event) => {
@@ -29,11 +25,19 @@ const ScrollTop = () => {
 
   return (
     <Zoom in={trigger}>
-      <div onClick={handleClick} role="presentation" className={classes.root}>
+      <Box
+        onClick={handleClick}
+        role="presentation"
+        sx={{
+          position: 'fixed',
+          bottom: theme.spacing(spacing),
+          right: theme.spacing(2)
+        }}
+      >
         <Fab color="secondary" size="small" aria-label="scroll back to top">
           <KeyboardArrowUp />
         </Fab>
-      </div>
+      </Box>
     </Zoom>
   )
 }

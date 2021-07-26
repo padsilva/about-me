@@ -5,27 +5,16 @@ import {
   Grid,
   Hidden,
   Toolbar,
-  Typography
+  Typography,
+  useTheme
 } from '@material-ui/core'
-import { makeStyles } from '@material-ui/styles'
 import { useIntl } from 'react-intl'
 
 import Menu from 'components/Menu'
 
-import { useDarkMode } from 'hooks/darkMode'
-
-const useStyles = makeStyles((theme) => ({
-  active: {
-    color:
-      theme.palette.mode === 'light'
-        ? theme.palette.primary.dark
-        : theme.palette.primary.main
-  }
-}))
-
 const TopBar = () => {
-  const classes = useStyles()
-  const { darkMode } = useDarkMode()
+  const theme = useTheme()
+  const darkMode = theme.palette.mode === 'dark'
   const { pathname } = useRouter()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
@@ -55,7 +44,11 @@ const TopBar = () => {
                   component="h5"
                   variant="subtitle2"
                   display="inline"
-                  className={classes.active}
+                  sx={{
+                    color: darkMode
+                      ? theme.palette.primary.main
+                      : theme.palette.primary.dark
+                  }}
                 >
                   {breadCrumb()}
                 </Typography>

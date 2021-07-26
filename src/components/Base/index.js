@@ -1,29 +1,25 @@
 import PropTypes from 'prop-types'
-import { Box } from '@material-ui/core'
-import { makeStyles } from '@material-ui/styles'
+import { Box, useMediaQuery, useTheme } from '@material-ui/core'
 
 import Footer from 'components/Footer'
 import TopBar from 'components/TopBar'
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(3),
-    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      marginTop: theme.spacing(6),
-      marginBottom: theme.spacing(6)
-    }
-  }
-}))
-
 const Base = ({ children }) => {
-  const classes = useStyles()
+  const theme = useTheme()
+  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm')) ? 6 : 3
 
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh">
       <TopBar />
 
-      <Box className={classes.container}>{children}</Box>
+      <Box
+        sx={{
+          mt: theme.spacing(spacing),
+          mb: theme.spacing(spacing)
+        }}
+      >
+        {children}
+      </Box>
 
       <Footer />
     </Box>

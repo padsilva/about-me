@@ -1,21 +1,18 @@
-import { CardActions, Grid, IconButton } from '@material-ui/core'
-import { makeStyles } from '@material-ui/styles'
+import { CardActions, Grid, IconButton, useTheme } from '@material-ui/core'
 import { Email, GitHub, LinkedIn, Twitter } from '@material-ui/icons'
 
-const useStyles = makeStyles((theme) => ({
-  actions: {
-    backgroundColor:
-      theme.palette.mode === 'light'
-        ? theme.palette.primary.light
-        : theme.palette.primary.dark
-  }
-}))
-
 const SocialLinks = () => {
-  const classes = useStyles()
+  const theme = useTheme()
 
   return (
-    <CardActions className={classes.actions}>
+    <CardActions
+      sx={{
+        bgcolor:
+          theme.palette.mode === 'light'
+            ? theme.palette.primary.light
+            : theme.palette.primary.dark
+      }}
+    >
       <Grid container justifyContent="space-evenly">
         <Grid item>
           <IconButton

@@ -1,21 +1,28 @@
 import PropTypes from 'prop-types'
-import { Tooltip, Typography } from '@material-ui/core'
+import { Box, Tooltip, Typography, useTheme } from '@material-ui/core'
 
-const LevelTooltip = ({ text, label }) => (
-  <Tooltip
-    disableFocusListener
-    enterTouchDelay={0}
-    placement="right-start"
-    title={
-      <Typography
-        variant="subtitle2"
-        dangerouslySetInnerHTML={{ __html: text }}
-      />
-    }
-  >
-    <a style={{ borderBottom: '1px dotted black' }}>{label}</a>
-  </Tooltip>
-)
+const LevelTooltip = ({ text, label }) => {
+  const theme = useTheme()
+  const color = theme.palette.mode === 'dark' ? 'black' : 'white'
+
+  return (
+    <Tooltip
+      disableFocusListener
+      enterTouchDelay={0}
+      placement="right-start"
+      title={
+        <Typography
+          variant="subtitle2"
+          dangerouslySetInnerHTML={{ __html: text }}
+        />
+      }
+    >
+      <Box component="a" sx={{ borderBottom: `1px dotted ${color}` }}>
+        {label}
+      </Box>
+    </Tooltip>
+  )
+}
 
 LevelTooltip.propTypes = {
   text: PropTypes.string.isRequired,

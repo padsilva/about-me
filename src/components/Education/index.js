@@ -1,31 +1,24 @@
 import React from 'react'
 import { useIntl } from 'react-intl'
-import Timeline from '@material-ui/lab/Timeline'
-import TimelineItem from '@material-ui/lab/TimelineItem'
-import TimelineSeparator from '@material-ui/lab/TimelineSeparator'
-import TimelineConnector from '@material-ui/lab/TimelineConnector'
-import TimelineContent from '@material-ui/lab/TimelineContent'
-import TimelineDot from '@material-ui/lab/TimelineDot'
 import {
   Card,
   CardContent,
   Container,
   Hidden,
-  Typography
+  Link,
+  Typography,
+  useMediaQuery,
+  useTheme
 } from '@material-ui/core'
-import { makeStyles } from '@material-ui/styles'
-import { TimelineOppositeContent } from '@material-ui/lab'
-import Link from '@material-ui/core/Link'
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    padding: '6px 16px',
-    marginBottom: theme.spacing(2),
-    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      marginBottom: theme.spacing(4)
-    }
-  }
-}))
+import {
+  Timeline,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
+  TimelineItem,
+  TimelineOppositeContent,
+  TimelineSeparator
+} from '@material-ui/lab'
 
 const educations = [
   {
@@ -49,9 +42,14 @@ const educations = [
 ]
 
 const Experience = () => {
-  const classes = useStyles()
+  const theme = useTheme()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
+  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm')) ? 4 : 2
+  const paper = {
+    p: `${theme.spacing(1)} ${theme.spacing(2)}`,
+    mb: theme.spacing(spacing)
+  }
 
   return (
     <>
@@ -67,7 +65,7 @@ const Experience = () => {
                     <TimelineConnector />
                   </TimelineSeparator>
                   <TimelineContent>
-                    <Card raised className={classes.paper}>
+                    <Card raised sx={paper}>
                       <Typography variant="h5">
                         <Link href={grade.link} target="_blank" rel="noopener">
                           {f(grade.name)}
@@ -90,7 +88,7 @@ const Experience = () => {
         <Container component="main" maxWidth="sm">
           {educations.map(
             ({ date, grade, institution, description }, index) => (
-              <Card key={`education-${index}`} raised className={classes.paper}>
+              <Card key={`education-${index}`} raised sx={paper}>
                 <CardContent>
                   <Typography variant="subtitle1" color="textSecondary">
                     {f(date)}

@@ -1,30 +1,27 @@
 import { useRouter } from 'next/router'
-import { makeStyles } from '@material-ui/styles'
-import { ToggleButton, ToggleButtonGroup } from '@material-ui/core'
+import { ToggleButton, ToggleButtonGroup, useTheme } from '@material-ui/core'
 
-const useStyles = makeStyles((theme) => ({
-  button: {
+const ToggleLang = () => {
+  const { locale, pathname, push } = useRouter()
+  const theme = useTheme()
+  const button = {
     color:
       theme.palette.mode === 'light'
         ? theme.palette.primary.dark
         : theme.palette.primary.main
-  },
-  selected: {
+  }
+  const selected = {
     cursor: 'default',
     pointerEvents: 'none'
   }
-}))
 
-const ToggleLang = () => {
-  const { locale, pathname, push } = useRouter()
-  const classes = useStyles()
-
-  const handleChange = (event, newLocale) =>
+  const handleChange = (_, newLocale) =>
     push(pathname, pathname, { locale: newLocale })
 
   return (
     <ToggleButtonGroup
       value={locale}
+      sx={{ color: 'grey' }}
       exclusive
       aria-label="language"
       size="small"
@@ -33,7 +30,7 @@ const ToggleLang = () => {
       <ToggleButton
         value="en"
         aria-label="english"
-        className={locale === 'en' ? classes.selected : classes.button}
+        sx={locale === 'en' ? selected : button}
         disabled={locale === 'en'}
       >
         ENG
@@ -41,7 +38,7 @@ const ToggleLang = () => {
       <ToggleButton
         value="pt"
         aria-label="portuguese"
-        className={locale === 'pt' ? classes.selected : classes.button}
+        sx={locale === 'pt' ? selected : button}
         disabled={locale === 'pt'}
       >
         POR

@@ -5,21 +5,14 @@ import {
   CardContent,
   Container,
   Grid,
-  Typography
+  Typography,
+  useTheme
 } from '@material-ui/core'
-import { makeStyles } from '@material-ui/styles'
 
 import SocialLinks from 'components/SocialLinks'
 
-const useStyles = makeStyles((theme) => ({
-  large: {
-    width: theme.spacing(26),
-    height: theme.spacing(26)
-  }
-}))
-
 const Home = () => {
-  const classes = useStyles()
+  const theme = useTheme()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
 
@@ -41,7 +34,7 @@ const Home = () => {
                 <Avatar
                   alt="Paulo Silva"
                   src="/img/profile.jpg"
-                  className={classes.large}
+                  sx={{ width: theme.spacing(26), height: theme.spacing(26) }}
                 />
               </Grid>
               <Grid

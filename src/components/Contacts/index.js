@@ -11,9 +11,10 @@ import {
   FormHelperText,
   Grid,
   IconButton,
-  TextField
+  TextField,
+  useMediaQuery,
+  useTheme
 } from '@material-ui/core'
-import { makeStyles } from '@material-ui/styles'
 import { Alert } from '@material-ui/lab'
 import { Close } from '@material-ui/icons'
 
@@ -21,22 +22,14 @@ import SocialLinks from 'components/SocialLinks'
 import { sendEmailValidate } from 'utils/formValidations'
 import { useDarkMode } from 'hooks/darkMode'
 
-const useStyles = makeStyles((theme) => ({
-  content: {
-    padding: theme.spacing(2),
-    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      padding: theme.spacing(3)
-    }
-  }
-}))
-
 const Contacts = () => {
+  const theme = useTheme()
   const { locale } = useRouter()
-  const classes = useStyles()
   const recaptchaRef = useRef(null)
   const { darkMode } = useDarkMode()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
+  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm')) ? 3 : 2
 
   const [key, setKey] = useState(0)
   const [status, setStatus] = useState({
@@ -140,7 +133,11 @@ const Contacts = () => {
         onSubmit={handleOnSubmit}
         raised
       >
-        <CardContent className={classes.content}>
+        <CardContent
+          sx={{
+            p: theme.spacing(spacing)
+          }}
+        >
           <Grid container spacing={2} item>
             <Grid item xs={12} sm={6}>
               <TextField

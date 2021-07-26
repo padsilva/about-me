@@ -1,13 +1,14 @@
 import React from 'react'
 import { useIntl } from 'react-intl'
-import { makeStyles } from '@material-ui/styles'
 import {
   Card,
   CardContent,
   Container,
   Hidden,
   Link,
-  Typography
+  Typography,
+  useMediaQuery,
+  useTheme
 } from '@material-ui/core'
 import {
   Timeline,
@@ -18,16 +19,6 @@ import {
   TimelineOppositeContent,
   TimelineSeparator
 } from '@material-ui/lab'
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    padding: '6px 16px',
-    marginBottom: theme.spacing(2),
-    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      marginBottom: theme.spacing(4)
-    }
-  }
-}))
 
 const jobs = [
   {
@@ -60,9 +51,14 @@ const jobs = [
 ]
 
 const Experience = () => {
-  const classes = useStyles()
+  const theme = useTheme()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
+  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm')) ? 4 : 2
+  const paper = {
+    p: `${theme.spacing(1)} ${theme.spacing(2)}`,
+    mb: theme.spacing(spacing)
+  }
 
   return (
     <>
@@ -77,7 +73,7 @@ const Experience = () => {
                   <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
-                  <Card raised className={classes.paper}>
+                  <Card raised sx={paper}>
                     <Typography variant="h5">
                       <Link
                         href={institution.link}
@@ -102,7 +98,7 @@ const Experience = () => {
       <Hidden mdUp>
         <Container component="main" maxWidth="sm">
           {jobs.map(({ date, position, institution, description }, index) => (
-            <Card key={`job-${index}`} raised className={classes.paper}>
+            <Card key={`job-${index}`} raised sx={paper}>
               <CardContent>
                 <Typography variant="subtitle1" color="textSecondary">
                   {f(date)}

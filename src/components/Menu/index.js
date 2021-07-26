@@ -10,7 +10,6 @@ import {
   ListItem,
   Typography
 } from '@material-ui/core'
-import { makeStyles } from '@material-ui/styles'
 import MenuIcon from '@material-ui/icons/Menu'
 
 import InternalLink from 'components/InternalLink'
@@ -18,14 +17,7 @@ import data from 'components/Menu/data'
 import ToggleTheme from 'components/ToggleTheme'
 import ToggleLang from 'components/ToggleLang'
 
-const useStyles = makeStyles(() => ({
-  drawerPaper: {
-    width: 190
-  }
-}))
-
 const Menu = () => {
-  const classes = useStyles()
   const [open, setOpen] = useState(false)
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
@@ -57,9 +49,7 @@ const Menu = () => {
           anchor="right"
           open={open}
           onClose={() => setOpen(false)}
-          classes={{
-            paper: classes.drawerPaper
-          }}
+          sx={{ width: 190 }}
         >
           <List>
             {data.map((menu) => (
