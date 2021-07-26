@@ -29,7 +29,9 @@ const Contacts = () => {
   const { darkMode } = useDarkMode()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
-  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm')) ? 3 : 2
+  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm'))
+    ? theme.spacing(3)
+    : theme.spacing(2)
 
   const [key, setKey] = useState(0)
   const [status, setStatus] = useState({
@@ -135,7 +137,7 @@ const Contacts = () => {
       >
         <CardContent
           sx={{
-            p: theme.spacing(spacing)
+            p: spacing
           }}
         >
           <Grid container spacing={2} item>

@@ -6,7 +6,9 @@ import TopBar from 'components/TopBar'
 
 const Base = ({ children }) => {
   const theme = useTheme()
-  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm')) ? 6 : 3
+  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm'))
+    ? theme.spacing(6)
+    : theme.spacing(3)
 
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh">
@@ -14,8 +16,8 @@ const Base = ({ children }) => {
 
       <Box
         sx={{
-          mt: theme.spacing(spacing),
-          mb: theme.spacing(spacing)
+          mt: spacing,
+          mb: spacing
         }}
       >
         {children}

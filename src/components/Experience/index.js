@@ -1,4 +1,3 @@
-import React from 'react'
 import { useIntl } from 'react-intl'
 import {
   Card,
@@ -54,10 +53,12 @@ const Experience = () => {
   const theme = useTheme()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
-  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm')) ? 4 : 2
+  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm'))
+    ? theme.spacing(4)
+    : theme.spacing(2)
   const paper = {
     p: `${theme.spacing(1)} ${theme.spacing(2)}`,
-    mb: theme.spacing(spacing)
+    mb: spacing
   }
 
   return (

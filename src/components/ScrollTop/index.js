@@ -10,7 +10,9 @@ import { KeyboardArrowUp } from '@material-ui/icons'
 
 const ScrollTop = () => {
   const theme = useTheme()
-  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm')) ? 10 : 6
+  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm'))
+    ? theme.spacing(10)
+    : theme.spacing(6)
   const trigger = useScrollTrigger()
 
   const handleClick = (event) => {
@@ -30,7 +32,7 @@ const ScrollTop = () => {
         role="presentation"
         sx={{
           position: 'fixed',
-          bottom: theme.spacing(spacing),
+          bottom: spacing,
           right: theme.spacing(2)
         }}
       >
