@@ -14,9 +14,9 @@ import {
   GridListTileBar,
   IconButton,
   Link,
-  makeStyles,
   Typography
 } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 import { Close, Info } from '@material-ui/icons'
 
 import data from './data'

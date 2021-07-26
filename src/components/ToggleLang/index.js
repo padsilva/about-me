@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router'
-import { makeStyles } from '@material-ui/core'
-import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab'
+import { makeStyles } from '@material-ui/styles'
+import { ToggleButton, ToggleButtonGroup } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   button: {
     color:
-      theme.palette.type === 'light'
+      theme.palette.mode === 'light'
         ? theme.palette.primary.dark
         : theme.palette.primary.main
   },

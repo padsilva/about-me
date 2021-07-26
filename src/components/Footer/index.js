@@ -1,4 +1,5 @@
-import { Box, Grid, Hidden, makeStyles, Typography } from '@material-ui/core'
+import { Box, Grid, Hidden, Typography } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 
 import ToggleLang from 'components/ToggleLang'
 import ToggleTheme from 'components/ToggleTheme'
@@ -6,7 +7,7 @@ import ToggleTheme from 'components/ToggleTheme'
 const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor:
-      theme.palette.type === 'light'
+      theme.palette.mode === 'light'
         ? theme.palette.grey[200]
         : theme.palette.grey[800]
   }

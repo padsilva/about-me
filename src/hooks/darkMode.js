@@ -1,6 +1,6 @@
-import { ThemeProvider } from '@material-ui/styles'
 import PropTypes from 'prop-types'
 import { createContext, useContext, useEffect, useState } from 'react'
+import { ThemeProvider } from '@material-ui/core/styles'
 
 import { getStorageItem, setStorageItem } from 'utils/localStorage'
 import { darkTheme, lightTheme } from 'styles/theme'

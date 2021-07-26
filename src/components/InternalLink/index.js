@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { makeStyles } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 
 const useStyles = makeStyles((theme) => ({
   link: {
@@ -9,14 +9,14 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
     '&:hover': {
       color:
-        theme.palette.type === 'light'
+        theme.palette.mode === 'light'
           ? theme.palette.primary.dark
           : theme.palette.primary.main
     }
   },
   active: {
     color:
-      theme.palette.type === 'light'
+      theme.palette.mode === 'light'
         ? theme.palette.primary.dark
         : theme.palette.primary.main,
     textDecoration: 'none'

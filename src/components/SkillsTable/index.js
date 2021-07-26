@@ -8,16 +8,16 @@ import {
   TableCell,
   TableContainer,
   TableHead,
-  TableRow,
-  withStyles
+  TableRow
 } from '@material-ui/core'
+import { withStyles } from '@material-ui/styles'
 
 import LevelTooltip from 'components/LevelTooltip'
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.primary.dark,
-    color: theme.palette.common.white
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.common.black
   }
 }))(TableCell)
 

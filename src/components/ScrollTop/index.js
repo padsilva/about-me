@@ -1,4 +1,5 @@
-import { Fab, makeStyles, useScrollTrigger, Zoom } from '@material-ui/core'
+import { Fab, useScrollTrigger, Zoom } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 import { KeyboardArrowUp } from '@material-ui/icons'
 
 const useStyles = makeStyles((theme) => ({

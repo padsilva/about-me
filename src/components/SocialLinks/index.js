@@ -1,9 +1,13 @@
-import { CardActions, Grid, IconButton, makeStyles } from '@material-ui/core'
+import { CardActions, Grid, IconButton } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 import { Email, GitHub, LinkedIn, Twitter } from '@material-ui/icons'
 
 const useStyles = makeStyles((theme) => ({
   actions: {
-    backgroundColor: theme.palette.primary[theme.palette.type]
+    backgroundColor:
+      theme.palette.mode === 'light'
+        ? theme.palette.primary.light
+        : theme.palette.primary.dark
   }
 }))
 

@@ -1,21 +1,23 @@
 import React from 'react'
 import { useIntl } from 'react-intl'
-import { makeStyles } from '@material-ui/core/styles'
-import Timeline from '@material-ui/lab/Timeline'
-import TimelineItem from '@material-ui/lab/TimelineItem'
-import TimelineSeparator from '@material-ui/lab/TimelineSeparator'
-import TimelineConnector from '@material-ui/lab/TimelineConnector'
-import TimelineContent from '@material-ui/lab/TimelineContent'
-import TimelineDot from '@material-ui/lab/TimelineDot'
+import { makeStyles } from '@material-ui/styles'
 import {
   Card,
   CardContent,
   Container,
   Hidden,
+  Link,
   Typography
 } from '@material-ui/core'
-import { TimelineOppositeContent } from '@material-ui/lab'
-import Link from '@material-ui/core/Link'
+import {
+  Timeline,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
+  TimelineItem,
+  TimelineOppositeContent,
+  TimelineSeparator
+} from '@material-ui/lab'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -66,7 +68,7 @@ const Experience = () => {
     <>
       <Hidden smDown>
         <Container component="main" maxWidth="lg">
-          <Timeline align="alternate">
+          <Timeline position="alternate">
             {jobs.map(({ date, institution, position, description }, index) => (
               <TimelineItem key={`job-${index}`}>
                 <TimelineOppositeContent>{f(date)}</TimelineOppositeContent>

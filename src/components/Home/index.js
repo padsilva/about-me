@@ -5,26 +5,16 @@ import {
   CardContent,
   Container,
   Grid,
-  makeStyles,
   Typography
 } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 
 import SocialLinks from 'components/SocialLinks'
 
 const useStyles = makeStyles((theme) => ({
-  actions: {
-    backgroundColor: theme.palette.primary.light
-  },
   large: {
     width: theme.spacing(26),
     height: theme.spacing(26)
-  },
-  paper: {
-    padding: '6px 16px',
-    marginBottom: theme.spacing(2),
-    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      marginBottom: theme.spacing(4)
-    }
   }
 }))
 

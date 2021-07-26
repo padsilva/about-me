@@ -8,9 +8,9 @@ import {
   IconButton,
   List,
   ListItem,
-  makeStyles,
   Typography
 } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 import MenuIcon from '@material-ui/icons/Menu'
 
 import InternalLink from 'components/InternalLink'

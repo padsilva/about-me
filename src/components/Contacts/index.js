@@ -11,9 +11,9 @@ import {
   FormHelperText,
   Grid,
   IconButton,
-  makeStyles,
   TextField
 } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 import { Alert } from '@material-ui/lab'
 import { Close } from '@material-ui/icons'
 

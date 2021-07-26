@@ -1,6 +1,5 @@
 import React from 'react'
 import { useIntl } from 'react-intl'
-import { makeStyles } from '@material-ui/core/styles'
 import Timeline from '@material-ui/lab/Timeline'
 import TimelineItem from '@material-ui/lab/TimelineItem'
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator'
@@ -14,6 +13,7 @@ import {
   Hidden,
   Typography
 } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 import { TimelineOppositeContent } from '@material-ui/lab'
 import Link from '@material-ui/core/Link'
 
@@ -57,7 +57,7 @@ const Experience = () => {
     <>
       <Hidden smDown>
         <Container component="main" maxWidth="lg">
-          <Timeline align="alternate">
+          <Timeline position="alternate">
             {educations.map(
               ({ date, grade, institution, description }, index) => (
                 <TimelineItem key={`education-${index}`}>

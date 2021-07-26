@@ -13,7 +13,7 @@ const LevelTooltip = ({ text, label }) => (
       />
     }
   >
-    <a style={{ borderBottom: '1px dotted white' }}>{label}</a>
+    <a style={{ borderBottom: '1px dotted black' }}>{label}</a>
   </Tooltip>
 )
 

@@ -5,17 +5,19 @@ import {
   Grid,
   Hidden,
   Toolbar,
-  Typography,
-  makeStyles
+  Typography
 } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 import { useIntl } from 'react-intl'
 
 import Menu from 'components/Menu'
 
+import { useDarkMode } from 'hooks/darkMode'
+
 const useStyles = makeStyles((theme) => ({
   active: {
     color:
-      theme.palette.type === 'light'
+      theme.palette.mode === 'light'
         ? theme.palette.primary.dark
         : theme.palette.primary.main
   }
@@ -23,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 const TopBar = () => {
   const classes = useStyles()
+  const { darkMode } = useDarkMode()
   const { pathname } = useRouter()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
@@ -31,7 +34,11 @@ const TopBar = () => {
 
   return (
     <>
-      <AppBar position="fixed" color="default">
+      <AppBar
+        position="fixed"
+        color={darkMode ? 'grey' : 'default'}
+        enableColorOnDark
+      >
         <Toolbar>
           <Grid
             container

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
-import { Box, makeStyles } from '@material-ui/core'
+import { Box } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 
 import Footer from 'components/Footer'
 import TopBar from 'components/TopBar'
