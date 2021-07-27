@@ -20,12 +20,12 @@ const Home = () => {
     <Container component="main" maxWidth="md">
       <Card raised>
         <CardContent>
-          <Grid container spacing={2}>
+          <Grid container spacing={4} justifyContent="space-around">
             <Grid
               container
               spacing={2}
               item
-              sm={5}
+              sm={4}
               direction="column"
               justifyContent="space-evenly"
               alignItems="center"
@@ -71,7 +71,6 @@ const Home = () => {
             </Grid>
             <Grid
               container
-              spacing={2}
               item
               sm={7}
               direction="column"

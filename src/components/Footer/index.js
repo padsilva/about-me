@@ -1,10 +1,17 @@
-import { Box, Grid, Hidden, Typography, useTheme } from '@material-ui/core'
+import {
+  Box,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme
+} from '@material-ui/core'
 
 import ToggleLang from 'components/ToggleLang'
 import ToggleTheme from 'components/ToggleTheme'
 
 const Footer = () => {
   const theme = useTheme()
+  const mdDown = useMediaQuery((theme) => theme.breakpoints.down('md'))
 
   return (
     <Box
@@ -21,11 +28,11 @@ const Footer = () => {
       <Grid item xs={12}>
         <Grid container justifyContent="space-between" alignItems="center">
           <Grid item container justifyContent="flex-start" sm={3}>
-            <Hidden smDown>
+            {mdDown ? null : (
               <Grid item>
                 <ToggleTheme />
               </Grid>
-            </Hidden>
+            )}
           </Grid>
           <Grid item xs={12} sm>
             <Typography variant="body2" align="center">
@@ -33,9 +40,7 @@ const Footer = () => {
             </Typography>
           </Grid>
           <Grid item container justifyContent="flex-end" sm={3}>
-            <Hidden smDown>
-              <ToggleLang />
-            </Hidden>
+            {mdDown ? null : <ToggleLang />}
           </Grid>
         </Grid>
       </Grid>

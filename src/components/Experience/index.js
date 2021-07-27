@@ -3,7 +3,6 @@ import {
   Card,
   CardContent,
   Container,
-  Hidden,
   Link,
   Typography,
   useMediaQuery,
@@ -53,57 +52,24 @@ const Experience = () => {
   const theme = useTheme()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
-  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm'))
-    ? theme.spacing(4)
-    : theme.spacing(2)
+  const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'))
   const paper = {
     p: `${theme.spacing(1)} ${theme.spacing(2)}`,
-    mb: spacing
+    mb: mdUp ? theme.spacing(4) : theme.spacing(2)
   }
 
-  return (
-    <>
-      <Hidden smDown>
-        <Container component="main" maxWidth="lg">
-          <Timeline position="alternate">
-            {jobs.map(({ date, institution, position, description }, index) => (
-              <TimelineItem key={`job-${index}`}>
-                <TimelineOppositeContent>{f(date)}</TimelineOppositeContent>
-                <TimelineSeparator>
-                  <TimelineDot />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent>
-                  <Card raised sx={paper}>
-                    <Typography variant="h5">
-                      <Link
-                        href={institution.link}
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        {f(institution.name)}
-                      </Link>
-                    </Typography>
-                    <Typography variant="h6">{f(position)}</Typography>
-                    <Typography
-                      align="justify"
-                      dangerouslySetInnerHTML={{ __html: f(description) }}
-                    />
-                  </Card>
-                </TimelineContent>
-              </TimelineItem>
-            ))}
-          </Timeline>
-        </Container>
-      </Hidden>
-      <Hidden mdUp>
-        <Container component="main" maxWidth="sm">
-          {jobs.map(({ date, position, institution, description }, index) => (
-            <Card key={`job-${index}`} raised sx={paper}>
-              <CardContent>
-                <Typography variant="subtitle1" color="textSecondary">
-                  {f(date)}
-                </Typography>
+  return mdUp ? (
+    <Container component="main" maxWidth="lg">
+      <Timeline position="alternate">
+        {jobs.map(({ date, institution, position, description }, index) => (
+          <TimelineItem key={`job-${index}`}>
+            <TimelineOppositeContent>{f(date)}</TimelineOppositeContent>
+            <TimelineSeparator>
+              <TimelineDot />
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent>
+              <Card raised sx={paper}>
                 <Typography variant="h5">
                   <Link href={institution.link} target="_blank" rel="noopener">
                     {f(institution.name)}
@@ -114,12 +80,34 @@ const Experience = () => {
                   align="justify"
                   dangerouslySetInnerHTML={{ __html: f(description) }}
                 />
-              </CardContent>
-            </Card>
-          ))}
-        </Container>
-      </Hidden>
-    </>
+              </Card>
+            </TimelineContent>
+          </TimelineItem>
+        ))}
+      </Timeline>
+    </Container>
+  ) : (
+    <Container component="main" maxWidth="sm">
+      {jobs.map(({ date, position, institution, description }, index) => (
+        <Card key={`job-${index}`} raised sx={paper}>
+          <CardContent>
+            <Typography variant="subtitle1" color="textSecondary">
+              {f(date)}
+            </Typography>
+            <Typography variant="h5">
+              <Link href={institution.link} target="_blank" rel="noopener">
+                {f(institution.name)}
+              </Link>
+            </Typography>
+            <Typography variant="h6">{f(position)}</Typography>
+            <Typography
+              align="justify"
+              dangerouslySetInnerHTML={{ __html: f(description) }}
+            />
+          </CardContent>
+        </Card>
+      ))}
+    </Container>
   )
 }
 

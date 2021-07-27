@@ -3,7 +3,6 @@ import {
   Card,
   CardContent,
   Container,
-  Hidden,
   Link,
   Typography,
   useMediaQuery,
@@ -44,73 +43,63 @@ const Experience = () => {
   const theme = useTheme()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
-  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm'))
-    ? theme.spacing(4)
-    : theme.spacing(2)
+  const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'))
+
   const paper = {
     p: `${theme.spacing(1)} ${theme.spacing(2)}`,
-    mb: spacing
+    mb: mdUp ? theme.spacing(4) : theme.spacing(2)
   }
 
-  return (
-    <>
-      <Hidden smDown>
-        <Container component="main" maxWidth="lg">
-          <Timeline position="alternate">
-            {educations.map(
-              ({ date, grade, institution, description }, index) => (
-                <TimelineItem key={`education-${index}`}>
-                  <TimelineOppositeContent>{f(date)}</TimelineOppositeContent>
-                  <TimelineSeparator>
-                    <TimelineDot />
-                    <TimelineConnector />
-                  </TimelineSeparator>
-                  <TimelineContent>
-                    <Card raised sx={paper}>
-                      <Typography variant="h5">
-                        <Link href={grade.link} target="_blank" rel="noopener">
-                          {f(grade.name)}
-                        </Link>
-                      </Typography>
-                      <Typography variant="h6">{f(institution)}</Typography>
-                      <Typography
-                        align="justify"
-                        dangerouslySetInnerHTML={{ __html: f(description) }}
-                      />
-                    </Card>
-                  </TimelineContent>
-                </TimelineItem>
-              )
-            )}
-          </Timeline>
-        </Container>
-      </Hidden>
-      <Hidden mdUp>
-        <Container component="main" maxWidth="sm">
-          {educations.map(
-            ({ date, grade, institution, description }, index) => (
-              <Card key={`education-${index}`} raised sx={paper}>
-                <CardContent>
-                  <Typography variant="subtitle1" color="textSecondary">
-                    {f(date)}
-                  </Typography>
-                  <Typography variant="h5">
-                    <Link href={grade.link} target="_blank" rel="noopener">
-                      {f(grade.name)}
-                    </Link>
-                  </Typography>
-                  <Typography variant="h6">{f(institution)}</Typography>
-                  <Typography
-                    align="justify"
-                    dangerouslySetInnerHTML={{ __html: f(description) }}
-                  />
-                </CardContent>
+  return mdUp ? (
+    <Container component="main" maxWidth="lg">
+      <Timeline position="alternate">
+        {educations.map(({ date, grade, institution, description }, index) => (
+          <TimelineItem key={`education-${index}`}>
+            <TimelineOppositeContent>{f(date)}</TimelineOppositeContent>
+            <TimelineSeparator>
+              <TimelineDot />
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent>
+              <Card raised sx={paper}>
+                <Typography variant="h5">
+                  <Link href={grade.link} target="_blank" rel="noopener">
+                    {f(grade.name)}
+                  </Link>
+                </Typography>
+                <Typography variant="h6">{f(institution)}</Typography>
+                <Typography
+                  align="justify"
+                  dangerouslySetInnerHTML={{ __html: f(description) }}
+                />
               </Card>
-            )
-          )}
-        </Container>
-      </Hidden>
-    </>
+            </TimelineContent>
+          </TimelineItem>
+        ))}
+      </Timeline>
+    </Container>
+  ) : (
+    <Container component="main" maxWidth="sm">
+      {educations.map(({ date, grade, institution, description }, index) => (
+        <Card key={`education-${index}`} raised sx={paper}>
+          <CardContent>
+            <Typography variant="subtitle1" color="textSecondary">
+              {f(date)}
+            </Typography>
+            <Typography variant="h5">
+              <Link href={grade.link} target="_blank" rel="noopener">
+                {f(grade.name)}
+              </Link>
+            </Typography>
+            <Typography variant="h6">{f(institution)}</Typography>
+            <Typography
+              align="justify"
+              dangerouslySetInnerHTML={{ __html: f(description) }}
+            />
+          </CardContent>
+        </Card>
+      ))}
+    </Container>
   )
 }
 

@@ -3,9 +3,9 @@ import {
   AppBar,
   Box,
   Grid,
-  Hidden,
   Toolbar,
   Typography,
+  useMediaQuery,
   useTheme
 } from '@material-ui/core'
 import { useIntl } from 'react-intl'
@@ -18,6 +18,8 @@ const TopBar = () => {
   const { pathname } = useRouter()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
+  const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'))
+  const mdDown = useMediaQuery((theme) => theme.breakpoints.down('md'))
 
   const breadCrumb = () => ' / ' + f(pathname.replace('/', '') || 'home')
 
@@ -39,7 +41,13 @@ const TopBar = () => {
               <Typography variant="h4" display="inline">
                 Paulo Silva
               </Typography>
-              <Hidden mdUp>
+              {lgUp ? (
+                <Box ml={1} display="inline">
+                  <Typography variant="caption">{f('position')}</Typography>
+                </Box>
+              ) : null}
+
+              {mdDown ? (
                 <Typography
                   component="h5"
                   variant="subtitle2"
@@ -52,12 +60,7 @@ const TopBar = () => {
                 >
                   {breadCrumb()}
                 </Typography>
-              </Hidden>
-              <Hidden mdDown>
-                <Box ml={1} display="inline">
-                  <Typography variant="caption">{f('position')}</Typography>
-                </Box>
-              </Hidden>
+              ) : null}
             </Grid>
             <Grid
               container
