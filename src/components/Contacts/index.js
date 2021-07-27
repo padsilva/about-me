@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { useIntl } from 'react-intl'
 import ReCAPTCHA from 'react-google-recaptcha'
 import {
+  Alert,
   Button,
   Card,
   CardContent,
@@ -11,32 +12,24 @@ import {
   FormHelperText,
   Grid,
   IconButton,
-  makeStyles,
-  TextField
+  TextField,
+  useMediaQuery,
+  useTheme
 } from '@material-ui/core'
-import { Alert } from '@material-ui/lab'
 import { Close } from '@material-ui/icons'
 
 import SocialLinks from 'components/SocialLinks'
 import { sendEmailValidate } from 'utils/formValidations'
-import { useDarkMode } from 'hooks/darkMode'
-
-const useStyles = makeStyles((theme) => ({
-  content: {
-    padding: theme.spacing(2),
-    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      padding: theme.spacing(3)
-    }
-  }
-}))
 
 const Contacts = () => {
+  const theme = useTheme()
   const { locale } = useRouter()
-  const classes = useStyles()
   const recaptchaRef = useRef(null)
-  const { darkMode } = useDarkMode()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
+  const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm'))
+    ? theme.spacing(3)
+    : theme.spacing(2)
 
   const [key, setKey] = useState(0)
   const [status, setStatus] = useState({
@@ -55,8 +48,8 @@ const Contacts = () => {
   })
 
   useEffect(() => {
-    setKey(`${darkMode ? 'dark' : 'light'}_${locale}`)
-  }, [key, darkMode, locale])
+    setKey(`${theme.palette.mode}_${locale}`)
+  }, [key, locale, theme])
 
   const handleOnChange = (e) => {
     setInputs((prevStatus) => ({
@@ -140,7 +133,11 @@ const Contacts = () => {
         onSubmit={handleOnSubmit}
         raised
       >
-        <CardContent className={classes.content}>
+        <CardContent
+          sx={{
+            p: spacing
+          }}
+        >
           <Grid container spacing={2} item>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -148,6 +145,7 @@ const Contacts = () => {
                 name="firstName"
                 label={`${f('firstName')} *`}
                 fullWidth
+                variant="standard"
                 value={inputs.firstName}
                 onChange={handleOnChange}
                 error={!!status.fieldError.firstName}
@@ -162,6 +160,7 @@ const Contacts = () => {
                 name="lastName"
                 label={`${f('lastName')} *`}
                 fullWidth
+                variant="standard"
                 value={inputs.lastName}
                 onChange={handleOnChange}
                 error={!!status.fieldError.lastName}
@@ -176,6 +175,7 @@ const Contacts = () => {
                 name="email"
                 label="Email *"
                 fullWidth
+                variant="standard"
                 value={inputs.email}
                 onChange={handleOnChange}
                 error={!!status.fieldError.email}
@@ -190,6 +190,7 @@ const Contacts = () => {
                 name="subject"
                 label={`${f('subject')} *`}
                 fullWidth
+                variant="standard"
                 value={inputs.subject}
                 onChange={handleOnChange}
                 error={!!status.fieldError.subject}
@@ -206,7 +207,6 @@ const Contacts = () => {
                 multiline
                 rows={12}
                 fullWidth
-                variant="outlined"
                 value={inputs.message}
                 onChange={handleOnChange}
                 error={!!status.fieldError.message}
@@ -230,7 +230,7 @@ const Contacts = () => {
                     }))
                   }
                   hl={locale}
-                  theme={darkMode ? 'dark' : 'light'}
+                  theme={theme.palette.mode}
                   value={inputs.captcha}
                 />
               </Grid>

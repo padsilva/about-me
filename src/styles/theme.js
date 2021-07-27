@@ -1,56 +1,73 @@
 import { createTheme, responsiveFontSizes } from '@material-ui/core/styles'
 
-// Create a theme instance.
+const common = {
+  components: {
+    MuiLink: {
+      defaultProps: {
+        underline: 'hover'
+      }
+    },
+    MuiToggleButton: {
+      styleOverrides: {
+        root: {
+          '&.Mui-selected': {
+            color: 'grey'
+          }
+        }
+      }
+    }
+  }
+}
+
 export const darkTheme = responsiveFontSizes(
   createTheme({
+    ...common,
     palette: {
-      type: 'dark',
+      mode: 'dark',
       background: {
         paper: '#252525',
-        default: '#121212',
-        level2: '#333',
-        level1: '#212121'
+        default: '#121212'
       },
       primary: {
         main: '#90caf9',
-        light: 'rgb(166, 212, 250)',
-        dark: 'rgb(100, 141, 174)',
+        light: '#e3f2fd',
+        dark: '#42a5f5',
         contrastText: 'rgba(0, 0, 0, 0.87)'
       },
       secondary: {
         main: '#f48fb1',
-        light: 'rgb(246, 165, 192)',
-        dark: 'rgb(170, 100, 123)',
+        light: '#f3e5f5',
+        dark: '#ab47bc',
         contrastText: 'rgba(0, 0, 0, 0.87)'
       },
       error: {
-        main: '#f3564a'
+        main: '#f3564a',
+        light: '#e57373',
+        dark: '#d32f2f'
       }
     }
   })
 )
 
-// Create a theme instance.
 export const lightTheme = responsiveFontSizes(
   createTheme({
+    ...common,
     palette: {
-      type: 'light',
+      mode: 'light',
       background: {
         paper: '#fff',
-        default: '#fff',
-        level2: '#f5f5f5',
-        level1: '#fff'
+        default: '#fff'
       },
       primary: {
         main: '#1976d2',
-        light: 'rgb(71, 145, 219)',
-        dark: 'rgb(17, 82, 147)',
+        light: '#42a5f5',
+        dark: '#1565c0',
         contrastText: '#fff'
       },
       secondary: {
-        main: 'rgb(220, 0, 78)',
-        light: 'rgb(227, 51, 113)',
-        dark: 'rgb(154, 0, 54)',
+        main: '#9c27b0',
+        light: '#ba68c8',
+        dark: '#7b1fa2',
         contrastText: '#fff'
       },
       error: {

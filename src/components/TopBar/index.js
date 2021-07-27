@@ -3,35 +3,33 @@ import {
   AppBar,
   Box,
   Grid,
-  Hidden,
   Toolbar,
   Typography,
-  makeStyles
+  useMediaQuery,
+  useTheme
 } from '@material-ui/core'
 import { useIntl } from 'react-intl'
 
 import Menu from 'components/Menu'
 
-const useStyles = makeStyles((theme) => ({
-  active: {
-    color:
-      theme.palette.type === 'light'
-        ? theme.palette.primary.dark
-        : theme.palette.primary.main
-  }
-}))
-
 const TopBar = () => {
-  const classes = useStyles()
+  const theme = useTheme()
+  const darkMode = theme.palette.mode === 'dark'
   const { pathname } = useRouter()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
+  const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'))
+  const mdDown = useMediaQuery((theme) => theme.breakpoints.down('md'))
 
   const breadCrumb = () => ' / ' + f(pathname.replace('/', '') || 'home')
 
   return (
     <>
-      <AppBar position="fixed" color="default">
+      <AppBar
+        position="fixed"
+        color={darkMode ? 'grey' : 'default'}
+        enableColorOnDark
+      >
         <Toolbar>
           <Grid
             container
@@ -43,21 +41,26 @@ const TopBar = () => {
               <Typography variant="h4" display="inline">
                 Paulo Silva
               </Typography>
-              <Hidden mdUp>
+              {lgUp ? (
+                <Box ml={1} display="inline">
+                  <Typography variant="caption">{f('position')}</Typography>
+                </Box>
+              ) : null}
+
+              {mdDown ? (
                 <Typography
                   component="h5"
                   variant="subtitle2"
                   display="inline"
-                  className={classes.active}
+                  sx={{
+                    color: darkMode
+                      ? theme.palette.primary.main
+                      : theme.palette.primary.dark
+                  }}
                 >
                   {breadCrumb()}
                 </Typography>
-              </Hidden>
-              <Hidden mdDown>
-                <Box ml={1} display="inline">
-                  <Typography variant="caption">{f('position')}</Typography>
-                </Box>
-              </Hidden>
+              ) : null}
             </Grid>
             <Grid
               container

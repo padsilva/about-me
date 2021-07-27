@@ -9,36 +9,17 @@ import {
   DialogContentText,
   DialogTitle,
   Grid,
-  GridList,
-  GridListTile,
-  GridListTileBar,
   IconButton,
+  ImageList,
+  ImageListItem,
+  ImageListItemBar,
   Link,
-  makeStyles,
-  Typography
+  Typography,
+  useTheme
 } from '@material-ui/core'
 import { Close, Info } from '@material-ui/icons'
 
 import data from './data'
-
-const useStyles = makeStyles((theme) => ({
-  icon: {
-    color: 'white'
-  },
-  content: {
-    padding: theme.spacing(2)
-  },
-  title: {
-    margin: 0,
-    padding: theme.spacing(2)
-  },
-  closeButton: {
-    position: 'absolute',
-    right: theme.spacing(1),
-    top: theme.spacing(1),
-    color: theme.palette.grey[500]
-  }
-}))
 
 const initialStatus = {
   name: '',
@@ -49,7 +30,7 @@ const initialStatus = {
 }
 
 const Projects = () => {
-  const classes = useStyles()
+  const theme = useTheme()
   const [open, setOpen] = useState(false)
   const [info, setInfo] = useState(initialStatus)
   const { formatMessage } = useIntl()
@@ -66,9 +47,9 @@ const Projects = () => {
 
   return (
     <Container component="main" maxWidth="md">
-      <GridList cellHeight={200}>
+      <ImageList rowHeight={200}>
         {data.map((proj) => (
-          <GridListTile
+          <ImageListItem
             key={proj.name}
             cols={proj.featured ? 2 : 1}
             rows={proj.featured ? 2 : 1}
@@ -80,43 +61,51 @@ const Projects = () => {
               objectFit="cover"
               objectPosition="top"
             />
-            <GridListTileBar
+            <ImageListItemBar
               title={proj.title}
               actionIcon={
                 <IconButton
                   aria-label={`info about ${proj.title}`}
-                  className={classes.icon}
+                  sx={{ color: 'white' }}
                   onClick={() => handleClickOpen(proj)}
                 >
                   <Info />
                 </IconButton>
               }
             />
-          </GridListTile>
+          </ImageListItem>
         ))}
-      </GridList>
+      </ImageList>
       <Dialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
       >
         <DialogTitle
-          disableTypography
           id="customized-dialog-title"
-          className={classes.title}
+          sx={{
+            m: 0,
+            p: theme.spacing(2)
+          }}
+          component="span"
         >
           <Typography variant="h4" component="h2">
             {info.title}
           </Typography>
           <IconButton
             aria-label="close"
-            className={classes.closeButton}
+            sx={{
+              position: 'absolute',
+              right: theme.spacing(1),
+              top: theme.spacing(1),
+              color: theme.palette.grey[500]
+            }}
             onClick={handleClose}
           >
             <Close />
           </IconButton>
         </DialogTitle>
-        <DialogContent dividers className={classes.content}>
+        <DialogContent dividers sx={{ p: theme.spacing(2) }}>
           <Typography variant="h6" gutterBottom>
             {f('title.desc')}
           </Typography>
@@ -189,7 +178,7 @@ const Projects = () => {
         </DialogContent>
 
         {info.udemy && (
-          <DialogActions className={classes.content}>
+          <DialogActions sx={{ p: theme.spacing(2) }}>
             <DialogContentText variant="body2">
               {f('udemy')}
               <Link href={info.udemy.link} target="_blank" rel="noopener">

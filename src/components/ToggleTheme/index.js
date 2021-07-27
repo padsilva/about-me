@@ -1,16 +1,15 @@
-import { Grid, makeStyles, Switch } from '@material-ui/core'
+import { Grid, Switch, useTheme } from '@material-ui/core'
 import { Brightness3, Brightness5 } from '@material-ui/icons'
-import { useDarkMode } from 'hooks/darkMode'
 
-const useStyles = makeStyles(() => ({
-  iconActive: {
-    color: '#ffca28'
-  }
-}))
+import { useColorMode } from 'hooks/colorMode'
 
 const ToggleTheme = () => {
-  const { darkMode, toggleTheme } = useDarkMode()
-  const classes = useStyles()
+  const theme = useTheme()
+  const { toggleColorMode } = useColorMode()
+  const darkMode = theme.palette.mode === 'dark'
+  const iconActive = {
+    color: '#ffca28'
+  }
 
   return (
     <Grid
@@ -19,20 +18,15 @@ const ToggleTheme = () => {
       justifyContent="center"
       alignItems="center"
     >
-      <Brightness5
-        fontSize="small"
-        className={!darkMode ? classes.iconActive : null}
-      />
+      <Brightness5 fontSize="small" sx={!darkMode ? iconActive : null} />
       <Switch
+        color="secondary"
         size="small"
         checked={darkMode}
-        onChange={toggleTheme}
+        onClick={toggleColorMode}
         inputProps={{ 'aria-label': 'toggle theme' }}
       />
-      <Brightness3
-        fontSize="small"
-        className={darkMode ? classes.iconActive : null}
-      />
+      <Brightness3 fontSize="small" sx={darkMode ? iconActive : null} />
     </Grid>
   )
 }

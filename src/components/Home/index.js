@@ -5,31 +5,14 @@ import {
   CardContent,
   Container,
   Grid,
-  makeStyles,
-  Typography
+  Typography,
+  useTheme
 } from '@material-ui/core'
 
 import SocialLinks from 'components/SocialLinks'
 
-const useStyles = makeStyles((theme) => ({
-  actions: {
-    backgroundColor: theme.palette.primary.light
-  },
-  large: {
-    width: theme.spacing(26),
-    height: theme.spacing(26)
-  },
-  paper: {
-    padding: '6px 16px',
-    marginBottom: theme.spacing(2),
-    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      marginBottom: theme.spacing(4)
-    }
-  }
-}))
-
 const Home = () => {
-  const classes = useStyles()
+  const theme = useTheme()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
 
@@ -37,12 +20,12 @@ const Home = () => {
     <Container component="main" maxWidth="md">
       <Card raised>
         <CardContent>
-          <Grid container spacing={2}>
+          <Grid container spacing={4} justifyContent="space-around">
             <Grid
               container
               spacing={2}
               item
-              sm={5}
+              sm={4}
               direction="column"
               justifyContent="space-evenly"
               alignItems="center"
@@ -51,7 +34,7 @@ const Home = () => {
                 <Avatar
                   alt="Paulo Silva"
                   src="/img/profile.jpg"
-                  className={classes.large}
+                  sx={{ width: theme.spacing(26), height: theme.spacing(26) }}
                 />
               </Grid>
               <Grid
@@ -88,7 +71,6 @@ const Home = () => {
             </Grid>
             <Grid
               container
-              spacing={2}
               item
               sm={7}
               direction="column"

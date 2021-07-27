@@ -9,25 +9,54 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  withStyles
+  useTheme
 } from '@material-ui/core'
 
 import LevelTooltip from 'components/LevelTooltip'
 
-const StyledTableCell = withStyles((theme) => ({
-  head: {
-    backgroundColor: theme.palette.primary.dark,
-    color: theme.palette.common.white
-  }
-}))(TableCell)
+const StyledTableCell = ({ children, ...props }) => {
+  const theme = useTheme()
 
-const StyledTableRow = withStyles((theme) => ({
-  root: {
-    '&:nth-of-type(even)': {
-      backgroundColor: theme.palette.action.hover
-    }
-  }
-}))(TableRow)
+  return (
+    <TableCell
+      sx={{
+        backgroundColor: theme.palette.primary.main,
+        color:
+          theme.palette.mode === 'dark'
+            ? theme.palette.common.black
+            : theme.palette.common.white
+      }}
+      {...props}
+    >
+      {children}
+    </TableCell>
+  )
+}
+
+StyledTableCell.propTypes = {
+  children: PropTypes.node.isRequired
+}
+
+const StyledTableRow = ({ children, ...props }) => {
+  const theme = useTheme()
+
+  return (
+    <TableRow
+      sx={{
+        '&:nth-of-type(even)': {
+          backgroundColor: theme.palette.action.hover
+        }
+      }}
+      {...props}
+    >
+      {children}
+    </TableRow>
+  )
+}
+
+StyledTableRow.propTypes = {
+  children: PropTypes.node.isRequired
+}
 
 const SkillsTable = ({ label, data }) => {
   const { formatMessage } = useIntl()
@@ -46,8 +75,8 @@ const SkillsTable = ({ label, data }) => {
         </TableHead>
         <TableBody>
           {data.map((tech) => (
-            <StyledTableRow key={tech.name}>
-              <StyledTableCell component="th" scope="row">
+            <TableRow key={tech.name}>
+              <TableCell component="th" scope="row">
                 <Link
                   href={tech.link}
                   target="_blank"
@@ -56,9 +85,9 @@ const SkillsTable = ({ label, data }) => {
                 >
                   <strong>{tech.name}</strong>
                 </Link>
-              </StyledTableCell>
-              <StyledTableCell align="right">{f(tech.level)}</StyledTableCell>
-            </StyledTableRow>
+              </TableCell>
+              <TableCell align="right">{f(tech.level)}</TableCell>
+            </TableRow>
           ))}
         </TableBody>
       </Table>
