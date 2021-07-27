@@ -20,13 +20,11 @@ import { Close } from '@material-ui/icons'
 
 import SocialLinks from 'components/SocialLinks'
 import { sendEmailValidate } from 'utils/formValidations'
-import { useDarkMode } from 'hooks/darkMode'
 
 const Contacts = () => {
   const theme = useTheme()
   const { locale } = useRouter()
   const recaptchaRef = useRef(null)
-  const { darkMode } = useDarkMode()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
   const spacing = useMediaQuery((theme) => theme.breakpoints.up('sm'))
@@ -50,8 +48,8 @@ const Contacts = () => {
   })
 
   useEffect(() => {
-    setKey(`${darkMode ? 'dark' : 'light'}_${locale}`)
-  }, [key, darkMode, locale])
+    setKey(`${theme.palette.mode}_${locale}`)
+  }, [key, locale, theme])
 
   const handleOnChange = (e) => {
     setInputs((prevStatus) => ({
@@ -232,7 +230,7 @@ const Contacts = () => {
                     }))
                   }
                   hl={locale}
-                  theme={darkMode ? 'dark' : 'light'}
+                  theme={theme.palette.mode}
                   value={inputs.captcha}
                 />
               </Grid>

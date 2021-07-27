@@ -9,9 +9,10 @@ import createCache from '@emotion/cache'
 import Base from 'components/Base'
 import ScrollTop from 'components/ScrollTop'
 
+import { ColorModeProvider } from 'hooks/colorMode'
+
 import messages_en from 'lang/en.json'
 import messages_pt from 'lang/pt.json'
-import { DarkModeProvider } from 'hooks/darkMode'
 
 const cache = createCache({ key: 'css' })
 cache.compat = true
@@ -31,7 +32,7 @@ const App = ({ Component, pageProps }) => {
         defaultLocale={defaultLocale}
         messages={messages[locale]}
       >
-        <DarkModeProvider>
+        <ColorModeProvider>
           <Head>
             <meta
               name="google-site-verification"
@@ -76,7 +77,7 @@ const App = ({ Component, pageProps }) => {
             <Component {...pageProps} />
           </Base>
           <ScrollTop />
-        </DarkModeProvider>
+        </ColorModeProvider>
       </IntlProvider>
     </CacheProvider>
   )

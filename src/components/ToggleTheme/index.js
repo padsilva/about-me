@@ -1,11 +1,11 @@
 import { Grid, Switch, useTheme } from '@material-ui/core'
 import { Brightness3, Brightness5 } from '@material-ui/icons'
 
-import { useDarkMode } from 'hooks/darkMode'
+import { useColorMode } from 'hooks/colorMode'
 
 const ToggleTheme = () => {
-  const { toggleTheme } = useDarkMode()
   const theme = useTheme()
+  const { toggleColorMode } = useColorMode()
   const darkMode = theme.palette.mode === 'dark'
   const iconActive = {
     color: '#ffca28'
@@ -23,7 +23,7 @@ const ToggleTheme = () => {
         color="secondary"
         size="small"
         checked={darkMode}
-        onChange={toggleTheme}
+        onClick={toggleColorMode}
         inputProps={{ 'aria-label': 'toggle theme' }}
       />
       <Brightness3 fontSize="small" sx={darkMode ? iconActive : null} />
