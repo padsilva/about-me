@@ -1,20 +1,34 @@
 export default [
   {
-    name: 'wonGames',
-    title: 'Won Games',
-    udemy: {
-      name: 'React Avançado: Crie aplicações com NextJS, GraphQL e mais',
-      link: 'https://www.udemy.com/course/react-avancado/'
-    },
-    github: 'https://github.com/padsilva/won-games-client',
-    live: '',
-    featured: true
+    name: 'aboutMe',
+    title: 'About Me',
+    github: 'https://github.com/padsilva/about-me',
+    live: 'https://padsilva.vercel.app',
+    featured: true,
+    techs: [
+      {
+        name: 'JavaScript',
+        imgSrc: '/img/tech/javascript.svg'
+      },
+      {
+        name: 'React',
+        imgSrc: '/img/tech/react.svg'
+      },
+      {
+        name: 'Next.js',
+        imgSrc: '/img/tech/nextjs.svg'
+      },
+      {
+        name: 'Material-UI',
+        imgSrc: '/img/tech/material-ui.svg'
+      }
+    ]
   },
   {
     name: 'myTrips',
     title: 'My Trips',
     udemy: {
-      name: 'Aprenda NextJS, GraphQL e Leaflet na prática!',
+      name: 'Aprenda Next.js, GraphQL e Leaflet na prática!',
       link: 'https://www.udemy.com/course/aprenda-nextjs-na-pratica/'
     },
     github: 'https://github.com/padsilva/my-trips',
@@ -25,12 +39,12 @@ export default [
         imgSrc: '/img/tech/typescript.svg'
       },
       {
-        name: 'NextJS',
-        imgSrc: '/img/tech/nextjs.svg'
-      },
-      {
         name: 'React',
         imgSrc: '/img/tech/react.svg'
+      },
+      {
+        name: 'Next.js',
+        imgSrc: '/img/tech/nextjs.svg'
       },
       {
         name: 'GraphQL',
@@ -57,14 +71,18 @@ export default [
       name: 'Gatsby: Crie um site PWA com React, GraphQL e Netlify CMS',
       link: 'https://www.udemy.com/course/gatsby-crie-um-site-pwa-com-react-graphql-e-netlify-cms/'
     },
-    github: 'https://github.com/padsilva/gatsby-site',
-    live: 'https://padsilva-blog.netlify.app/'
+    github: 'https://github.com/padsilva/nextjs-blog',
+    live: 'https://padsilva-blog.vercel.app/'
   },
   {
-    name: 'footballApp',
-    title: 'Football App',
-    github: 'https://github.com/padsilva/football-app-client',
-    live: '',
+    name: 'wonGames',
+    title: 'Won Games',
+    udemy: {
+      name: 'React Avançado: Crie aplicações com NextJS, GraphQL e mais',
+      link: 'https://www.udemy.com/course/react-avancado/'
+    },
+    github: 'https://github.com/padsilva/won-games-client',
+    live: 'https://padsilva-won-games.vercel.app',
     featured: true
   },
   {

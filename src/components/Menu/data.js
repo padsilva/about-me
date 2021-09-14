@@ -14,14 +14,14 @@ export default [
     name: 'home'
   },
   {
-    icon: <Work fontSize="small" />,
-    link: '/experience',
-    name: 'experience'
-  },
-  {
     icon: <School fontSize="small" />,
     link: '/education',
     name: 'education'
+  },
+  {
+    icon: <Work fontSize="small" />,
+    link: '/experience',
+    name: 'experience'
   },
   {
     icon: <Notes fontSize="small" />,
