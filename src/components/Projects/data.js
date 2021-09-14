@@ -47,16 +47,16 @@ export default [
         imgSrc: '/img/tech/nextjs.svg'
       },
       {
+        name: 'Styled Components',
+        imgSrc: '/img/tech/styled-components.jpg'
+      },
+      {
         name: 'GraphQL',
         imgSrc: '/img/tech/graphql.svg'
       },
       {
         name: 'Jest',
         imgSrc: '/img/tech/jest.svg'
-      },
-      {
-        name: 'Styled Components',
-        imgSrc: '/img/tech/styled-components.jpg'
       },
       {
         name: 'React Leaflet',
@@ -89,12 +89,56 @@ export default [
     name: 'boilerplateJS',
     title: 'Boilerplate JavaScript',
     github: 'https://github.com/padsilva/nextjs-boilerplate',
-    live: 'https://padsilva-boilerplate.vercel.app'
+    live: 'https://padsilva-boilerplate.vercel.app',
+    techs: [
+      {
+        name: 'JavaScript',
+        imgSrc: '/img/tech/javascript.svg'
+      },
+      {
+        name: 'React',
+        imgSrc: '/img/tech/react.svg'
+      },
+      {
+        name: 'Next.js',
+        imgSrc: '/img/tech/nextjs.svg'
+      },
+      {
+        name: 'Styled Components',
+        imgSrc: '/img/tech/styled-components.jpg'
+      },
+      {
+        name: 'Jest',
+        imgSrc: '/img/tech/jest.svg'
+      }
+    ]
   },
   {
     name: 'boilerplateTS',
     title: 'Boilerplate TypeScript',
     github: 'https://github.com/padsilva/nextjs-boilerplate-ts',
-    live: 'https://padsilva-boilerplate-typescript.vercel.app'
+    live: 'https://padsilva-boilerplate-typescript.vercel.app',
+    techs: [
+      {
+        name: 'TypeScript',
+        imgSrc: '/img/tech/typescript.svg'
+      },
+      {
+        name: 'React',
+        imgSrc: '/img/tech/react.svg'
+      },
+      {
+        name: 'Next.js',
+        imgSrc: '/img/tech/nextjs.svg'
+      },
+      {
+        name: 'Styled Components',
+        imgSrc: '/img/tech/styled-components.jpg'
+      },
+      {
+        name: 'Jest',
+        imgSrc: '/img/tech/jest.svg'
+      }
+    ]
   }
 ]
