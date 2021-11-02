@@ -18,8 +18,7 @@ const cache = createCache({ key: 'css' })
 cache.compat = true
 
 const App = ({ Component, pageProps }) => {
-  const router = useRouter()
-  const { locale, defaultLocale } = router
+  const { locale, defaultLocale } = useRouter()
   const messages = {
     en: messages_en,
     pt: messages_pt

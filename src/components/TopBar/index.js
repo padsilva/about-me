@@ -68,7 +68,7 @@ const TopBar = () => {
               xs={2}
               sm={1}
               md={9}
-              lg={7}
+              lg={8}
               xl={5}
               direction="row"
               justifyContent="space-around"
