@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl'
 import {
   Card,
-  CardContent,
   Container,
+  Divider,
   Link,
   Typography,
   useMediaQuery,
@@ -54,8 +54,8 @@ const Experience = () => {
   const f = (id) => formatMessage({ id })
   const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'))
   const paper = {
-    p: `${theme.spacing(1)} ${theme.spacing(2)}`,
-    mb: mdUp ? theme.spacing(4) : theme.spacing(2)
+    p: theme.spacing(3),
+    mb: theme.spacing(3)
   }
 
   return mdUp ? (
@@ -63,20 +63,28 @@ const Experience = () => {
       <Timeline position="alternate">
         {jobs.map(({ date, institution, position, description }, index) => (
           <TimelineItem key={`job-${index}`}>
-            <TimelineOppositeContent>{f(date)}</TimelineOppositeContent>
+            <TimelineOppositeContent color="textSecondary">
+              {f(date)}
+            </TimelineOppositeContent>
             <TimelineSeparator>
-              <TimelineDot />
+              <TimelineDot
+                color={theme.palette.mode === 'dark' ? 'secondary' : 'primary'}
+              />
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
               <Card raised sx={paper}>
-                <Typography variant="h5">
+                <Typography variant="h6">
                   <Link href={institution.link} target="_blank" rel="noopener">
                     {f(institution.name)}
                   </Link>
                 </Typography>
-                <Typography variant="h6">{f(position)}</Typography>
+                <Typography variant="subtitle2" paragraph>
+                  {f(position)}
+                </Typography>
                 <Typography
+                  component="div"
+                  variant="body2"
                   align="justify"
                   dangerouslySetInnerHTML={{ __html: f(description) }}
                 />
@@ -90,21 +98,29 @@ const Experience = () => {
     <Container component="main" maxWidth="sm">
       {jobs.map(({ date, position, institution, description }, index) => (
         <Card key={`job-${index}`} raised sx={paper}>
-          <CardContent>
-            <Typography variant="subtitle1" color="textSecondary">
-              {f(date)}
-            </Typography>
-            <Typography variant="h5">
-              <Link href={institution.link} target="_blank" rel="noopener">
-                {f(institution.name)}
-              </Link>
-            </Typography>
-            <Typography variant="h6">{f(position)}</Typography>
-            <Typography
-              align="justify"
-              dangerouslySetInnerHTML={{ __html: f(description) }}
-            />
-          </CardContent>
+          <Typography
+            component="div"
+            align="right"
+            gutterBottom
+            color="textSecondary"
+          >
+            {f(date)}
+            <Divider />
+          </Typography>
+          <Typography variant="h6">
+            <Link href={institution.link} target="_blank" rel="noopener">
+              {f(institution.name)}
+            </Link>
+          </Typography>
+          <Typography variant="subtitle2" paragraph>
+            {f(position)}
+          </Typography>
+          <Typography
+            component="div"
+            variant="body2"
+            align="justify"
+            dangerouslySetInnerHTML={{ __html: f(description) }}
+          />
         </Card>
       ))}
     </Container>

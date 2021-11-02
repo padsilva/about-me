@@ -2,6 +2,7 @@ import { useIntl } from 'react-intl'
 import {
   Card,
   Container,
+  Divider,
   Link,
   Typography,
   useMediaQuery,
@@ -53,9 +54,13 @@ const Experience = () => {
       <Timeline position="alternate">
         {educations.map(({ date, grade, institution, description }, index) => (
           <TimelineItem key={`education-${index}`}>
-            <TimelineOppositeContent>{f(date)}</TimelineOppositeContent>
+            <TimelineOppositeContent color="textSecondary">
+              {f(date)}
+            </TimelineOppositeContent>
             <TimelineSeparator>
-              <TimelineDot />
+              <TimelineDot
+                color={theme.palette.mode === 'dark' ? 'secondary' : 'primary'}
+              />
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
@@ -84,8 +89,14 @@ const Experience = () => {
     <Container component="main" maxWidth="sm">
       {educations.map(({ date, grade, institution, description }, index) => (
         <Card key={`education-${index}`} raised sx={paper}>
-          <Typography variant="subtitle1" color="textSecondary">
+          <Typography
+            component="div"
+            align="right"
+            gutterBottom
+            color="textSecondary"
+          >
             {f(date)}
+            <Divider />
           </Typography>
           <Typography variant="h6">
             <Link href={grade.link} target="_blank" rel="noopener">
