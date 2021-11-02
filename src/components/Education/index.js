@@ -1,7 +1,6 @@
 import { useIntl } from 'react-intl'
 import {
   Card,
-  CardContent,
   Container,
   Link,
   Typography,
@@ -44,10 +43,9 @@ const Experience = () => {
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
   const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'))
-
   const paper = {
-    p: `${theme.spacing(1)} ${theme.spacing(2)}`,
-    mb: mdUp ? theme.spacing(4) : theme.spacing(2)
+    p: theme.spacing(3),
+    mb: theme.spacing(3)
   }
 
   return mdUp ? (
@@ -62,13 +60,17 @@ const Experience = () => {
             </TimelineSeparator>
             <TimelineContent>
               <Card raised sx={paper}>
-                <Typography variant="h5">
+                <Typography variant="h6">
                   <Link href={grade.link} target="_blank" rel="noopener">
                     {f(grade.name)}
                   </Link>
                 </Typography>
-                <Typography variant="h6">{f(institution)}</Typography>
+                <Typography variant="subtitle2" paragraph>
+                  {f(institution)}
+                </Typography>
                 <Typography
+                  component="div"
+                  variant="body2"
                   align="justify"
                   dangerouslySetInnerHTML={{ __html: f(description) }}
                 />
@@ -82,21 +84,23 @@ const Experience = () => {
     <Container component="main" maxWidth="sm">
       {educations.map(({ date, grade, institution, description }, index) => (
         <Card key={`education-${index}`} raised sx={paper}>
-          <CardContent>
-            <Typography variant="subtitle1" color="textSecondary">
-              {f(date)}
-            </Typography>
-            <Typography variant="h5">
-              <Link href={grade.link} target="_blank" rel="noopener">
-                {f(grade.name)}
-              </Link>
-            </Typography>
-            <Typography variant="h6">{f(institution)}</Typography>
-            <Typography
-              align="justify"
-              dangerouslySetInnerHTML={{ __html: f(description) }}
-            />
-          </CardContent>
+          <Typography variant="subtitle1" color="textSecondary">
+            {f(date)}
+          </Typography>
+          <Typography variant="h6">
+            <Link href={grade.link} target="_blank" rel="noopener">
+              {f(grade.name)}
+            </Link>
+          </Typography>
+          <Typography variant="subtitle2" paragraph>
+            {f(institution)}
+          </Typography>
+          <Typography
+            component="div"
+            variant="body2"
+            align="justify"
+            dangerouslySetInnerHTML={{ __html: f(description) }}
+          />
         </Card>
       ))}
     </Container>
