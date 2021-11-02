@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { createContext, useContext, useMemo, useState } from 'react'
-import { ThemeProvider } from '@material-ui/core/styles'
+import { ThemeProvider } from '@mui/material'
 
 import { darkTheme, lightTheme } from 'styles/theme'
 

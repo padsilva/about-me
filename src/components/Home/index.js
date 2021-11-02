@@ -7,7 +7,7 @@ import {
   Grid,
   Typography,
   useTheme
-} from '@material-ui/core'
+} from '@mui/material'
 
 import SocialLinks from 'components/SocialLinks'
 

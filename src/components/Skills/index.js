@@ -1,4 +1,4 @@
-import { Box, Container, Grid, useMediaQuery } from '@material-ui/core'
+import { Box, Container, Grid, useMediaQuery } from '@mui/material'
 
 import SkillsTable from 'components/SkillsTable'
 

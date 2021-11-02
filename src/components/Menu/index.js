@@ -9,8 +9,8 @@ import {
   ListItem,
   Typography,
   useMediaQuery
-} from '@material-ui/core'
-import MenuIcon from '@material-ui/icons/Menu'
+} from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
 
 import InternalLink from 'components/InternalLink'
 import data from 'components/Menu/data'

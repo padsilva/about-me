@@ -5,8 +5,8 @@ import {
   useMediaQuery,
   useScrollTrigger,
   useTheme
-} from '@material-ui/core'
-import { KeyboardArrowUp } from '@material-ui/icons'
+} from '@mui/material'
+import { KeyboardArrowUp } from '@mui/icons-material'
 
 const ScrollTop = () => {
   const theme = useTheme()

@@ -7,7 +7,7 @@ import {
   Typography,
   useMediaQuery,
   useTheme
-} from '@material-ui/core'
+} from '@mui/material'
 import { useIntl } from 'react-intl'
 
 import Menu from 'components/Menu'

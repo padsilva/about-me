@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { Box, Tooltip, Typography, useTheme } from '@material-ui/core'
+import { Box, Tooltip, Typography, useTheme } from '@mui/material'
 
 const LevelTooltip = ({ text, label }) => {
   const theme = useTheme()

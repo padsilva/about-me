@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Box, useTheme } from '@material-ui/core'
+import { Box, useTheme } from '@mui/material'
 
 const InternalLink = ({ isActive = false, href, children, ...props }) => {
   const theme = useTheme()

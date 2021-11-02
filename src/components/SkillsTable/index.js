@@ -10,7 +10,7 @@ import {
   TableHead,
   TableRow,
   useTheme
-} from '@material-ui/core'
+} from '@mui/material'
 
 import LevelTooltip from 'components/LevelTooltip'
 

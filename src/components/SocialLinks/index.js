@@ -1,5 +1,5 @@
-import { CardActions, Grid, IconButton, useTheme } from '@material-ui/core'
-import { Email, GitHub, LinkedIn, Twitter } from '@material-ui/icons'
+import { CardActions, Grid, IconButton, useTheme } from '@mui/material'
+import { Email, GitHub, LinkedIn, Twitter } from '@mui/icons-material'
 
 const SocialLinks = () => {
   const theme = useTheme()

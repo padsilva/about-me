@@ -1,5 +1,5 @@
-import { Grid, Switch, useTheme } from '@material-ui/core'
-import { Brightness3, Brightness5 } from '@material-ui/icons'
+import { Grid, Switch, useTheme } from '@mui/material'
+import { Brightness3, Brightness5 } from '@mui/icons-material'
 
 import { useColorMode } from 'hooks/colorMode'
 

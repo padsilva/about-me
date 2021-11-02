@@ -16,8 +16,8 @@ import {
   Link,
   Typography,
   useTheme
-} from '@material-ui/core'
-import { Close, Info } from '@material-ui/icons'
+} from '@mui/material'
+import { Close, Info } from '@mui/icons-material'
 
 import data from './data'
 

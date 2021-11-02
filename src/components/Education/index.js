@@ -7,7 +7,7 @@ import {
   Typography,
   useMediaQuery,
   useTheme
-} from '@material-ui/core'
+} from '@mui/material'
 import {
   Timeline,
   TimelineConnector,
@@ -16,7 +16,7 @@ import {
   TimelineItem,
   TimelineOppositeContent,
   TimelineSeparator
-} from '@material-ui/lab'
+} from '@mui/lab'
 
 const educations = [
   {

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { ToggleButton, ToggleButtonGroup, useTheme } from '@material-ui/core'
+import { ToggleButton, ToggleButtonGroup, useTheme } from '@mui/material'
 
 const ToggleLang = () => {
   const { locale, pathname, push } = useRouter()

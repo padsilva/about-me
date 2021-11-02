@@ -5,7 +5,7 @@ import {
   Notes,
   School,
   Work
-} from '@material-ui/icons'
+} from '@mui/icons-material'
 
 export default [
   {

@@ -1,10 +1,4 @@
-import {
-  Box,
-  Grid,
-  Typography,
-  useMediaQuery,
-  useTheme
-} from '@material-ui/core'
+import { Box, Grid, Typography, useMediaQuery, useTheme } from '@mui/material'
 
 import ToggleLang from 'components/ToggleLang'
 import ToggleTheme from 'components/ToggleTheme'

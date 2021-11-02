@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { IntlProvider } from 'react-intl'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import { CssBaseline } from '@material-ui/core'
+import { CssBaseline } from '@mui/material'
 import { CacheProvider } from '@emotion/react'
 import createCache from '@emotion/cache'
 
