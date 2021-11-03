@@ -20,12 +20,12 @@ const Home = () => {
     <Container component="main" maxWidth="md">
       <Card raised>
         <CardContent>
-          <Grid container spacing={4} justifyContent="space-around">
+          <Grid container justifyContent="space-around">
             <Grid
               container
               spacing={2}
               item
-              sm={4}
+              md={4}
               direction="column"
               justifyContent="space-evenly"
               alignItems="center"
@@ -47,16 +47,10 @@ const Home = () => {
                 <Typography variant="h4" component="h5">
                   Paulo Silva
                 </Typography>
-                <Typography variant="subtitle2">{f('position')}</Typography>
-              </Grid>
-              <Grid
-                container
-                direction="column"
-                item
-                justifyContent="center"
-                alignItems="center"
-              >
-                <Typography variant="body2">
+                <Typography variant="body1" component="h6">
+                  {f('position')}
+                </Typography>
+                <Typography variant="caption">
                   <FormattedDate
                     value="1988/09/04"
                     year="numeric"
@@ -64,7 +58,7 @@ const Home = () => {
                     day="2-digit"
                   />
                 </Typography>
-                <Typography variant="body2" paragraph>
+                <Typography variant="caption">
                   {`${f('hometown')}, Portugal`}
                 </Typography>
               </Grid>
@@ -72,14 +66,15 @@ const Home = () => {
             <Grid
               container
               item
-              sm={7}
+              md={8}
               direction="column"
               justifyContent="center"
               alignItems="center"
+              sx={{ padding: theme.spacing(3) }}
             >
               <Typography
                 component="div"
-                variant="body1"
+                variant="body2"
                 align="justify"
                 dangerouslySetInnerHTML={{ __html: f('abstract') }}
               />
