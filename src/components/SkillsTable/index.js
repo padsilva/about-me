@@ -9,6 +9,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Typography,
   useTheme
 } from '@mui/material'
 
@@ -83,7 +84,7 @@ const SkillsTable = ({ label, data }) => {
                   rel="noopener"
                   color="inherit"
                 >
-                  <strong>{tech.name}</strong>
+                  <Typography variant="subtitle2">{tech.name}</Typography>
                 </Link>
               </TableCell>
               <TableCell align="right">{f(tech.level)}</TableCell>
