@@ -62,6 +62,11 @@ const Projects = () => {
               objectPosition="top"
             />
             <ImageListItemBar
+              sx={{
+                background:
+                  'linear-gradient(to top, rgba(0,0,0,0.7) 0%, ' +
+                  'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)'
+              }}
               title={proj.title}
               actionIcon={
                 <IconButton
@@ -85,11 +90,16 @@ const Projects = () => {
           id="customized-dialog-title"
           sx={{
             m: 0,
-            p: theme.spacing(2)
+            p: theme.spacing(2),
+            backgroundColor: theme.palette.primary.main,
+            color:
+              theme.palette.mode === 'dark'
+                ? theme.palette.common.black
+                : theme.palette.common.white
           }}
           component="span"
         >
-          <Typography variant="h4" component="h2">
+          <Typography variant="h5" component="h2">
             {info.title}
           </Typography>
           <IconButton
@@ -98,7 +108,10 @@ const Projects = () => {
               position: 'absolute',
               right: theme.spacing(1),
               top: theme.spacing(1),
-              color: theme.palette.grey[500]
+              color:
+                theme.palette.mode === 'dark'
+                  ? theme.palette.common.black
+                  : theme.palette.common.white
             }}
             onClick={handleClose}
           >
@@ -111,30 +124,14 @@ const Projects = () => {
           </Typography>
           {info.name && (
             <Typography
+              component="div"
+              variant="body2"
               align="justify"
               dangerouslySetInnerHTML={{
                 __html: f(`${info.name}.description`)
               }}
-              paragraph
+              gutterBottom
             />
-          )}
-
-          {info.live && (
-            <Typography>
-              {f('live')}
-              <Link href={info.live} target="_blank" rel="noopener">
-                {info.live}
-              </Link>
-            </Typography>
-          )}
-
-          {info.github && (
-            <Typography paragraph>
-              {f('repo')}
-              <Link href={info.github} target="_blank" rel="noopener">
-                {info.github}
-              </Link>
-            </Typography>
           )}
 
           <br />
@@ -170,16 +167,44 @@ const Projects = () => {
                   />
                 </Grid>
                 <Grid item>
-                  <Typography variant="caption">{tech.name}</Typography>
+                  <Typography noWrap variant="caption">
+                    {tech.name}
+                  </Typography>
                 </Grid>
               </Grid>
             ))}
           </Grid>
+
+          <br />
+
+          {(info.live || info.github) && (
+            <Typography variant="h6" gutterBottom>
+              Links
+            </Typography>
+          )}
+
+          {info.live && (
+            <Typography variant="body2">
+              {f('live')}
+              <Link href={info.live} target="_blank" rel="noopener">
+                {info.live}
+              </Link>
+            </Typography>
+          )}
+
+          {info.github && (
+            <Typography variant="body2">
+              {f('repo')}
+              <Link href={info.github} target="_blank" rel="noopener">
+                {info.github}
+              </Link>
+            </Typography>
+          )}
         </DialogContent>
 
         {info.udemy && (
           <DialogActions sx={{ p: theme.spacing(2) }}>
-            <DialogContentText variant="body2">
+            <DialogContentText variant="caption">
               {f('udemy')}
               <Link href={info.udemy.link} target="_blank" rel="noopener">
                 {info.udemy.name}

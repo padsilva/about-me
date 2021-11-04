@@ -21,6 +21,14 @@ export default [
       {
         name: 'Material-UI',
         imgSrc: '/img/tech/material-ui.svg'
+      },
+      {
+        name: 'joi',
+        imgSrc: '/img/tech/joi.png'
+      },
+      {
+        name: 'FormatJS',
+        imgSrc: '/img/tech/format.png'
       }
     ]
   },
@@ -61,6 +69,10 @@ export default [
       {
         name: 'React Leaflet',
         imgSrc: '/img/tech/leaflet.svg'
+      },
+      {
+        name: 'GraphCMS',
+        imgSrc: '/img/tech/graphcms.svg'
       }
     ]
   },
@@ -110,6 +122,10 @@ export default [
       {
         name: 'Jest',
         imgSrc: '/img/tech/jest.svg'
+      },
+      {
+        name: 'React Testing Library',
+        imgSrc: '/img/tech/react-testing-library.png'
       }
     ]
   },
@@ -138,6 +154,10 @@ export default [
       {
         name: 'Jest',
         imgSrc: '/img/tech/jest.svg'
+      },
+      {
+        name: 'React Testing Library',
+        imgSrc: '/img/tech/react-testing-library.png'
       }
     ]
   }
