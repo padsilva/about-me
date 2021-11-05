@@ -24,11 +24,11 @@ export default [
       },
       {
         name: 'joi',
-        imgSrc: '/img/tech/joi.png'
+        imgSrc: '/img/tech/joi.svg'
       },
       {
         name: 'FormatJS',
-        imgSrc: '/img/tech/format.png'
+        imgSrc: '/img/tech/format.svg'
       }
     ]
   },
@@ -56,7 +56,7 @@ export default [
       },
       {
         name: 'Styled Components',
-        imgSrc: '/img/tech/styled-components.jpg'
+        imgSrc: '/img/tech/styled-components.svg'
       },
       {
         name: 'GraphQL',
@@ -117,7 +117,7 @@ export default [
       },
       {
         name: 'Styled Components',
-        imgSrc: '/img/tech/styled-components.jpg'
+        imgSrc: '/img/tech/styled-components.svg'
       },
       {
         name: 'Jest',
@@ -125,7 +125,7 @@ export default [
       },
       {
         name: 'React Testing Library',
-        imgSrc: '/img/tech/react-testing-library.png'
+        imgSrc: '/img/tech/react-testing-library.svg'
       }
     ]
   },
@@ -149,7 +149,7 @@ export default [
       },
       {
         name: 'Styled Components',
-        imgSrc: '/img/tech/styled-components.jpg'
+        imgSrc: '/img/tech/styled-components.svg'
       },
       {
         name: 'Jest',
@@ -157,7 +157,7 @@ export default [
       },
       {
         name: 'React Testing Library',
-        imgSrc: '/img/tech/react-testing-library.png'
+        imgSrc: '/img/tech/react-testing-library.svg'
       }
     ]
   }
