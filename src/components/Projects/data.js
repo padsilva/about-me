@@ -121,7 +121,57 @@ export default [
     },
     github: 'https://github.com/padsilva/won-games-client',
     live: 'https://padsilva-won-games.vercel.app',
-    featured: true
+    featured: true,
+    techs: [
+      {
+        name: 'JavaScript',
+        imgSrc: '/img/tech/javascript.svg'
+      },
+      {
+        name: 'React',
+        imgSrc: '/img/tech/react.svg'
+      },
+      {
+        name: 'Next.js',
+        imgSrc: '/img/tech/nextjs.svg'
+      },
+      {
+        name: 'Styled Components',
+        imgSrc: '/img/tech/styled-components.svg'
+      },
+      {
+        name: 'Strapi',
+        imgSrc: '/img/tech/strapi.svg'
+      },
+      {
+        name: 'GraphQL',
+        imgSrc: '/img/tech/graphql.svg'
+      },
+      {
+        name: 'NextAuth.js',
+        imgSrc: '/img/tech/next-auth.svg'
+      },
+      {
+        name: 'Jest',
+        imgSrc: '/img/tech/jest.svg'
+      },
+      {
+        name: 'React Testing Library',
+        imgSrc: '/img/tech/react-testing-library.svg'
+      },
+      {
+        name: 'Storybook',
+        imgSrc: '/img/tech/storybook.svg'
+      },
+      {
+        name: 'Apollo',
+        imgSrc: '/img/tech/apollo.svg'
+      },
+      {
+        name: 'Cypress',
+        imgSrc: '/img/tech/cypress.svg'
+      }
+    ]
   },
   {
     name: 'boilerplateJS',
