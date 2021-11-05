@@ -41,7 +41,7 @@
   "aboutMe.description": "<span>Página pessoal onde se podem encontrar diversas informações sobre mim, nomeadamente: breve resumo, percurso académico, experiência profissional, competências técnicas, projectos pessoais e contactos.</span>",
   "wonGames.description": "<span>Loja de jogos online que oferece a possibilidade de adicioná-los à lista de desejos, comprá-los através de cartão de crédito e usufruir de grandes promoções. Todo o conteúdo é gerido por um CMS.</span>",
   "myTrips.description": "<span>Mapa mundo interactivo com alguns pontos de interesse: terra natal, países visitados e locais a visitar.</span>",
-  "mtbBlog.description": "<span>Fugiat magna magna velit est in ullamco duis ipsum irure adipisicing velit. Proident dolor occaecat irure mollit veniam consectetur labore in laboris ad proident eiusmod irure fugiat. Amet esse tempor tempor sit Lorem.</span>",
+  "blog.description": "<span>Um blog que lê e interpreta ficheiros Markdown, criando as páginas automaticamente através do conteúdo desses ficheiros.</span>",
   "boilerplateJS.description": "<span>Modelo pré-configurado para criar projectos com JavaScript, Next.js, styled-components e Jest.</span>",
   "boilerplateTS.description": "<span>Modelo pré-configurado para criar projectos com TypeScript, Next.js, styled-components e Jest.</span>",
   "title.desc": "Descrição",

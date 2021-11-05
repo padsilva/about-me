@@ -77,14 +77,40 @@ export default [
     ]
   },
   {
-    name: 'mtbBlog',
-    title: 'MTB Blog',
+    name: 'blog',
+    title: 'Blog',
     udemy: {
       name: 'Gatsby: Crie um site PWA com React, GraphQL e Netlify CMS',
       link: 'https://www.udemy.com/course/gatsby-crie-um-site-pwa-com-react-graphql-e-netlify-cms/'
     },
     github: 'https://github.com/padsilva/nextjs-blog',
-    live: 'https://padsilva-blog.vercel.app/'
+    live: 'https://padsilva-blog.vercel.app/',
+    techs: [
+      {
+        name: 'JavaScript',
+        imgSrc: '/img/tech/javascript.svg'
+      },
+      {
+        name: 'Markdown',
+        imgSrc: '/img/tech/markdown.svg'
+      },
+      {
+        name: 'React',
+        imgSrc: '/img/tech/react.svg'
+      },
+      {
+        name: 'Next.js',
+        imgSrc: '/img/tech/nextjs.svg'
+      },
+      {
+        name: 'Styled Components',
+        imgSrc: '/img/tech/styled-components.svg'
+      },
+      {
+        name: 'Algolia',
+        imgSrc: '/img/tech/algolia.svg'
+      }
+    ]
   },
   {
     name: 'wonGames',
