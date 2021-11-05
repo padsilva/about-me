@@ -3,6 +3,8 @@ import { useIntl } from 'react-intl'
 import {
   Link,
   Paper,
+  Rating,
+  styled,
   Table,
   TableBody,
   TableCell,
@@ -12,6 +14,7 @@ import {
   Typography,
   useTheme
 } from '@mui/material'
+import { Circle, CircleOutlined } from '@mui/icons-material'
 
 import LevelTooltip from 'components/LevelTooltip'
 
@@ -59,6 +62,12 @@ StyledTableRow.propTypes = {
   children: PropTypes.node.isRequired
 }
 
+const StyledRating = styled(Rating)(({ theme }) => ({
+  '& .MuiRating-iconFilled': {
+    color: theme.palette.success.main
+  }
+}))
+
 const SkillsTable = ({ label, data }) => {
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
@@ -87,7 +96,17 @@ const SkillsTable = ({ label, data }) => {
                   <Typography variant="subtitle2">{tech.name}</Typography>
                 </Link>
               </TableCell>
-              <TableCell align="right">{f(tech.level)}</TableCell>
+              <TableCell align="right">
+                <StyledRating
+                  name="read-only"
+                  value={tech.level}
+                  readOnly
+                  size="small"
+                  icon={<Circle fontSize="inherit" />}
+                  emptyIcon={<CircleOutlined fontSize="inherit" />}
+                  color="success"
+                />
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

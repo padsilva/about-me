@@ -156,8 +156,8 @@ export default [
         imgSrc: '/img/tech/jest.svg'
       },
       {
-        name: 'React Testing Library',
-        imgSrc: '/img/tech/react-testing-library.svg'
+        name: 'Testing Library',
+        imgSrc: '/img/tech/testing-library.svg'
       },
       {
         name: 'Storybook',
@@ -200,8 +200,8 @@ export default [
         imgSrc: '/img/tech/jest.svg'
       },
       {
-        name: 'React Testing Library',
-        imgSrc: '/img/tech/react-testing-library.svg'
+        name: 'Testing Library',
+        imgSrc: '/img/tech/testing-library.svg'
       }
     ]
   },
@@ -232,8 +232,8 @@ export default [
         imgSrc: '/img/tech/jest.svg'
       },
       {
-        name: 'React Testing Library',
-        imgSrc: '/img/tech/react-testing-library.svg'
+        name: 'Testing Library',
+        imgSrc: '/img/tech/testing-library.svg'
       }
     ]
   }

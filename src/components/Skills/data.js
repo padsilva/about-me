@@ -2,27 +2,27 @@ export const lang = [
   {
     link: 'https://www.javascript.com',
     name: 'JavaScript',
-    level: 'expert'
+    level: 5
   },
   {
     link: 'https://html.spec.whatwg.org',
     name: 'HTML',
-    level: 'proficient'
+    level: 4
   },
   {
     link: 'https://www.w3.org/TR/CSS/#css',
     name: 'CSS',
-    level: 'competent'
+    level: 3
   },
   {
     link: 'https://www.typescriptlang.org',
     name: 'TypeScript',
-    level: 'competent'
+    level: 3
   },
   {
     link: 'https://www.w3.org/TR/REC-xml/',
     name: 'XML',
-    level: 'competent'
+    level: 3
   }
 ]
 
@@ -30,42 +30,42 @@ export const lib = [
   {
     link: 'https://nextjs.org',
     name: 'Next.js',
-    level: 'proficient'
+    level: 4
   },
   {
     link: 'https://reactjs.org',
     name: 'React',
-    level: 'proficient'
+    level: 4
   },
   {
     link: 'https://www.apollographql.com/',
     name: 'Apollo',
-    level: 'competent'
+    level: 3
   },
   {
     link: 'https://material-ui.com/',
     name: 'Material-UI',
-    level: 'competent'
+    level: 3
   },
   {
     link: 'https://nodejs.org/',
     name: 'Node.js',
-    level: 'competent'
+    level: 3
   },
   {
     link: 'https://www.cypress.io/',
     name: 'Cypress',
-    level: 'basic'
+    level: 2
   },
   {
     link: 'https://jestjs.io',
     name: 'Jest',
-    level: 'basic'
+    level: 2
   },
   {
     link: 'https://testing-library.com/',
     name: 'Testing Library',
-    level: 'basic'
+    level: 2
   }
 ]
 
@@ -73,27 +73,27 @@ export const db = [
   {
     link: 'https://graphql.org',
     name: 'GraphQL',
-    level: 'proficient'
+    level: 4
   },
   {
     link: 'https://www.ibm.com/products/db2-database',
     name: 'IBM Db2',
-    level: 'proficient'
+    level: 4
   },
   {
     link: 'https://www.oracle.com/database/',
     name: 'Oracle',
-    level: 'proficient'
+    level: 4
   },
   {
     link: 'https://www.mongodb.com',
     name: 'MongoDB',
-    level: 'competent'
+    level: 3
   },
   {
     link: 'https://www.microsoft.com/sql-server',
     name: 'MS SQL Server',
-    level: 'competent'
+    level: 3
   }
 ]
 
@@ -101,12 +101,12 @@ export const cms = [
   {
     link: 'https://graphcms.com',
     name: 'GraphCMS',
-    level: 'competent'
+    level: 3
   },
   {
     link: 'https://strapi.io',
     name: 'Strapi',
-    level: 'competent'
+    level: 3
   }
 ]
 
@@ -114,17 +114,17 @@ export const arch = [
   {
     link: 'https://en.wikipedia.org/wiki/Model–view–controller',
     name: 'MVC',
-    level: 'proficient'
+    level: 4
   },
   {
     link: 'https://en.wikipedia.org/wiki/Representational_state_transfer',
     name: 'REST',
-    level: 'proficient'
+    level: 4
   },
   {
     link: 'https://en.wikipedia.org/wiki/SOAP',
     name: 'SOAP',
-    level: 'competent'
+    level: 3
   }
 ]
 
@@ -132,17 +132,17 @@ export const dev = [
   {
     link: 'https://www.scrum.org/resources/what-is-scrum',
     name: 'Scrum',
-    level: 'expert'
+    level: 5
   },
   {
     link: 'https://www.atlassian.com/agile/kanban',
     name: 'Kanban',
-    level: 'competent'
+    level: 3
   },
   {
     link: 'https://en.wikipedia.org/wiki/Waterfall_model',
     name: 'Waterfall',
-    level: 'competent'
+    level: 3
   }
 ]
 
@@ -150,16 +150,16 @@ export const scm = [
   {
     link: 'https://git-scm.com',
     name: 'Git',
-    level: 'expert'
+    level: 5
   },
   {
     link: 'https://www.ibm.com/docs/fi/elm/6.0.6?topic=capabilities-rational-team-concert',
     name: 'IBM RTC',
-    level: 'proficient'
+    level: 4
   },
   {
     link: 'https://www.mercurial-scm.org',
     name: 'Mercurial',
-    level: 'competent'
+    level: 3
   }
 ]

@@ -58,10 +58,5 @@
   "cms": "Content Management System",
   "levelTip": "<p>5 - Expert</p><p>4 - Proficient</p><p>3 - Competent</p><p>2 - Basic</p><p>1 - Novice</p>",
   "level": "Level",
-  "expert": "Expert",
-  "proficient": "Proficient",
-  "competent": "Competent",
-  "basic": "Basic",
-  "novice": "Novice",
   "_error": "Error"
 }
