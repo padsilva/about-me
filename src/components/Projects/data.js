@@ -29,6 +29,14 @@ export default [
       {
         name: 'FormatJS',
         imgSrc: '/img/tech/format.svg'
+      },
+      {
+        name: 'SendGrid',
+        imgSrc: '/img/tech/sendgrid.svg'
+      },
+      {
+        name: 'reCAPTCHA',
+        imgSrc: '/img/tech/recaptcha.svg'
       }
     ]
   },
