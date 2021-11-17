@@ -18,18 +18,6 @@
   "string.empty": "Required.",
   "string.email": "Invalid email.",
   "header": "Header",
-  "jobDate1": "2017-Present",
-  "jobInstitution1": "Eximbills Technologies",
-  "jobPosition1": "Software Developer",
-  "jobDescription1": "<p>Development and improvement of Eximbills Enterprise, integrated system that automates and audits the complete cycle of trade finance, open account and payment transactions, in real time and in accordance with SWIFT, UCP and ISO20022 standards.<p/><p>Acquired skills of analysis, negotiation, conflict resolution and decision-making in short periods of time, inherent to the direct relationship with customers.</p><span>Also performed technical leader functions: assignment of tasks, training, expectations management, planning, etc.</span>",
-  "jobDate2": "2016-2017",
-  "jobInstitution2": "agap2IT",
-  "jobPosition2": "Junior Consultant",
-  "jobDescription2": "<span>Providing Software Engineering consulting services, at the customer offices, contributing to the development of skills of analysis, negotiation, conflict resolution and decision-making in short periods of time.</span>",
-  "jobDate3": "2014-2015",
-  "jobInstitution3": "iClio",
-  "jobPosition3": "Intern",
-  "jobDescription3": "<span>Collecting, analyzing and specifying of functional requirements, as well as design, implementation and integration of an application for generating family trees.</span>",
   "aboutMe.description": "<span>Personal page where you can find different information about me, including: abstract, academic background, professional experience, technical skills, personal projects and contacts.</span>",
   "wonGames.description": "<span>Game store which offers the possibility to add them to the wishlist, buy them via credit card and enjoy great deals. All content is managed by a CMS.</span>",
   "myTrips.description": "<span>Interactive world map with some points of interest: hometown, visited countries and places to visit.</span>",
@@ -50,5 +38,6 @@
   "cms": "Content Management System",
   "levelTip": "<p>5 - Expert</p><p>4 - Proficient</p><p>3 - Competent</p><p>2 - Basic</p><p>1 - Novice</p>",
   "level": "Level",
-  "_error": "Error"
+  "_error": "Error",
+  "present": "Present"
 }

@@ -13,3 +13,17 @@ export const GET_EDUCATIONS = gql`
     }
   }
 `
+
+export const GET_EXPERIENCES = gql`
+  query getExperiences {
+    experiences {
+      id
+      position
+      url
+      institution
+      startDate
+      endDate
+      description
+    }
+  }
+`

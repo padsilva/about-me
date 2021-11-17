@@ -18,18 +18,6 @@
   "string.empty": "Preenchimento obrigatório.",
   "string.email": "Email inválido.",
   "header": "Cabeçalho",
-  "jobDate1": "2017-Presente",
-  "jobInstitution1": "Eximbills Technologies",
-  "jobPosition1": "Analista Programador",
-  "jobDescription1": "<p>Desenvolvimento e otimização do Eximbills Enterprise, sistema integrado que automatiza e audita todo o ciclo de trade finance, abertura de contas e transações de pagamentos, em tempo real e em concordância com as normas SWIFT, UCP e ISO20022.<p/><p>Adquiridas competências de análise, negociação, resolução de conflitos e tomada de decisões em curtos períodos de tempo, inerentes à relação direta com os clientes.</p><span>Desempenhadas também funções de líder técnico: atribuição de tarefas, formação, gestão de expectativas, planeamento, etc.</span>",
-  "jobDate2": "2016-2017",
-  "jobInstitution2": "agap2IT",
-  "jobPosition2": "Consultor Júnior",
-  "jobDescription2": "<span>Prestação de serviços de consultoria na área da Engenharia de Software, presencialmente nos escritórios dos clientes, contribuindo para o desenvolvimento de capacidades de análise, negociação, resolução de conflitos e tomada de decisões em curtos períodos de tempo.</span>",
-  "jobDate3": "2014-2015",
-  "jobInstitution3": "iClio",
-  "jobPosition3": "Estagiário",
-  "jobDescription3": "<span>Recolha, análise e especificação dos requisitos funcionais, bem como desenho, implementação e integração de uma aplicação de geração de árvores genealógicas.</span>",
   "aboutMe.description": "<span>Página pessoal onde se podem encontrar diversas informações sobre mim, nomeadamente: breve resumo, percurso académico, experiência profissional, competências técnicas, projectos pessoais e contactos.</span>",
   "wonGames.description": "<span>Loja de jogos online que oferece a possibilidade de adicioná-los à lista de desejos, comprá-los através de cartão de crédito e usufruir de grandes promoções. Todo o conteúdo é gerido por um CMS.</span>",
   "myTrips.description": "<span>Mapa mundo interactivo com alguns pontos de interesse: terra natal, países visitados e locais a visitar.</span>",
@@ -50,5 +38,6 @@
   "cms": "Sistema de Gestão de Conteúdos",
   "levelTip": "<p>5 - Especialista</p><p>4 - Proficiente</p><p>3 - Competente</p><p>2 - Básico</p><p>1 - Principiante</p>",
   "level": "Nível",
-  "_error": "Erro"
+  "_error": "Erro",
+  "present": "Presente"
 }
