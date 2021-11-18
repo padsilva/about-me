@@ -3,13 +3,16 @@ import { gql } from 'graphql-request'
 export const GET_EDUCATIONS = gql`
   query getEducations {
     educations {
-      id
-      grade
-      url
-      institution
-      startDate
-      endDate
-      description
+      localizations(includeCurrent: true) {
+        id
+        grade
+        url
+        institution
+        startDate
+        endDate
+        description
+        locale
+      }
     }
   }
 `
@@ -17,13 +20,16 @@ export const GET_EDUCATIONS = gql`
 export const GET_EXPERIENCES = gql`
   query getExperiences {
     experiences {
-      id
-      position
-      url
-      institution
-      startDate
-      endDate
-      description
+      localizations(includeCurrent: true) {
+        id
+        position
+        url
+        institution
+        startDate
+        endDate
+        description
+        locale
+      }
     }
   }
 `
