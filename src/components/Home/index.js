@@ -1,4 +1,5 @@
-import { FormattedDate, useIntl } from 'react-intl'
+import PropTypes from 'prop-types'
+import { FormattedDate } from 'react-intl'
 import {
   Avatar,
   Card,
@@ -11,10 +12,18 @@ import {
 
 import SocialLinks from 'components/SocialLinks'
 
-const Home = () => {
+const Home = ({
+  abstract: {
+    avatar,
+    name,
+    position,
+    birthdate,
+    hometown,
+    country,
+    description
+  }
+}) => {
   const theme = useTheme()
-  const { formatMessage } = useIntl()
-  const f = (id) => formatMessage({ id })
 
   return (
     <Container component="main" maxWidth="md">
@@ -32,8 +41,8 @@ const Home = () => {
             >
               <Grid item>
                 <Avatar
-                  alt="Paulo Silva"
-                  src="/img/profile.jpg"
+                  alt={name}
+                  src={avatar.url}
                   sx={{ width: theme.spacing(26), height: theme.spacing(26) }}
                 />
               </Grid>
@@ -45,21 +54,21 @@ const Home = () => {
                 alignItems="center"
               >
                 <Typography variant="h4" component="h5">
-                  Paulo Silva
+                  {name}
                 </Typography>
                 <Typography variant="body1" component="h6">
-                  {f('position')}
+                  {position}
                 </Typography>
                 <Typography variant="caption">
                   <FormattedDate
-                    value="1988/09/04"
+                    value={birthdate}
                     year="numeric"
                     month="long"
                     day="2-digit"
                   />
                 </Typography>
                 <Typography variant="caption">
-                  {`${f('hometown')}, Portugal`}
+                  {`${hometown}, ${country}`}
                 </Typography>
               </Grid>
             </Grid>
@@ -76,7 +85,7 @@ const Home = () => {
                 component="div"
                 variant="body2"
                 align="justify"
-                dangerouslySetInnerHTML={{ __html: f('abstract') }}
+                dangerouslySetInnerHTML={{ __html: description }}
               />
             </Grid>
           </Grid>
@@ -85,6 +94,10 @@ const Home = () => {
       </Card>
     </Container>
   )
+}
+
+Home.propTypes = {
+  abstract: PropTypes.object.isRequired
 }
 
 export default Home

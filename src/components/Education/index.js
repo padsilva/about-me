@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import { FormattedDate } from 'react-intl'
 import {
   Card,
   Container,
@@ -31,20 +30,10 @@ const Education = ({ educations }) => {
     <Container component="main" maxWidth="lg">
       <Timeline position="alternate">
         {educations.map(
-          ({
-            id,
-            grade,
-            url,
-            institution,
-            startDate,
-            endDate,
-            description
-          }) => (
+          ({ id, grade, url, institution, start, end, description }) => (
             <TimelineItem key={id}>
               <TimelineOppositeContent color="textSecondary">
-                <FormattedDate value={startDate} year="numeric" />
-                {`-`}
-                <FormattedDate value={endDate} year="numeric" />
+                {start}-{end}
               </TimelineOppositeContent>
               <TimelineSeparator>
                 <TimelineDot
@@ -80,7 +69,7 @@ const Education = ({ educations }) => {
   ) : (
     <Container component="main" maxWidth="sm">
       {educations.map(
-        ({ id, grade, url, institution, startDate, endDate, description }) => (
+        ({ id, grade, url, institution, start, end, description }) => (
           <Card key={id} raised sx={paper}>
             <Typography
               component="div"
@@ -88,9 +77,7 @@ const Education = ({ educations }) => {
               gutterBottom
               color="textSecondary"
             >
-              <FormattedDate value={startDate} year="numeric" />
-              {`-`}
-              <FormattedDate value={endDate} year="numeric" />
+              {start}-{end}
               <Divider />
             </Typography>
             <Typography variant="h6">

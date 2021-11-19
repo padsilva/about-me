@@ -8,8 +8,8 @@ export const GET_EDUCATIONS = gql`
         grade
         url
         institution
-        startDate
-        endDate
+        start
+        end
         description
         locale
       }
@@ -25,8 +25,27 @@ export const GET_EXPERIENCES = gql`
         position
         url
         institution
-        startDate
-        endDate
+        start
+        end
+        description
+        locale
+      }
+    }
+  }
+`
+
+export const GET_ABSTRACT = gql`
+  query getAbstract {
+    abstracts {
+      localizations(includeCurrent: true) {
+        avatar {
+          url
+        }
+        name
+        position
+        birthdate
+        hometown
+        country
         description
         locale
       }

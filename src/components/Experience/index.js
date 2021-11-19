@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { FormattedDate, useIntl } from 'react-intl'
+import { useIntl } from 'react-intl'
 import {
   Card,
   Container,
@@ -33,24 +33,10 @@ const Experience = ({ experiences }) => {
     <Container component="main" maxWidth="lg">
       <Timeline position="alternate">
         {experiences.map(
-          ({
-            id,
-            position,
-            url,
-            institution,
-            startDate,
-            endDate,
-            description
-          }) => (
+          ({ id, position, url, institution, start, end, description }) => (
             <TimelineItem key={id}>
               <TimelineOppositeContent color="textSecondary">
-                <FormattedDate value={startDate} year="numeric" />
-                {`-`}
-                {endDate ? (
-                  <FormattedDate value={endDate} year="numeric" />
-                ) : (
-                  f('present')
-                )}
+                {start}-{end || f('present')}
               </TimelineOppositeContent>
               <TimelineSeparator>
                 <TimelineDot
@@ -86,15 +72,7 @@ const Experience = ({ experiences }) => {
   ) : (
     <Container component="main" maxWidth="sm">
       {experiences.map(
-        ({
-          id,
-          position,
-          url,
-          institution,
-          startDate,
-          endDate,
-          description
-        }) => (
+        ({ id, position, url, institution, start, end, description }) => (
           <Card key={id} raised sx={paper}>
             <Typography
               component="div"
@@ -103,9 +81,7 @@ const Experience = ({ experiences }) => {
               color="textSecondary"
             >
               <TimelineOppositeContent color="textSecondary">
-                <FormattedDate value={startDate} year="numeric" />
-                {`-`}
-                <FormattedDate value={endDate} year="numeric" />
+                {start}-{end || f('present')}
               </TimelineOppositeContent>
               <Divider />
             </Typography>
