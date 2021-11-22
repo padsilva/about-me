@@ -52,3 +52,20 @@ export const GET_ABSTRACT = gql`
     }
   }
 `
+
+export const GET_SKILLS = gql`
+  query getSkills {
+    skillsLists {
+      localizations(includeCurrent: true) {
+        label
+        title
+        skills {
+          name
+          link
+          level
+        }
+        locale
+      }
+    }
+  }
+`

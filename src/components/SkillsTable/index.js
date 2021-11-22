@@ -68,7 +68,7 @@ const StyledRating = styled(Rating)(({ theme }) => ({
   }
 }))
 
-const SkillsTable = ({ label, data }) => {
+const SkillsTable = ({ data: { label, title, skills } }) => {
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
 
@@ -77,38 +77,39 @@ const SkillsTable = ({ label, data }) => {
       <Table aria-label={`${label} table`}>
         <TableHead>
           <StyledTableRow>
-            <StyledTableCell>{f(label)}</StyledTableCell>
+            <StyledTableCell>{title}</StyledTableCell>
             <StyledTableCell align="right">
               <LevelTooltip text={f('levelTip')} label={f('level')} />
             </StyledTableCell>
           </StyledTableRow>
         </TableHead>
         <TableBody>
-          {data.map((tech) => (
-            <TableRow key={tech.name}>
-              <TableCell component="th" scope="row">
-                <Link
-                  href={tech.link}
-                  target="_blank"
-                  rel="noopener"
-                  color="inherit"
-                >
-                  <Typography variant="subtitle2">{tech.name}</Typography>
-                </Link>
-              </TableCell>
-              <TableCell align="right">
-                <StyledRating
-                  name="read-only"
-                  value={tech.level}
-                  readOnly
-                  size="small"
-                  icon={<Circle fontSize="inherit" />}
-                  emptyIcon={<CircleOutlined fontSize="inherit" />}
-                  color="success"
-                />
-              </TableCell>
-            </TableRow>
-          ))}
+          {skills &&
+            skills.map(({ name, link, level }) => (
+              <TableRow key={name}>
+                <TableCell component="th" scope="row">
+                  <Link
+                    href={link}
+                    target="_blank"
+                    rel="noopener"
+                    color="inherit"
+                  >
+                    <Typography variant="subtitle2">{name}</Typography>
+                  </Link>
+                </TableCell>
+                <TableCell align="right">
+                  <StyledRating
+                    name="read-only"
+                    value={level}
+                    readOnly
+                    size="small"
+                    icon={<Circle fontSize="inherit" />}
+                    emptyIcon={<CircleOutlined fontSize="inherit" />}
+                    color="success"
+                  />
+                </TableCell>
+              </TableRow>
+            ))}
         </TableBody>
       </Table>
     </TableContainer>
@@ -116,8 +117,11 @@ const SkillsTable = ({ label, data }) => {
 }
 
 SkillsTable.propTypes = {
-  label: PropTypes.string.isRequired,
-  data: PropTypes.array.isRequired
+  data: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    skills: PropTypes.array.isRequired
+  }).isRequired
 }
 
 export default SkillsTable

@@ -1,8 +1,7 @@
+import PropTypes from 'prop-types'
 import { Box, Container, Grid, useMediaQuery } from '@mui/material'
 
 import SkillsTable from 'components/SkillsTable'
-
-import { arch, cms, db, dev, lang, lib, scm } from './data'
 
 const GridItem = (props) => (
   <Box
@@ -16,8 +15,15 @@ const GridItem = (props) => (
   />
 )
 
-const Skills = () => {
+const Skills = ({ skills }) => {
   const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'))
+  const arch = skills.filter((entry) => entry.label === 'arch')[0]
+  const cms = skills.filter((entry) => entry.label === 'cms')[0]
+  const db = skills.filter((entry) => entry.label === 'db')[0]
+  const dev = skills.filter((entry) => entry.label === 'dev')[0]
+  const lang = skills.filter((entry) => entry.label === 'lang')[0]
+  const lib = skills.filter((entry) => entry.label === 'lib')[0]
+  const scm = skills.filter((entry) => entry.label === 'scm')[0]
 
   return mdUp ? (
     <Container component="main" maxWidth="lg">
@@ -37,25 +43,25 @@ const Skills = () => {
             ". . SCM"`}
       >
         <GridItem gridArea="Lang">
-          <SkillsTable label="lang" data={lang} />
+          <SkillsTable data={lang} />
         </GridItem>
         <GridItem gridArea="Lib">
-          <SkillsTable label="lib" data={lib} />
+          <SkillsTable data={lib} />
         </GridItem>
         <GridItem gridArea="DB">
-          <SkillsTable label="db" data={db} />
+          <SkillsTable data={db} />
         </GridItem>
         <GridItem gridArea="SCM">
-          <SkillsTable label="scm" data={scm} />
+          <SkillsTable data={scm} />
         </GridItem>
         <GridItem gridArea="Arch">
-          <SkillsTable label="arch" data={arch} />
+          <SkillsTable data={arch} />
         </GridItem>
         <GridItem gridArea="Dev">
-          <SkillsTable label="dev" data={dev} />
+          <SkillsTable data={dev} />
         </GridItem>
         <GridItem gridArea="CMS">
-          <SkillsTable label="cms" data={cms} />
+          <SkillsTable data={cms} />
         </GridItem>
       </Box>
     </Container>
@@ -86,6 +92,10 @@ const Skills = () => {
       </Grid>
     </Container>
   )
+}
+
+Skills.propTypes = {
+  skills: PropTypes.array.isRequired
 }
 
 export default Skills
