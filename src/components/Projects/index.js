@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Image from 'next/image'
 import { useState } from 'react'
 import { useIntl } from 'react-intl'
@@ -19,17 +20,16 @@ import {
 } from '@mui/material'
 import { Close, Info } from '@mui/icons-material'
 
-import data from './data'
-
 const initialStatus = {
-  name: '',
   title: '',
+  description: '',
   github: '',
   live: '',
-  techs: []
+  skills: [],
+  course: {}
 }
 
-const Projects = () => {
+const Projects = ({ projects }) => {
   const theme = useTheme()
   const [open, setOpen] = useState(false)
   const [info, setInfo] = useState(initialStatus)
@@ -48,38 +48,59 @@ const Projects = () => {
   return (
     <Container component="main" maxWidth="md">
       <ImageList rowHeight={200}>
-        {data.map((proj) => (
-          <ImageListItem
-            key={proj.name}
-            cols={proj.featured ? 2 : 1}
-            rows={proj.featured ? 2 : 1}
-          >
-            <Image
-              src={`/img/projects/${proj.name}.jpg`}
-              alt={proj.title}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="top"
-            />
-            <ImageListItemBar
-              sx={{
-                background:
-                  'linear-gradient(to top, rgba(0,0,0,0.7) 0%, ' +
-                  'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)'
-              }}
-              title={proj.title}
-              actionIcon={
-                <IconButton
-                  aria-label={`info about ${proj.title}`}
-                  sx={{ color: 'white' }}
-                  onClick={() => handleClickOpen(proj)}
-                >
-                  <Info />
-                </IconButton>
-              }
-            />
-          </ImageListItem>
-        ))}
+        {projects.map(
+          ({
+            title,
+            description,
+            github,
+            live,
+            featured,
+            course,
+            skills,
+            printscreen
+          }) => (
+            <ImageListItem
+              key={title}
+              cols={featured ? 2 : 1}
+              rows={featured ? 2 : 1}
+            >
+              <Image
+                src={printscreen.url}
+                alt={title}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="top"
+              />
+              <ImageListItemBar
+                sx={{
+                  background:
+                    'linear-gradient(to top, rgba(0,0,0,0.7) 0%, ' +
+                    'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)'
+                }}
+                title={title}
+                actionIcon={
+                  <IconButton
+                    aria-label={`info about ${title}`}
+                    sx={{ color: 'white' }}
+                    onClick={() =>
+                      handleClickOpen({
+                        title,
+                        description,
+                        github,
+                        live,
+                        featured,
+                        course,
+                        skills
+                      })
+                    }
+                  >
+                    <Info />
+                  </IconButton>
+                }
+              />
+            </ImageListItem>
+          )
+        )}
       </ImageList>
       <Dialog
         onClose={handleClose}
@@ -120,24 +141,23 @@ const Projects = () => {
         </DialogTitle>
         <DialogContent dividers sx={{ p: theme.spacing(2) }}>
           <Typography variant="h6" gutterBottom>
-            {f('title.desc')}
+            {f('desc')}
           </Typography>
-          {info.name && (
+          {info.title && (
             <Typography
               component="div"
               variant="body2"
               align="justify"
-              dangerouslySetInnerHTML={{
-                __html: f(`${info.name}.description`)
-              }}
               gutterBottom
-            />
+            >
+              {info.description}
+            </Typography>
           )}
 
           <br />
 
           <Typography gutterBottom variant="h6" paragraph>
-            {f('title.techs')}
+            {f('techs')}
           </Typography>
 
           <Grid
@@ -146,29 +166,24 @@ const Projects = () => {
             justifyContent="center"
             alignItems="flex-start"
           >
-            {info.techs.map((tech) => (
+            {info.skills.map(({ name, logo }) => (
               <Grid
                 container
                 item
                 xs={6}
                 sm={3}
-                key={tech.name}
+                key={name}
                 direction="column"
                 justifyContent="center"
                 alignItems="center"
                 spacing={1}
               >
                 <Grid item>
-                  <Image
-                    src={tech.imgSrc}
-                    alt={tech.name}
-                    width={40}
-                    height={40}
-                  />
+                  <Image src={logo.url} alt={name} width={40} height={40} />
                 </Grid>
                 <Grid item>
                   <Typography noWrap variant="caption">
-                    {tech.name}
+                    {name}
                   </Typography>
                 </Grid>
               </Grid>
@@ -202,12 +217,12 @@ const Projects = () => {
           )}
         </DialogContent>
 
-        {info.udemy && (
+        {info.course && (
           <DialogActions sx={{ p: theme.spacing(2) }}>
             <DialogContentText variant="caption">
               {f('udemy')}
-              <Link href={info.udemy.link} target="_blank" rel="noopener">
-                {info.udemy.name}
+              <Link href={info.course.link} target="_blank" rel="noopener">
+                {info.course.name}
               </Link>
             </DialogContentText>
           </DialogActions>
@@ -215,6 +230,10 @@ const Projects = () => {
       </Dialog>
     </Container>
   )
+}
+
+Projects.propTypes = {
+  projects: PropTypes.array.isRequired
 }
 
 export default Projects

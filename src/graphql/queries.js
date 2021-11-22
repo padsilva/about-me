@@ -69,3 +69,31 @@ export const GET_SKILLS = gql`
     }
   }
 `
+
+export const GET_PROJECTS = gql`
+  query getProjects {
+    projects {
+      localizations(includeCurrent: true) {
+        title
+        description
+        github
+        live
+        featured
+        course {
+          name
+          link
+        }
+        skills {
+          name
+          logo {
+            url
+          }
+        }
+        printscreen {
+          url
+        }
+        locale
+      }
+    }
+  }
+`
