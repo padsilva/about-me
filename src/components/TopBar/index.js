@@ -37,7 +37,7 @@ const TopBar = () => {
           >
             <Grid item xs>
               <Typography variant="h4" display="inline">
-                {process.env.NEXT_PUBLIC_AUTHOR}
+                {process.env.NEXT_PUBLIC_AUTHOR || 'John Doe'}
               </Typography>
 
               {mdDown ? (
