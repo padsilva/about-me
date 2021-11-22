@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import {
   AppBar,
-  Box,
   Grid,
   Toolbar,
   Typography,
@@ -18,7 +17,6 @@ const TopBar = () => {
   const { pathname } = useRouter()
   const { formatMessage } = useIntl()
   const f = (id) => formatMessage({ id })
-  const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'))
   const mdDown = useMediaQuery((theme) => theme.breakpoints.down('md'))
 
   const breadCrumb = () => ' / ' + f(pathname.replace('/', '') || 'home')
@@ -39,13 +37,8 @@ const TopBar = () => {
           >
             <Grid item xs>
               <Typography variant="h4" display="inline">
-                Paulo Silva
+                {process.env.NEXT_PUBLIC_AUTHOR}
               </Typography>
-              {lgUp ? (
-                <Box ml={1} display="inline">
-                  <Typography variant="caption">{f('position')}</Typography>
-                </Box>
-              ) : null}
 
               {mdDown ? (
                 <Typography

@@ -37,7 +37,7 @@ const App = ({ Component, pageProps }) => {
               name="google-site-verification"
               content="pM0VV9O2-QE_DFgTJpfdEQu9st9jxjHU8PQVAORwCLc"
             />
-            <title>Paulo Silva</title>
+            <title>{process.env.NEXT_PUBLIC_AUTHOR}</title>
             <link
               rel="apple-touch-icon"
               sizes="180x180"
