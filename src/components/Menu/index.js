@@ -10,12 +10,52 @@ import {
   Typography,
   useMediaQuery
 } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
+import {
+  Code,
+  ContactSupport,
+  Home,
+  Menu as MenuIcon,
+  Notes,
+  School,
+  Work
+} from '@mui/icons-material'
 
 import InternalLink from 'components/InternalLink'
-import data from 'components/Menu/data'
 import ToggleTheme from 'components/ToggleTheme'
 import ToggleLang from 'components/ToggleLang'
+
+const data = [
+  {
+    icon: <Home fontSize="small" />,
+    link: '/',
+    name: 'home'
+  },
+  {
+    icon: <School fontSize="small" />,
+    link: '/education',
+    name: 'education'
+  },
+  {
+    icon: <Work fontSize="small" />,
+    link: '/experience',
+    name: 'experience'
+  },
+  {
+    icon: <Notes fontSize="small" />,
+    link: '/skills',
+    name: 'skills'
+  },
+  {
+    icon: <Code fontSize="small" />,
+    link: '/projects',
+    name: 'projects'
+  },
+  {
+    icon: <ContactSupport fontSize="small" />,
+    link: '/contacts',
+    name: 'contacts'
+  }
+]
 
 const Menu = () => {
   const [open, setOpen] = useState(false)
