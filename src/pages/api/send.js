@@ -1,6 +1,6 @@
 import sgMail from '@sendgrid/mail'
 
-export default async function (req, res) {
+const sendEmail = async (req, res) => {
   sgMail.setApiKey(process.env.NEXT_SENDGRID_API_KEY)
 
   const { email, message, firstName, lastName, subject } = req.body
@@ -19,3 +19,5 @@ export default async function (req, res) {
     res.status(400).send('emailError')
   }
 }
+
+export default sendEmail
