@@ -80,9 +80,7 @@ const Experience = ({ experiences }) => {
               gutterBottom
               color="textSecondary"
             >
-              <TimelineOppositeContent color="textSecondary">
-                {start}-{end || f('present')}
-              </TimelineOppositeContent>
+              {start}-{end || f('present')}
               <Divider />
             </Typography>
             <Typography variant="h6">
